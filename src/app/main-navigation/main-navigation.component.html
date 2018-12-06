@@ -1,0 +1,108 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav main-nav-line"
+    fixedInViewport="true"
+    fxFlexAlign="center"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-nav-list>
+      <div class="center-h">
+        <div class="main-nav-icon-top">
+          <a
+            mat-list-item
+            routerLink=""
+            matTooltip="Začetna stran"
+            matTooltipPosition="right"
+            matTooltipClass="tooltip"
+            ><i class="fas fa-desktop"></i
+          ></a>
+
+          <a
+            mat-list-item
+            routerLink="items"
+            matTooltip="Zavihki in zgodovina"
+            matTooltipPosition="right"
+            matTooltipClass="tooltip"
+            ><i class="far fa-star"></i
+          ></a>
+
+          <button
+            mat-icon-button
+            matTooltip="Ustvari novo komponento"
+            matTooltipClass="tooltip"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+
+          <a
+            mat-list-item
+            routerLink="datatable"
+            matTooltip="Ustvari novo komponento"
+            matTooltipPosition="right"
+            matTooltipClass="tooltip"
+            ><i class="fas fa-plus"></i
+          ></a>
+        </div>
+
+        <div class="main-nav-icon-bot">
+          <a
+            mat-list-item
+            routerLink="tree"
+            matTooltip="Obvestila"
+            matTooltipPosition="right"
+            matTooltipClass="tooltip"
+            ><i class="far fa-bell"></i
+          ></a>
+
+          <a
+            mat-list-item
+            routerLink="datatable"
+            matTooltip="Prehod med aplikacijami"
+            matTooltipPosition="right"
+            matTooltipClass="tooltip"
+            ><i class="fas fa-th"></i
+          ></a>
+
+          <a
+            mat-list-item
+            routerLink="datatable"
+            matTooltip="Pomoč in podpora"
+            matTooltipPosition="right"
+            matTooltipClass="tooltip"
+            ><i class="fas fa-question-circle"></i
+          ></a>
+
+          <a
+            mat-list-item
+            routerLink="datatable"
+            matTooltip="Profil"
+            matTooltipPosition="right"
+            matTooltipClass="tooltip"
+            ><i class="fas fa-user"></i
+          ></a>
+        </div>
+      </div>
+
+      <!--
+        MATERIAL DESIGN ICONS
+         <a mat-list-item routerLink=""><mat-icon>home</mat-icon></a>
+         <a mat-list-item routerLink="items"><mat-icon>star_border</mat-icon></a>
+         <a mat-list-item routerLink="forms"><i class="fab fa-star"></i></a>
+         <a mat-list-item routerLink="datatable"><mat-icon>add</mat-icon></a>
+
+
+         <a mat-list-item routerLink="tree"><mat-icon>notification_important</mat-icon></a>
+         <a mat-list-item routerLink="datatable"><mat-icon>apps</mat-icon></a>
+         <a mat-list-item routerLink="datatable"><mat-icon>live_help</mat-icon></a>
+         <a mat-list-item routerLink="datatable"><mat-icon>person</mat-icon></a>
+      -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="test">
+    <!-- Add Content Here -->
+
+    <app-navigation></app-navigation>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,96 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 63px;
+  //width: 120px; //For testing only
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+mat-sidenav {
+  background-color: #0747A6;
+}
+
+a {
+  color: whitesmoke;
+  }
+
+  a:link {
+  color: whitesmoke;
+  }
+  a:visited {
+  color: whitesmoke;
+  }
+  a:hover {
+  color: whitesmoke;
+  }
+
+
+  .my-tile > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//Navigacija, ko se z kurzorjem dotaknemo gumba
+.mat-list-item:hover{
+  border-radius: 50%;
+  background-color: #1C63CE;
+}
+
+//Ko pritisnemo navigacijsko tipko
+.mat-list-item:active{
+  //background-color: aqua;
+}
+
+//Navigacijska izbira na meniju
+.mat-list-item:focus{
+  border-radius: 50%;
+  background-color: #05367F;
+
+}
+
+.center-h {
+  text-align: center;
+}
+
+// Angular material Navigation icons to allight centeer
+.main-nav-icon-top{
+  top: 10px;
+  display: inline-block;
+}
+
+.main-nav-icon-bot{
+  bottom: 10px;
+  display: inline-block;
+}
+
+//Angular Material Tooltip
+::ng-deep .tooltip {
+  background-color: black;
+  color: blue;
+  font-size: 14px;
+}
+
+.center-f {
+  justify-content: flex-end;
+}
+
+// Main-nav Linija med main in Side navigation
+.main-nav-line {
+  border-style: none solid none none;
+    border-width: 2px;
+}
+
+
+

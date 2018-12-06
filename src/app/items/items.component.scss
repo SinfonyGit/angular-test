@@ -1,0 +1,72 @@
+.container {
+  margin: 20px;
+  display: grid; // spremenimo container v grid oz 2D tabelce
+  grid-template-columns: 200px 150px 20% 1fr;
+  grid-template-rows: 5rem 2.5rem;
+}
+
+.el1 {
+  background: rgba(255, 154, 72, 0.5);
+}
+
+.el2 {
+  background: rgba(225, 0, 0, 0.5);
+}
+
+.el3 {
+  background: rgba(0, 128, 0, 0.5);
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+.el4 {
+  background: rgba(0, 4, 255, 0.5);
+}
+
+.container-button{
+  margin: 20px;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.buttonColorGreen {background-color: #4CAF50;} /* Green */
+.buttonColorBlue {background-color: #008CBA;} /* Blue */
+.buttonColorRed {background-color: #f44336;} /* Red */
+.buttonColorGray {background-color: #e7e7e7; color: black;} /* Gray */
+.buttonColorBlack {background-color: #555555;} /* Black */
+
+.buttonSize10 {font-size: 10px;}
+.buttonSize12 {font-size: 12px;}
+.buttonSize16 {font-size: 16px;}
+.buttonSize20 {font-size: 20px;}
+.buttonSize24 {font-size: 24px;}
+
+.element {
+  --my-var: red;
+  background-color: var(--my-var);
+}
+
+.color {
+  --red: red;
+  --blue: blue;
+  --cyan: cyan;
+  background-color: var(--red);
+}
+
+$colors: (
+  primary:    #387ef5,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  favorite:   #69BB7B
+);
