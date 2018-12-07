@@ -5,3 +5,22 @@
 .container {
     margin: 20px;
 }
+
+.breadcrumbsBoxCss, .breadcrumbsBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+}
+  
+.breadcrumbsBoxCss {
+    height: 500px;
+    width: 700px;
+}
+  
+.breadcrumbsBox {
+    height: 200px;
+    width: 600px;
+}
