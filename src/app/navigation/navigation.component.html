@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav main-nav-line" fixedInViewport="true"
+  <mat-sidenav #sidenav class="sidenav main-nav-line" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
@@ -9,7 +9,7 @@
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="drawer.toggle()">
+        (click)="sidenav.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       Navigacija
@@ -21,6 +21,7 @@
       <a mat-list-item routerLink="datatable"><i class="fas fa-database"></i>&nbsp;&nbsp;&nbsp;&nbsp;DataTable
       </a>
       <a mat-list-item routerLink="tree"><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Tree<i class="fas fa-arrow-right"></i></a>
+      <a mat-list-item routerLink="documentation"><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Dokumentacija<i class="fas fa-arrow-right"></i></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

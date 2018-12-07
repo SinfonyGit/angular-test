@@ -6,6 +6,7 @@ import { ItemsComponent } from './items/items.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TreeComponent } from './tree/tree.component';
+import { DocumentationComponent } from './documentation/documentation.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'forms', component: AddressFormComponent },
   { path: 'datatable', component: DatatableComponent },
   { path: 'tree', component: TreeComponent },
-  { path: 'mainNav', component: MainNavigationComponent }
+  { path: 'mainNav', component: MainNavigationComponent },
+  { path: 'documentation', component: DocumentationComponent }
 ];
 
 @NgModule({

@@ -19,6 +19,7 @@ import { TreeComponent } from './tree/tree.component';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 import { SearchDialogNavigationComponent } from './main-navigation/search-dialog-navigation/search-dialog-navigation.component';
 import { SearchDialogComponent } from './main-navigation/search-dialog/search-dialog.component';
+import { DocumentationComponent } from './documentation/documentation.component';
 
 @NgModule({
    declarations: [
@@ -31,7 +32,8 @@ import { SearchDialogComponent } from './main-navigation/search-dialog/search-di
       TreeComponent,
       MainNavigationComponent,
       SearchDialogComponent,
-      SearchDialogNavigationComponent
+      SearchDialogNavigationComponent,
+      DocumentationComponent
    ],
    imports: [
       BrowserModule,
