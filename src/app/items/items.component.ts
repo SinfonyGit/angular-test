@@ -11,6 +11,10 @@ import {MatDialog} from '@angular/material';
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent implements OnInit {
+
+  classname = 'colors:danger button';
+
+
   animal = 'lol';
   constructor(public dialog: MatDialog) { }
 
