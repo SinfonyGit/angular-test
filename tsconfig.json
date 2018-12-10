@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "sinfony-ui": [
+        "dist/sinfony-ui"
+      ],
+      "sinfony-ui/*": [
+        "dist/sinfony-ui/*"
+      ]
+    }
   }
 }
