@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocumentationComponent implements OnInit {
 
+  Green = '#008000';
+
   constructor() { }
 
   ngOnInit() {

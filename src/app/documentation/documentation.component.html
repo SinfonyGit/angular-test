@@ -77,6 +77,74 @@
   <br />
   <hr />
 
+  <h3>Poljubno narejena komponenta kot knjižnica</h3>
+
+  <mat-tab-group>
+    <mat-tab label="Format Kode">
+
+        <div class="breadcrumbsBox mat-elevation-z4">
+
+          <sf-format-code>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam impedit architecto quibusdam nostrum cum vel porro in aliquid harum incidunt, dicta reprehenderit nulla, ipsum fugiat illo qui, error veniam obcaecati.
+          </sf-format-code>
+
+
+
+
+    </div>
+
+    </mat-tab>
+    <mat-tab label="CSS">
+        <div class="breadcrumbsBoxCss mat-elevation-z4">
+      <p>  <code>
+
+        
+        &lt;sf-format-code&gt;<br />
+        &nbsp;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam impedit architecto quibusdam nostrum cum vel porro in aliquid harum incidunt, dicta reprehenderit nulla, ipsum fugiat illo qui, error veniam obcaecati.<br />
+          &lt;/sf-format-code&gt;<br />
+
+      <p>Dodatne možnosti:</p>
+      <p>[Color]="Blue" --> Poljubna barva texta</p>
+      <p>[bgColor]="LightBlue" --> Poljubna barva ozadja</p>
+      <p>[font]="Roboto" --> Poljubna pisava texta</p>
+
+
+
+
+        </code>
+</p>
+</div>
+    </mat-tab>
+    <mat-tab label="Primer">
+      <div class="breadcrumbsBoxCss mat-elevation-z4">
+    <p>  <code>
+
+      <p>app-component.html</p>
+      
+      &lt;sf-format-code [Color]="Green"&gt;<br />
+      &nbsp;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam impedit architecto quibusdam nostrum cum vel porro in aliquid harum incidunt, dicta reprehenderit nulla, ipsum fugiat illo qui, error veniam obcaecati.<br />
+        &lt;/sf-format-code&gt;<br />
+<hr>
+        <p>app-component.ts</p>
+
+        Green = #008000; (HEX css barva)
+<hr>
+        <p>Ogled</p>
+        <sf-format-code [color]="Green">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam impedit architecto quibusdam nostrum cum vel porro in aliquid harum incidunt, dicta reprehenderit nulla, ipsum fugiat illo qui, error veniam obcaecati.
+        </sf-format-code>
+
+
+      </code>
+</p>
+</div>
+  </mat-tab>
+  </mat-tab-group>
+
+
+  <br />
+  <hr />
+
   <h3>Navigacija</h3>
 
   <button class="button">Nek knof</button>

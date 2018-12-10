@@ -20,6 +20,7 @@ import { MainNavigationComponent } from './main-navigation/main-navigation.compo
 import { SearchDialogNavigationComponent } from './main-navigation/search-dialog-navigation/search-dialog-navigation.component';
 import { SearchDialogComponent } from './main-navigation/search-dialog/search-dialog.component';
 import { DocumentationComponent } from './documentation/documentation.component';
+import { SinfonyUiModule } from 'projects/sinfony-ui/src/lib/sinfony-ui.module';
 
 @NgModule({
    declarations: [
@@ -42,7 +43,8 @@ import { DocumentationComponent } from './documentation/documentation.component'
       BrowserAnimationsModule,
       MaterialModule,
       ReactiveFormsModule,
-      LayoutModule
+      LayoutModule,
+      SinfonyUiModule
    ],
    providers: [],
    bootstrap: [
