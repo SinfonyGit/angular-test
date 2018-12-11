@@ -9,6 +9,11 @@ export class DocumentationComponent implements OnInit {
 
   Green = '#008000';
 
+  tabela: any[] = [
+    { 'link': '/../items', 'name': 'Itemsi' },
+    { 'link': '', 'name': 'vstopna' },
+];
+
   constructor() { }
 
   ngOnInit() {

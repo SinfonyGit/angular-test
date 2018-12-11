@@ -72,6 +72,36 @@
 </p>
 </div>
     </mat-tab>
+    <mat-tab label="Breadcrumbs NOVO custom knjnižnica">
+
+        <div class="breadcrumbsBox mat-elevation-z4">
+
+            <sf-breadcrumb [items]="tabela"></sf-breadcrumb>
+
+    </div>
+</mat-tab>
+    <mat-tab label="API custom breadcrumb knjižnica">
+        <div class="breadcrumbsBoxCss mat-elevation-z4">
+      <p>  <code>
+          <p>app-component.html</p>
+          &lt;sf-breadcrumb [items]="tabela"&gt; &lt;/sf-breadcrumb&gt; <br />
+<hr>
+          <p>app-component.ts</p>
+          
+         <p>
+            tabela: any[] = [
+         </p>
+         <p>( 'link': '/../items', 'name': 'Itemsi' ), </p>
+         <p>(  'link': '', 'name': 'vstopna' ), </p>
+         ];
+           
+
+        </code>
+</p>
+</div>
+    </mat-tab>
+
+    
   </mat-tab-group>
 
   <br />
@@ -139,6 +169,40 @@
 </p>
 </div>
   </mat-tab>
+  <mat-tab label="CSS">
+        <div class="breadcrumbsBoxCss mat-elevation-z4">
+      <p>  <code>
+
+          &lt;div class=&quot;breadcrumbsContainer breadcrumbsContainerBasic&quot;&gt;<br /><br />
+
+            &lt;div class=&quot;breadcrumbsItemElement&quot;&gt;  <br />
+            &nbsp;&nbsp;&lt;a routerLink=&quot;&quot; class=&quot;breadcrumbsButtonElement&quot;>Pages&lt;/a&gt;  <br />
+            &nbsp;&nbsp;&lt;div class=&quot;breadcrumbsSeparator&quot;&gt;/&lt;/div&gt; <br />
+            &lt;/div&gt; <br /><br />
+    
+            &lt;div class=&quot;breadcrumbsItemElement&quot;&gt;  <br />
+            &nbsp;&nbsp;&lt;a routerLink=&quot;&quot; class=&quot;breadcrumbsButtonElement&quot;>Home&lt;/a&gt; <br />
+            &nbsp;&nbsp;&lt;div class="&quot;breadcrumbsSeparator&quot;>/&lt;/div&gt; <br />
+            &lt;/div&gt;  <br /><br />
+    
+            &lt;div class=&quot;breadcrumbsItemElement&quot;&gt;  <br />
+            &nbsp;&nbsp;&lt;a routerLink=&quot;&quot; class=&quot;breadcrumbsButtonElement breadcrumbIcon&quot;&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;i class=&quot;fas fa-th&quot;>&lt;/i&gt; &nbsp; Icon Before&lt;/a&gt; <br />
+            &nbsp;&nbsp;&lt;div class=&quot;breadcrumbsSeparator&quot;&gt;/&lt;/div&gt; <br />
+            &lt;/div&gt;  <br /><br />
+    
+            &lt;div class=&quot;breadcrumbsItemElement&quot;&gt;  <br />
+            &nbsp;&nbsp;&lt;a routerLink=&quot;&quot; class=&quot;breadcrumbsButtonElement&quot;&gt;Icon After &nbsp; <br />
+            &nbsp;&nbsp;&nbsp;&lt;i class=&quot;fas fa-user&quot;&gt;&lt;/i&gt; <br />
+            &nbsp;&lt;/a&gt;  <br />
+              &lt;/div&gt;  <br /><br />
+
+              &lt;/div&gt;
+
+        </code>
+</p>
+</div>
+    </mat-tab>
   </mat-tab-group>
 
 

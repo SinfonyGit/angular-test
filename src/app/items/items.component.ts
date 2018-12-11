@@ -12,8 +12,15 @@ import {MatDialog} from '@angular/material';
 })
 export class ItemsComponent implements OnInit {
 
+
+   tabela: any[] = [
+    { 'link': '/../items', 'name': 'Itemsi' },
+    { 'link': '', 'name': 'vstopna' },
+];
+
   classname = 'colors:danger button';
 
+    menuBreadCrumb = 'vstop2';
 
   animal = 'lol';
   constructor(public dialog: MatDialog) { }
