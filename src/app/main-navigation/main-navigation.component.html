@@ -65,14 +65,18 @@
             ><i class="fas fa-th"></i
           ></a>
 
-          <a
-            mat-list-item
-            routerLink="datatable"
+          <button mat-button [matMenuTriggerFor]="menu"
+          isIconButton="true"
+            
             matTooltip="Pomoč in podpora"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
             ><i class="fas fa-question-circle"></i
-          ></a>
+          ></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Dokumentacija</button>
+            <button mat-menu-item>Kaj je novo</button>
+          </mat-menu>
 
           <a
             mat-list-item

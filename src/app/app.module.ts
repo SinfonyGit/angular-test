@@ -21,6 +21,7 @@ import { SearchDialogNavigationComponent } from './main-navigation/search-dialog
 import { SearchDialogComponent } from './main-navigation/search-dialog/search-dialog.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { SinfonyUiModule } from 'projects/sinfony-ui/src/lib/sinfony-ui.module';
+import { TestingUiComponent } from './testing-ui/testing-ui.component';
 
 @NgModule({
    declarations: [
@@ -34,7 +35,8 @@ import { SinfonyUiModule } from 'projects/sinfony-ui/src/lib/sinfony-ui.module';
       MainNavigationComponent,
       SearchDialogComponent,
       SearchDialogNavigationComponent,
-      DocumentationComponent
+      DocumentationComponent,
+      TestingUiComponent
    ],
    imports: [
       BrowserModule,

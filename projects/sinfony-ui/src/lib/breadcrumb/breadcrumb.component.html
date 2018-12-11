@@ -3,10 +3,13 @@
     <div *ngFor="let item of items">
 
     <div class="breadcrumbsItemElement">
-      <a routerLink="{{item.link}}" class="breadcrumbsButtonElement">{{item.name}} </a>
-      <div class="breadcrumbsSeparator">/</div>
+      <a routerLink="{{item.link}}" class="breadcrumbsButtonElement breadcrumbIcon"
+      
+      ><i class="{{item.icon}}">&nbsp;</i>  {{item.name}} </a>
+      <div class="breadcrumbsSeparator">{{item.separator}}</div>
     </div>
 
 </div>
 
   </div>
+
