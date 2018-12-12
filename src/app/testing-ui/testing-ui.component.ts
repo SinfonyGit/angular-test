@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestingUiComponent implements OnInit {
 
+  showFiller = false;
+
   constructor() { }
 
   ngOnInit() {

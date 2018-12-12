@@ -2,14 +2,11 @@
   <mat-sidenav
     #drawer
     class="sidenav main-nav-line"
-    fixedInViewport="true"
-    fxFlexAlign="center"
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    mode="side"
     [opened]="!(isHandset$ | async)">
-    <mat-nav-list>
-      <div class="center-h">
-        <div class="main-nav-icon-top">
+    <sf-main-nav-container>
+      <sf-main-nav-header>
+        <sf-main-nav-content>
           <a
             mat-list-item
             routerLink=""
@@ -18,35 +15,48 @@
             matTooltipClass="tooltip"
             ><i class="fas fa-desktop"></i
           ></a>
-
+        </sf-main-nav-content>
+        <sf-main-nav-content>
           <a
             mat-list-item
             routerLink="items"
-            matTooltip="Zavihki in zgodovina"
+            matTooltip="Zavihki in zgodovinaa"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
             ><i class="far fa-star"></i
           ></a>
-
-          <button
+        </sf-main-nav-content>
+        <sf-main-nav-content>
+          <button (click)="drawer.toggle()"
             mat-icon-button
-            matTooltip="Ustvari novo komponento"
+            matTooltip="Iskanje"
             matTooltipClass="tooltip"
           >
-            <i class="fas fa-search"></i>
+          <mat-icon>search</mat-icon> 
           </button>
-
+        </sf-main-nav-content>
+        <sf-main-nav-content>
           <a
             mat-list-item
             routerLink="datatable"
             matTooltip="Ustvari novo komponento"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><i class="fas fa-plus"></i
-          ></a>
-        </div>
+            ><i class="fas fa-plus"></i></a
+        ></sf-main-nav-content>
+        <sf-main-nav-content>
+            <button
+              mat-icon-button
+              routerLink="datatable"
+              matTooltip="Ustvari novo komponento2"
+              matTooltipPosition="right"
+              matTooltipClass="tooltip"
+              ><i class="fas fa-plus"></i></button>
+          </sf-main-nav-content>
+      </sf-main-nav-header>
 
-        <div class="main-nav-icon-bot">
+      <sf-main-nav-footer>
+        <sf-main-nav-footer-icon>
           <a
             mat-list-item
             routerLink="tree"
@@ -55,7 +65,8 @@
             matTooltipClass="tooltip"
             ><i class="far fa-bell"></i
           ></a>
-
+        </sf-main-nav-footer-icon>
+        <sf-main-nav-footer-icon>
           <a
             mat-list-item
             routerLink="datatable"
@@ -64,49 +75,59 @@
             matTooltipClass="tooltip"
             ><i class="fas fa-th"></i
           ></a>
-
-          <button mat-button [matMenuTriggerFor]="menu"
-          isIconButton="true"
-            
+        </sf-main-nav-footer-icon>
+        <sf-main-nav-footer-icon>
+          <button
+            mat-button
+            [matMenuTriggerFor]="menu"
+            isIconButton="true"
             matTooltip="Pomoč in podpora"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><i class="fas fa-question-circle"></i
-          ></button>
+          >
+            <i class="fas fa-question-circle"></i>
+          </button>
           <mat-menu #menu="matMenu">
             <button mat-menu-item>Dokumentacija</button>
             <button mat-menu-item>Kaj je novo</button>
           </mat-menu>
-
+        </sf-main-nav-footer-icon>
+        <sf-main-nav-footer-icon>
           <a
             mat-list-item
             routerLink="datatable"
             matTooltip="Profil"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><i class="fas fa-user"></i
-          ></a>
-        </div>
-      </div>
-
-      <!--
-        MATERIAL DESIGN ICONS
-         <a mat-list-item routerLink=""><mat-icon>home</mat-icon></a>
-         <a mat-list-item routerLink="items"><mat-icon>star_border</mat-icon></a>
-         <a mat-list-item routerLink="forms"><i class="fab fa-star"></i></a>
-         <a mat-list-item routerLink="datatable"><mat-icon>add</mat-icon></a>
-
-
-         <a mat-list-item routerLink="tree"><mat-icon>notification_important</mat-icon></a>
-         <a mat-list-item routerLink="datatable"><mat-icon>apps</mat-icon></a>
-         <a mat-list-item routerLink="datatable"><mat-icon>live_help</mat-icon></a>
-         <a mat-list-item routerLink="datatable"><mat-icon>person</mat-icon></a>
-      -->
-    </mat-nav-list>
+            ><i class="fas fa-user"></i></a
+        ></sf-main-nav-footer-icon>
+      </sf-main-nav-footer>
+    </sf-main-nav-container>
   </mat-sidenav>
   <mat-sidenav-content class="test">
     <!-- Add Content Here -->
-
+    
     <app-navigation></app-navigation>
+ 
+    <mat-drawer #drawer class="search-sidenav" mode="push" hasBackdrop="true">
+
+      <div>
+        <button (click)="drawer.close()"
+        mat-icon-button >
+      <mat-icon>keyboard_arrow_left</mat-icon> 
+      </button>
+      <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Iskanje"></textarea>
+        </mat-form-field>
+      </div>
+
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+          Toggle extra text
+        </button>
+        <br>
+
+      </mat-drawer>
+
   </mat-sidenav-content>
 </mat-sidenav-container>

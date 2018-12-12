@@ -19,7 +19,6 @@ export class MainNavigationComponent {
       map(result => result.matches)
     );
 
-    showFiller = false;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
