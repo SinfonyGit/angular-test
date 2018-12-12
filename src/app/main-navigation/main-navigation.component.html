@@ -110,18 +110,23 @@
  
     <mat-drawer #drawer class="search-sidenav" mode="push" hasBackdrop="true">
 
-      <div>
+      <div class="row">
+        <div class="column1">
         <button (click)="drawer.close()"
         mat-icon-button >
       <mat-icon>keyboard_arrow_left</mat-icon> 
       </button>
+      </div>
+      <div class="column2">
       <mat-form-field class="example-full-width">
           <textarea matInput placeholder="Iskanje"></textarea>
         </mat-form-field>
+  
+      <app-search-dialog></app-search-dialog>
+      
       </div>
 
-      <app-search-dialog></app-search-dialog>
-
+        </div>
       </mat-drawer>
 
       <mat-drawer #drawer1 class="search-sidenav" mode="push" hasBackdrop="true">
