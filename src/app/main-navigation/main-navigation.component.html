@@ -17,14 +17,13 @@
           ></a>
         </sf-main-nav-content>
         <sf-main-nav-content>
-          <a
-            mat-list-item
-            routerLink="items"
+            <button (click)="drawer1.toggle()"
+            mat-icon-button
             matTooltip="Zavihki in zgodovinaa"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><i class="far fa-star"></i
-          ></a>
+            ><mat-icon>star</mat-icon> 
+          </button>
         </sf-main-nav-content>
         <sf-main-nav-content>
           <button (click)="drawer.toggle()"
@@ -121,13 +120,24 @@
         </mat-form-field>
       </div>
 
-        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-        <button (click)="showFiller = !showFiller" mat-raised-button>
-          Toggle extra text
-        </button>
-        <br>
+      <app-search-dialog></app-search-dialog>
 
       </mat-drawer>
+
+      <mat-drawer #drawer1 class="search-sidenav" mode="push" hasBackdrop="true">
+
+          <div>
+            <button (click)="drawer1.close()"
+            mat-icon-button >
+          <mat-icon>keyboard_arrow_left</mat-icon> 
+          </button>
+          <mat-form-field class="example-full-width">
+              <textarea matInput placeholder="Iskanje"></textarea>
+            </mat-form-field>
+          </div>
+    Priljubleno
+    
+          </mat-drawer>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
