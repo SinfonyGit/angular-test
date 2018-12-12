@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'sf-main-nav-content',
+    selector: 'sf-main-nav-header-logo-icon',
     template: `
     <div class="global-nav-container-top-icon button">
       <ng-content></ng-content>
@@ -40,7 +40,7 @@ import { Component, OnInit} from '@angular/core';
   }
     `]
   })
-export class MainNavContentComponent implements OnInit {
+export class MainNavHeaderLogoIconComponent implements OnInit {
 
 
 

@@ -3,12 +3,12 @@ import { Component, OnInit, Input, Renderer2, ElementRef } from '@angular/core';
 @Component({
     selector: 'sf-format-code',
     template: `
-      <div>
+      <div class="format-code">
         <ng-content></ng-content>
       </div>
     `,
     styles: [`
-      div {
+      .format-code {
         padding: 20px;
         margin: 10px auto;
         box-shadow: 1px 3px 10px 1px rgba(0, 0, 0, 0.3);

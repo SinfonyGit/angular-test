@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'sf-main-nav-content',
+    selector: 'sf-main-nav-footer-icon',
     template: `
     <div class="global-nav-container-top-icon button">
       <ng-content></ng-content>
@@ -19,8 +19,8 @@ import { Component, OnInit} from '@angular/core';
       justify-content: center;
       line-height: 1;
       position: relative;
-      height: 40px;
-      width: 40px;
+      height: 32px;
+      width: 32px;
       background-color: rgb(7, 71, 166);
       border-width: 0px;
       border-style: initial;
@@ -40,7 +40,7 @@ import { Component, OnInit} from '@angular/core';
   }
     `]
   })
-export class MainNavContentComponent implements OnInit {
+export class MainNavFooterIconComponent implements OnInit {
 
 
 

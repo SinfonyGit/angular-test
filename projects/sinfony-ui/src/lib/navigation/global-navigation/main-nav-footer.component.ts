@@ -1,14 +1,14 @@
 import { Component, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'sf-main-nav-header',
+    selector: 'sf-main-nav-footer',
     template: `
-    <div class="global-nav-container-top" >
+    <div class="global-nav-container-bot" >
         <ng-content></ng-content>
     </div>
     `,
     styles: [`
-    .global-nav-container-top {
+    .global-nav-container-bot {
       -webkit-box-align: center;
       align-items: center;
       display: flex;
@@ -16,11 +16,11 @@ import { Component, OnInit} from '@angular/core';
       -webkit-box-pack: justify;
       justify-content: space-between;
       width: 100%;
-      padding-bottom: 16px;
+      padding-top: 8px;
     }
     `]
   })
-export class MainNavHeaderComponent implements OnInit {
+export class MainNavFooterComponent implements OnInit {
 
 
 
