@@ -1,34 +1,62 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav class="sidenav main-nav-line" fixedInViewport="true"
-        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-        [mode]="(isHandset$ | async) ? 'over' : 'side'"
-        [opened]="!(isHandset$ | async)">
-      <mat-toolbar>
-  
-          <button
+  <mat-sidenav
+    #sidenav
+    class="sidenav main-nav-line"
+    fixedInViewport="true"
+    [style.width.px]="widthSideBar"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <mat-toolbar>
+      Navigacija
+    </mat-toolbar>
+    <mat-nav-list style="margin: 20px;" [hidden]="!inboundClick">
+      <a mat-list-item routerLink=""
+        ><i class="far fa-file-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a
+      >
+      <a mat-list-item routerLink="items"
+        ><i class="fas fa-sitemap"></i>&nbsp;&nbsp;&nbsp;&nbsp;Items</a
+      >
+      <a mat-list-item routerLink="forms"
+        ><i class="fab fa-wpforms"></i>&nbsp;&nbsp;&nbsp;&nbsp;Forms</a
+      >
+      <a mat-list-item routerLink="datatable"
+        ><i class="fas fa-database"></i>&nbsp;&nbsp;&nbsp;&nbsp;DataTable
+      </a>
+      <a mat-list-item routerLink="tree"
+        ><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Tree<i
+          class="fas fa-arrow-right"
+        ></i
+      ></a>
+      <a mat-list-item routerLink="documentation"
+        ><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Dokumentacija<i
+          class="fas fa-arrow-right"
+        ></i
+      ></a>
+      <a mat-list-item routerLink="testing-ui"
+        ><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Testiranje UI</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content [style.marginLeft.px]="widthSideBar">
+    <div class="row" style="z-index: 305;">
+      <div class="column1 navButton blockDisplay" style="z-index: 306;">
+
+        <button
+        class="button1 button2" style="z-index: 307;"
+          mat-icon-button
           type="button"
           aria-label="Toggle sidenav"
-          mat-icon-button
-          (click)="sidenav.toggle()">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          (click)="toggleSideBar()"
+          (click)="inboundClick = !inboundClick"
+        >
+        <mat-icon>menu</mat-icon>
         </button>
-        Navigacija
-      </mat-toolbar>
-      <mat-nav-list style="margin: 20px;">
-        <a mat-list-item routerLink=""><i class="far fa-file-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a>
-        <a mat-list-item routerLink="items"><i class="fas fa-sitemap"></i>&nbsp;&nbsp;&nbsp;&nbsp;Items</a>
-        <a mat-list-item routerLink="forms"><i class="fab fa-wpforms"></i>&nbsp;&nbsp;&nbsp;&nbsp;Forms</a>
-        <a mat-list-item routerLink="datatable"><i class="fas fa-database"></i>&nbsp;&nbsp;&nbsp;&nbsp;DataTable
-        </a>
-        <a mat-list-item routerLink="tree"><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Tree<i class="fas fa-arrow-right"></i></a>
-        <a mat-list-item routerLink="documentation"><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Dokumentacija<i class="fas fa-arrow-right"></i></a>
-        <a mat-list-item routerLink="testing-ui"><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Testiranje UI</a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-  
-      <router-outlet></router-outlet>
-  
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+
+      </div>
+      <div class="column2"><router-outlet></router-outlet></div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

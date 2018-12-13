@@ -19,4 +19,26 @@ export class NavigationComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  widthSideBar = '241';
+  widthSideBarExpanded = '241';
+  widthSideBarCollapsed = '30';
+
+  hide() {
+    if (this.widthSideBarCollapsed === '20') {
+      console.log('skrito je');
+    }
+  }
+
+  toggleSideBar() {
+    // console.log('toggle called');
+    // this.sb.toggle();
+    if (this.widthSideBar === this.widthSideBarExpanded) {
+      this.widthSideBar = this.widthSideBarCollapsed;
+    } else {
+      this.widthSideBar = this.widthSideBarExpanded;
+    }
+    // snav.toggle();
+  }
+
+
 }
