@@ -21,7 +21,7 @@ export class NavigationComponent {
 
   widthSideBar = '241';
   widthSideBarExpanded = '241';
-  widthSideBarCollapsed = '30';
+  widthSideBarCollapsed = '21';
 
   hide() {
     if (this.widthSideBarCollapsed === '20') {
@@ -29,13 +29,16 @@ export class NavigationComponent {
     }
   }
 
-  toggleSideBar() {
+
+  toggleSideBar(status: string) {
     // console.log('toggle called');
     // this.sb.toggle();
     if (this.widthSideBar === this.widthSideBarExpanded) {
       this.widthSideBar = this.widthSideBarCollapsed;
+      return status = '1';
     } else {
       this.widthSideBar = this.widthSideBarExpanded;
+      return status = '0';
     }
     // snav.toggle();
   }

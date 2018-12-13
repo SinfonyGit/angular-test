@@ -7,12 +7,14 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)"
-  >
-    <mat-toolbar>
+    
+    >
+  
+    <mat-toolbar *ngIf="!inboundClick">
       Navigacija
     </mat-toolbar>
-    <mat-nav-list style="margin: 20px;" [hidden]="!inboundClick">
-      <a mat-list-item routerLink=""
+    <mat-nav-list style="margin: 20px;" *ngIf="!inboundClick">
+      <a mat-list-item routerLink="" 
         ><i class="far fa-file-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a
       >
       <a mat-list-item routerLink="items"
@@ -40,11 +42,11 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content [style.marginLeft.px]="widthSideBar">
+  <mat-sidenav-content [style.marginLeft.px]="widthSideBar" >
     <div class="row" style="z-index: 305;">
-      <div class="column1 navButton blockDisplay" style="z-index: 306;">
+      <div class="column1 navButton blockDisplay" style="z-index: 306;" >
 
-        <button
+        <button *ngIf="!changeText"
         class="button1 button2" style="z-index: 307;"
           mat-icon-button
           type="button"
@@ -52,7 +54,8 @@
           (click)="toggleSideBar()"
           (click)="inboundClick = !inboundClick"
         >
-        <mat-icon>menu</mat-icon>
+        <mat-icon *ngIf="inboundClick" style="position: relative; bottom: 7px;">menu</mat-icon>
+        <mat-icon *ngIf="!inboundClick" style="position: relative; bottom: 7px;">keyboard_arrow_left</mat-icon>
         </button>
 
       </div>

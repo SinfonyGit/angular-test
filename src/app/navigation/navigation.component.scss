@@ -108,6 +108,13 @@ a:hover {
   color: white;
 }
 
+::ng-deep mat-icon{
+  color: currentcolor;
+  display: inline-block;
+  fill: rgb(255, 255, 255);
+  flex-shrink: 0;
+  line-height: 1;
+}
 
 .row{
   display: flex;
