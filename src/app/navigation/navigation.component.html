@@ -11,13 +11,15 @@
     >
   
     <mat-toolbar *ngIf="!inboundClick">
-      Navigacija
+      <div class="toolbarBox">
+        Navigacija
+      </div>
     </mat-toolbar>
-    <mat-nav-list style="margin: 20px;" *ngIf="!inboundClick">
-      <a mat-list-item routerLink="" 
+    <mat-nav-list style="margin: 16px;" *ngIf="!inboundClick">
+      <a mat-list-item routerLink="" class="sideNavListComponent"
         ><i class="far fa-file-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a
       >
-      <a mat-list-item routerLink="items"
+      <a mat-list-item routerLink="items" class="sideNavListComponent"
         ><i class="fas fa-sitemap"></i>&nbsp;&nbsp;&nbsp;&nbsp;Items</a
       >
       <a mat-list-item routerLink="forms"
