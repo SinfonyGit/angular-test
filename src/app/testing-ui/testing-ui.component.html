@@ -1,5 +1,5 @@
 <div class="container">
-  <sf-main-nav-container>
+  <sbc-main-nav-container>
 
 
       <mat-drawer #drawer class="example-sidenav" mode="side">
@@ -18,29 +18,29 @@
 
 
 
-    <sf-main-nav-header>
-      <sf-main-nav-header-logo-icon>
+    <sbc-main-nav-header>
+      <sbc-main-nav-header-logo-icon>
         <button mat-icon-button routerLink="">
           <mat-icon>favorite</mat-icon>
         </button>
-      </sf-main-nav-header-logo-icon>
-      <sf-main-nav-content>
+      </sbc-main-nav-header-logo-icon>
+      <sbc-main-nav-content>
         <button mat-icon-button routerLink="./../items">
           <mat-icon>edit</mat-icon>
         </button>
-      </sf-main-nav-content>
-      <sf-main-nav-content> 
+      </sbc-main-nav-content>
+      <sbc-main-nav-content> 
 
           <button type="button" mat-button (click)="drawer.open()">
               <mat-icon>search</mat-icon> 
             </button>
 
         
-      </sf-main-nav-content>
-    </sf-main-nav-header>
+      </sbc-main-nav-content>
+    </sbc-main-nav-header>
 
-    <sf-main-nav-footer>
-      <sf-main-nav-footer-icon>
+    <sbc-main-nav-footer>
+      <sbc-main-nav-footer-icon>
         <button [matMenuTriggerFor]="menu1" mat-icon-button>
           <mat-icon aria-label="Example icon-button with a heart icon">info</mat-icon>
         </button>
@@ -48,8 +48,8 @@
             <button mat-menu-item>Item 1</button>
             <button mat-menu-item>Item 2</button>
           </mat-menu>
-      </sf-main-nav-footer-icon>
-      <sf-main-nav-footer-icon>
+      </sbc-main-nav-footer-icon>
+      <sbc-main-nav-footer-icon>
         <button [matMenuTriggerFor]="menu2" mat-icon-button>
           <mat-icon aria-label="Example icon-button with a heart icon">person</mat-icon>
         </button>
@@ -57,7 +57,7 @@
           <button mat-menu-item>Item 1</button>
           <button mat-menu-item>Item 2</button>
         </mat-menu>
-      </sf-main-nav-footer-icon>
-    </sf-main-nav-footer>
-  </sf-main-nav-container>
+      </sbc-main-nav-footer-icon>
+    </sbc-main-nav-footer>
+  </sbc-main-nav-container>
 </div>

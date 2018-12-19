@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
-    selector: 'sf-breadcrumb',
+    selector: 'sbc-breadcrumb',
     templateUrl: './breadcrumb.component.html',
     styleUrls: ['./breadcrumb.component.scss']
   })

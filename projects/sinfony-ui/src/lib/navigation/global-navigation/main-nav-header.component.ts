@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'sf-main-nav-header',
+    selector: 'sbc-main-nav-header',
     template: `
     <div class="global-nav-container-top" >
         <ng-content></ng-content>

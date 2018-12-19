@@ -4,9 +4,9 @@
     class="sidenav main-nav-line"
     mode="side"
     [opened]="!(isHandset$ | async)">
-    <sf-main-nav-container>
-      <sf-main-nav-header>
-        <sf-main-nav-content>
+    <sbc-main-nav-container>
+      <sbc-main-nav-header>
+        <sbc-main-nav-content>
           <a
             mat-list-item
             routerLink=""
@@ -15,8 +15,8 @@
             matTooltipClass="tooltip"
             ><i class="fas fa-desktop"></i
           ></a>
-        </sf-main-nav-content>
-        <sf-main-nav-content>
+        </sbc-main-nav-content>
+        <sbc-main-nav-content>
             <button (click)="drawer1.toggle()"
             mat-icon-button
             matTooltip="Zavihki in zgodovinaa"
@@ -24,8 +24,8 @@
             matTooltipClass="tooltip"
             ><mat-icon>star</mat-icon> 
           </button>
-        </sf-main-nav-content>
-        <sf-main-nav-content>
+        </sbc-main-nav-content>
+        <sbc-main-nav-content>
           <button (click)="drawer.toggle()"
             mat-icon-button
             matTooltip="Iskanje"
@@ -33,8 +33,8 @@
           >
           <mat-icon>search</mat-icon> 
           </button>
-        </sf-main-nav-content>
-        <sf-main-nav-content>
+        </sbc-main-nav-content>
+        <sbc-main-nav-content>
           <a
             mat-list-item
             routerLink="datatable"
@@ -42,8 +42,8 @@
             matTooltipPosition="right"
             matTooltipClass="tooltip"
             ><i class="fas fa-plus"></i></a
-        ></sf-main-nav-content>
-        <sf-main-nav-content>
+        ></sbc-main-nav-content>
+        <sbc-main-nav-content>
             <button
               mat-icon-button
               routerLink="datatable"
@@ -51,11 +51,11 @@
               matTooltipPosition="right"
               matTooltipClass="tooltip"
               ><i class="fas fa-plus"></i></button>
-          </sf-main-nav-content>
-      </sf-main-nav-header>
+          </sbc-main-nav-content>
+      </sbc-main-nav-header>
 
-      <sf-main-nav-footer>
-        <sf-main-nav-footer-icon>
+      <sbc-main-nav-footer>
+        <sbc-main-nav-footer-icon>
           <a
             mat-list-item
             routerLink="tree"
@@ -64,20 +64,42 @@
             matTooltipClass="tooltip"
             ><i class="far fa-bell"></i
           ></a>
-        </sf-main-nav-footer-icon>
-        <sf-main-nav-footer-icon>
-          <a
-            mat-list-item
-            routerLink="datatable"
+        </sbc-main-nav-footer-icon>
+        <sbc-main-nav-footer-icon>
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="prehodAplikacij"
             matTooltip="Prehod med aplikacijami"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
             ><i class="fas fa-th"></i
-          ></a>
-        </sf-main-nav-footer-icon>
-        <sf-main-nav-footer-icon>
+          ></button>
+          <mat-menu #prehodAplikacij="matMenu">
+            <span class="mat-menu-label mat-menu-label-text">Operacije</span>
+            <button mat-menu-item>Množenje</button>
+            <div class="mat-menu-select">Množenje primer dva</div>
+            <span class="mat-menu-select">Množenje primer tri</span>
+            <button mat-menu-item class="mat-menu-select">Množenje primer štiri</button>
+            <button mat-menu-item class="mat-menu-select">Množenje primer štiri</button>
+            <button mat-menu-item class="mat-menu-select">Množenje primer štiri</button>
+            <button mat-menu-item>Delenje</button>
+            <button mat-menu-item>
+              <mat-icon>plus_one</mat-icon>
+              <span>Seštevanje</span> 
+            </button>
+            <button mat-menu-item>
+                <mat-icon>minimize</mat-icon>
+                <span>Odštevanje</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>done</mat-icon>
+                <span>Izračun</span>
+            </button>
+          </mat-menu>
+        </sbc-main-nav-footer-icon>
+        <sbc-main-nav-footer-icon>
           <button
-            mat-button
+            mat-icon-button
             [matMenuTriggerFor]="menu"
             isIconButton="true"
             matTooltip="Pomoč in podpora"
@@ -90,8 +112,8 @@
             <button mat-menu-item>Dokumentacija</button>
             <button mat-menu-item>Kaj je novo</button>
           </mat-menu>
-        </sf-main-nav-footer-icon>
-        <sf-main-nav-footer-icon>
+        </sbc-main-nav-footer-icon>
+        <sbc-main-nav-footer-icon>
           <a
             mat-list-item
             routerLink="datatable"
@@ -99,9 +121,9 @@
             matTooltipPosition="right"
             matTooltipClass="tooltip"
             ><i class="fas fa-user"></i></a
-        ></sf-main-nav-footer-icon>
-      </sf-main-nav-footer>
-    </sf-main-nav-container>
+        ></sbc-main-nav-footer-icon>
+      </sbc-main-nav-footer>
+    </sbc-main-nav-container>
   </mat-sidenav>
   <mat-sidenav-content class="test">
     <!-- Add Content Here -->

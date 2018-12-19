@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sf-sinfony-ui',
+  selector: 'sbc-sinfony-ui',
   template: `
     <p>
       sinfony-ui works!

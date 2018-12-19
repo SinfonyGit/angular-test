@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
-    selector: 'sf-format-code',
+    selector: 'sbc-format-code',
     template: `
       <div class="format-code">
         <ng-content></ng-content>
