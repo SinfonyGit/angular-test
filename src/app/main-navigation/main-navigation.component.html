@@ -6,50 +6,53 @@
     [opened]="!(isHandset$ | async)">
     <sbc-main-nav-container>
       <sbc-main-nav-header>
-        <sbc-main-nav-content>
+        <sbc-main-nav-header-logo-icon>
           <a
             mat-list-item
             routerLink=""
             matTooltip="Začetna stran"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><fa-icon [icon]="['fas', 'star']"></fa-icon></a>
-        </sbc-main-nav-content>
+            ><fa-icon [icon]="['fas', 'home']" size="2x"></fa-icon>
+        </a>
+        </sbc-main-nav-header-logo-icon>
+
         <sbc-main-nav-content>
             <button (click)="drawer1.toggle()"
             mat-icon-button
             matTooltip="Zavihki in zgodovinaa"
             matTooltipPosition="right"
-            matTooltipClass="tooltip"
-            ><mat-icon>star</mat-icon> 
+            matTooltipClass="tooltip">
+            <fa-icon [icon]="['far', 'star']" size="lg"></fa-icon> 
           </button>
         </sbc-main-nav-content>
+
         <sbc-main-nav-content>
           <button (click)="drawer.toggle()"
             mat-icon-button
             matTooltip="Iskanje"
             matTooltipClass="tooltip"
           >
-          <mat-icon>search</mat-icon> 
+          <fa-icon [icon]="['fas', 'search']" size="lg"></fa-icon> 
           </button>
         </sbc-main-nav-content>
         <sbc-main-nav-content>
-          <a
-            mat-list-item
+          <button
+            mat-icon-button
             routerLink="datatable"
             matTooltip="Ustvari novo komponento"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><fa-icon [icon]="['fas', 'coffee']" size="lg"></fa-icon></a
+            ><fa-icon [icon]="['fas', 'plus']" size="lg"></fa-icon></button
         ></sbc-main-nav-content>
         <sbc-main-nav-content>
             <button
               mat-icon-button
               routerLink="datatable"
-              matTooltip="Pregled projektov"
+              matTooltip="Pregled projektov in kave"
               matTooltipPosition="right"
               matTooltipClass="tooltip"
-              ><fa-icon [icon]="['far', 'star']" size="lg"></fa-icon></button>
+              ><fa-icon [icon]="['fas', 'coffee']" size="lg"></fa-icon></button>
           </sbc-main-nav-content>
       </sbc-main-nav-header>
 
@@ -61,7 +64,7 @@
             matTooltip="Obvestila"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><fa-icon [icon]="['fas', 'coffee']" size="lg"></fa-icon></a>
+            ><fa-icon [icon]="['fas', 'bell']" size="lg"></fa-icon></a>
         </sbc-main-nav-footer-icon>
         <sbc-main-nav-footer-icon>
           <button
@@ -70,8 +73,8 @@
             matTooltip="Prehod med aplikacijami"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><i class="fas fa-th"></i
-          ></button>
+            ><fa-icon [icon]="['fas', 'th']" size="lg"></fa-icon>
+          </button>
           <mat-menu #prehodAplikacij="matMenu">
             <span class="atlas-menu-label">Operacije</span>
             <button mat-menu-item class="atlas-menu-item">Množenje</button>
@@ -93,7 +96,7 @@
             matTooltipPosition="right"
             matTooltipClass="tooltip"
           >
-            <i class="fas fa-question-circle"></i>
+          <fa-icon [icon]="['fas', 'question-circle']" size="lg"></fa-icon>
           </button>
           <mat-menu #menu="matMenu">
               <span class="atlas-menu-label">Dokumentacija</span>
@@ -112,7 +115,7 @@
             matTooltip="Profil"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><i class="fas fa-user"></i></a
+            ><fa-icon [icon]="['fas', 'user-circle']" size="lg"></fa-icon></a
         ></sbc-main-nav-footer-icon>
       </sbc-main-nav-footer>
     </sbc-main-nav-container>

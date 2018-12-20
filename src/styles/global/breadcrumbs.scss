@@ -1,89 +1,83 @@
 // CONTAINER
 .breadcrumbsContainer {
-    color: rgb(94, 108, 132);
-    display: flex;
-    flex-wrap: wrap;
+  color: rgb(94, 108, 132);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .breadcrumbsContainerBasic {
-    flex-shrink: 1;
-    min-width: 0px;
+  flex-shrink: 1;
+  min-width: 0px;
 }
 
 .breadcrumbsContainerBasic .breadcrumbsContainer :focus {
-    outline: -webkit-focus-ring-color auto 5px;
+  outline: -webkit-focus-ring-color auto 5px;
 }
-
 
 //ELEMENTI (TLE NOT GREJO PAGE-es)
 .breadcrumbsItemElement {
-    display: flex;
-    flex-direction: row;
-    height: 1.71429em;
-    line-height: 1.71429em;
-    box-sizing: border-box;
-    max-width: 100%;
-    padding: 0px;
+  display: flex;
+  flex-direction: row;
+  height: 1.71429em;
+  line-height: 1.71429em;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0px;
 }
 
 .breadcrumbsItemElement:focus {
-    outline: -webkit-focus-ring-color auto 5px;
+  outline: -webkit-focus-ring-color auto 5px;
 }
-
-
-
-
 
 //TLE NOT GRE SAM IME PAGE
 a.breadcrumbsButtonElement {
-    -webkit-box-align: baseline;
-    align-items: baseline;
-    box-sizing: border-box;
-    display: inline-flex;
-    font-size: inherit;
-    font-style: normal;
-    height: auto;
-    line-height: inherit;
-    max-width: 100%;
-    text-align: center;
-    vertical-align: baseline;
-    white-space: nowrap;
-    width: auto;
-    color: rgb(107, 119, 140) !important;
-    background: none;
-    border-radius: 3px;
-    border-width: 0px;
-    margin: 0px;
-    padding: 0px;
-    text-decoration: none;
-    
-    outline: none !important;
+  -webkit-box-align: baseline;
+  align-items: baseline;
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: inherit;
+  font-style: normal;
+  height: auto;
+  line-height: inherit;
+  max-width: 100%;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+  width: auto;
+  color: rgb(107, 119, 140) !important;
+  background: none;
+  border-radius: 3px;
+  border-width: 0px;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+
+  outline: none !important;
 }
 
-a:focus {
-    outline: 2px solid #4C9AFF;
-    outline-offset: 2px;
-    transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
-}
-
-
+/* a:focus {
+  outline: 2px solid #4c9aff;
+  outline-offset: 2px;
+  transition: background 0.1s ease-out 0s,
+    box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+} */
 
 .breadcrumbsSeparator {
-    color: rgb(122, 134, 154);
-    flex-shrink: 0;
-    text-align: center;
-    width: 8px;
-    padding: 0px 8px;
+  color: rgb(122, 134, 154);
+  flex-shrink: 0;
+  text-align: center;
+  width: 8px;
+  padding: 0px 8px;
 }
 
-.breadcrumbIcon{
-    align-self: center;
-    display: flex;
-    flex-shrink: 0;
-    line-height: 0;
-    font-size: 0px;
-    margin: 0px;
-    user-select: none;
-    transition: opacity 0.3s ease 0s;
-    opacity: 1;
+.breadcrumbIcon {
+  align-self: center;
+  display: flex;
+  flex-shrink: 0;
+  line-height: 0;
+  font-size: 0px;
+  margin: 0px;
+  user-select: none;
+  transition: opacity 0.3s ease 0s;
+  opacity: 1;
 }

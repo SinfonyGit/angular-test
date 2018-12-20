@@ -3,11 +3,16 @@ import { Component, OnInit} from '@angular/core';
 @Component({
     selector: 'sbc-main-nav-footer-icon',
     template: `
+    <div class="css-1">
     <div class="global-nav-container-top-icon button">
       <ng-content></ng-content>
     </div>
+    </div>
     `,
     styles: [`
+    .css-1 {
+      margin-top: 8px;
+    }
     .global-nav-container-top-icon{
       -webkit-box-align: center;
       align-items: center;
