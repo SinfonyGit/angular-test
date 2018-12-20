@@ -1,0 +1,34 @@
+// Ime za Meni. Uporabimo ga v <span> 
+.atlas-menu-label {
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(107, 119, 140);
+    display: flex;
+    flex: 1 1 auto;
+    padding: 8px 12px;
+    font-size: 11px;
+    line-height: 1;
+    text-transform: uppercase;
+    min-width: 0px;
+    flex: 1 1 auto;
+}
+  
+// Meni- itemsi oz predmeti
+.atlas-menu-item {
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    color: rgb(23, 43, 77);
+    fill: rgb(255, 255, 255);
+    border-radius: 0px;
+    flex: 0 0 auto;
+    text-decoration: none;
+    // padding: 8px 12px 7px;
+    line-height: 30px !important;
+    height: 30px !important;
+}
+
+  

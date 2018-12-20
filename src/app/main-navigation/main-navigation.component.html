@@ -75,26 +75,15 @@
             ><i class="fas fa-th"></i
           ></button>
           <mat-menu #prehodAplikacij="matMenu">
-            <span class="mat-menu-label mat-menu-label-text">Operacije</span>
-            <button mat-menu-item>Množenje</button>
-            <div class="mat-menu-select">Množenje primer dva</div>
-            <span class="mat-menu-select">Množenje primer tri</span>
-            <button mat-menu-item class="mat-menu-select">Množenje primer štiri</button>
-            <button mat-menu-item class="mat-menu-select">Množenje primer štiri</button>
-            <button mat-menu-item class="mat-menu-select">Množenje primer štiri</button>
-            <button mat-menu-item>Delenje</button>
-            <button mat-menu-item>
-              <mat-icon>plus_one</mat-icon>
-              <span>Seštevanje</span> 
-            </button>
-            <button mat-menu-item>
-                <mat-icon>minimize</mat-icon>
-                <span>Odštevanje</span>
-            </button>
-            <button mat-menu-item>
-                <mat-icon>done</mat-icon>
-                <span>Izračun</span>
-            </button>
+            <span class="atlas-menu-label">Operacije</span>
+            <button mat-menu-item class="atlas-menu-item">Množenje</button>
+            <button mat-menu-item class="atlas-menu-item">Delenje</button>
+            <button mat-menu-item class="atlas-menu-item">Seštevanje</button>
+            <button mat-menu-item class="atlas-menu-item">Odštevanje</button>
+            <span class="atlas-menu-label">Rezultat</span>
+            <button mat-menu-item class="atlas-menu-item">
+                <mat-icon>plus_one</mat-icon>
+                <span>Seštevanje</span></button>
           </mat-menu>
         </sbc-main-nav-footer-icon>
         <sbc-main-nav-footer-icon>
@@ -109,8 +98,13 @@
             <i class="fas fa-question-circle"></i>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>Dokumentacija</button>
-            <button mat-menu-item>Kaj je novo</button>
+              <span class="atlas-menu-label">Dokumentacija</span>
+              <button mat-menu-item class="atlas-menu-item">Pomoč pri Breadcrumbers</button>
+              <button mat-menu-item class="atlas-menu-item">Navigacija</button>
+              <span class="atlas-menu-label">Licenca</span>
+              <button mat-menu-item class="atlas-menu-item">
+                  <mat-icon>plus_one</mat-icon>
+                  <span>Pogoji uporabe</span></button>
           </mat-menu>
         </sbc-main-nav-footer-icon>
         <sbc-main-nav-footer-icon>
