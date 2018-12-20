@@ -1,3 +1,4 @@
+import { FontAwesomeIconsModule } from './font-awesome-icons.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -40,6 +41,7 @@ import { TestingUiComponent } from './testing-ui/testing-ui.component';
    ],
    imports: [
       BrowserModule,
+      FontAwesomeIconsModule,
       FlexLayoutModule,
       AppRoutingModule,
       BrowserAnimationsModule,
