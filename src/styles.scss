@@ -13,5 +13,15 @@ line-height: 1.42857142857143;
 }
 @import './styles/styles.scss';
 
+a:focus {
+    background-color: #05367F;
+}
 
+a:hover {
+    background-color: #1C63CE;
+}
+
+a:active {
+    background-color: #1A5ABC;
+}
   
