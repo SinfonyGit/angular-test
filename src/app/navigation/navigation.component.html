@@ -19,7 +19,7 @@
     </mat-toolbar>
     <mat-nav-list 
       style="margin: 16px;" 
-      *ngIf="!hideNavContent && !dropDownMenu"
+      *ngIf="!hideNavContent && !dropDownMenuDocumentation && !dropDownMenuTree"
       >
 
       <a mat-list-item routerLink="" class="sideNavListComponent">
@@ -52,7 +52,8 @@
 
       <a mat-list-item routerLink="tree" class="sideNavListComponent"
         (mouseenter)="showIconTree = true"
-        (mouseleave)="showIconTree = false">
+        (mouseleave)="showIconTree = false"
+        (click)="dropDownMenuTree = !dropDownMenuTree">
         <fa-icon [icon]="['fas', 'stream']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Tree
@@ -63,7 +64,7 @@
       <a mat-list-item routerLink="documentation" class="sideNavListComponent"
         (mouseenter)="showIconDocumentation = true"
         (mouseleave)="showIconDocumentation = false"
-        (click)="dropDownMenu = !dropDownMenu">
+        (click)="dropDownMenuDocumentation = !dropDownMenuDocumentation">
         <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Dokumentacija
@@ -87,11 +88,11 @@
     <!-- PodMeni komponente Dokumentacija -->
     <mat-nav-list 
       style="margin: 16px;" 
-      *ngIf="!hideNavContent && dropDownMenu"
+      *ngIf="!hideNavContent && dropDownMenuDocumentation"
       >
 
       <a mat-list-item routerLink="documentation" class="sideNavListComponent"
-        (click)="dropDownMenu = !dropDownMenu">
+        (click)="dropDownMenuDocumentation = !dropDownMenuDocumentation">
         <fa-icon [icon]="['fas', 'arrow-circle-left']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Nazaj na navigacijo
@@ -99,7 +100,7 @@
       </a>
 
       <hr>
-
+      <span class="podmeniText">Breadcrumbers</span>
       <a mat-list-item routerLink="documentation" class="sideNavListComponent">
         <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
@@ -108,7 +109,7 @@
       </a>
 
       <hr>
-
+      <span class="podmeniText">Hitre povezave</span>
       <a mat-list-item routerLink="" class="sideNavListComponent">
         <fa-icon [icon]="['fas', 'coffee']" size="lg" [fixedWidth]="true"></fa-icon>
         <span fxFlexOffset="15px">
@@ -122,9 +123,61 @@
             Items
         </span>
       </a>
+    </mat-nav-list>
 
+    <!-- PodMeni komponente Tree -->
+    <mat-nav-list 
+      style="margin: 16px;" 
+      *ngIf="!hideNavContent && dropDownMenuTree"
+      >
       
+      <a mat-list-item routerLink="documentation" class="sideNavListComponent"
+        (click)="dropDownMenuTree = !dropDownMenuTree">
+        <fa-icon [icon]="['fas', 'arrow-circle-left']" size="lg" [fixedWidth]="true"></fa-icon>
+          <span fxFlexOffset="15px">
+            Nazaj na navigacijo
+          </span>
+      </a>
 
+      <hr>
+      <span class="podmeniText">Datoteke ki so na voljo</span>
+      <a mat-list-item routerLink="documentation" class="sideNavListComponent">
+        <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
+          <span fxFlexOffset="15px">
+            Datoteka Avto
+          </span>
+      </a>
+
+      <a mat-list-item routerLink="documentation" class="sideNavListComponent">
+        <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
+          <span fxFlexOffset="15px">
+            Datoteka Pohištvo
+          </span>
+      </a>
+
+      <a mat-list-item routerLink="documentation" class="sideNavListComponent">
+        <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
+          <span fxFlexOffset="15px">
+            Datoteka Okna
+          </span>
+      </a>
+
+      <hr>
+
+      <span class="podmeniText">Hitre povezave</span>
+      <a mat-list-item routerLink="" class="sideNavListComponent">
+        <fa-icon [icon]="['fas', 'coffee']" size="lg" [fixedWidth]="true"></fa-icon>
+        <span fxFlexOffset="15px">
+            DashBoard
+        </span>
+      </a>
+
+      <a mat-list-item routerLink="items" class="sideNavListComponent">
+        <fa-icon [icon]="['far', 'folder']" size="lg" [fixedWidth]="true"></fa-icon>
+        <span fxFlexOffset="15px">
+            Items
+        </span>
+      </a>
     </mat-nav-list>
 
   </mat-sidenav>
