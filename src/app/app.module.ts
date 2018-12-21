@@ -1,4 +1,4 @@
-import { SinfonyUiModule } from './../@sbc';
+// import { SinfonyUiModule } from './../@sbc';
 import { FontAwesomeIconsModule } from './font-awesome-icons.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,7 +22,7 @@ import { MainNavigationComponent } from './main-navigation/main-navigation.compo
 import { SearchDialogNavigationComponent } from './main-navigation/search-dialog-navigation/search-dialog-navigation.component';
 import { SearchDialogComponent } from './main-navigation/search-dialog/search-dialog.component';
 import { DocumentationComponent } from './documentation/documentation.component';
-// import { SinfonyUiModule } from 'projects/sinfony-ui/src/lib/sinfony-ui.module';
+import { SinfonyUiModule } from 'projects/sinfony-ui/src/lib/sinfony-ui.module';
 import { TestingUiComponent } from './testing-ui/testing-ui.component';
 
 @NgModule({

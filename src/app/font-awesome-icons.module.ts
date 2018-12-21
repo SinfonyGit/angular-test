@@ -20,7 +20,8 @@ import {
     faTable,
     faStream,
     faArrowCircleRight,
-    faFileAlt
+    faFileAlt,
+    faArrowCircleLeft
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -58,7 +59,8 @@ library.add(
     faTable,
     faStream,
     faArrowCircleRight,
-    faFileAlt
+    faFileAlt,
+    faArrowCircleLeft
 );
 
 @NgModule({

@@ -3,6 +3,21 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+// ANIMACIJA
+
+import { HostBinding } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
+
+import { RouterOutlet } from '@angular/router';
+import { slideInAnimation } from './../animation';
+////////////////////////////// ZAKLJUČEK ANIMACIJE
 
 @Component({
   selector: 'app-navigation',
@@ -33,8 +48,12 @@ export class NavigationComponent {
   // Pokaži oz skrij navigacijski izbor predmeta
   hideNavContent = false;
 
+  // DropDown animacija in pokazatelj ob kliku na documentation
+  dropDownMenu = false;
+
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  // Spreminjanje Sidebara
   widthSideBar = '241';
   widthSideBarExpanded = '241';
   widthSideBarCollapsed = '21';
