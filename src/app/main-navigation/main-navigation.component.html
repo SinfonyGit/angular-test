@@ -13,7 +13,7 @@
             matTooltip="Začetna stran"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><fa-icon [icon]="['fas', 'home']" size="2x"></fa-icon>
+            ><fa-icon [icon]="['fab', 'accusoft']" size="2x"></fa-icon>
         </a>
         </sbc-main-nav-header-logo-icon>
 
@@ -28,7 +28,7 @@
         </sbc-main-nav-content>
 
         <sbc-main-nav-content>
-          <button (click)="drawer.toggle()"
+          <button (click)="drawer2.toggle()"
             mat-icon-button
             matTooltip="Iskanje"
             matTooltipClass="tooltip"
@@ -83,8 +83,8 @@
             <button mat-menu-item class="atlas-menu-item">Odštevanje</button>
             <span class="atlas-menu-label">Rezultat</span>
             <button mat-menu-item class="atlas-menu-item">
-                <mat-icon>plus_one</mat-icon>
-                <span>Seštevanje</span></button>
+                <fa-icon [icon]="['fab', 'affiliatetheme']" size="lg"></fa-icon>
+                <span fxFlexOffset="15px">Izračun</span></button>
           </mat-menu>
         </sbc-main-nav-footer-icon>
         <sbc-main-nav-footer-icon>
@@ -104,8 +104,8 @@
               <button mat-menu-item class="atlas-menu-item">Navigacija</button>
               <span class="atlas-menu-label">Licenca</span>
               <button mat-menu-item class="atlas-menu-item">
-                  <mat-icon>plus_one</mat-icon>
-                  <span>Pogoji uporabe</span></button>
+                  <fa-icon [icon]="['fas', 'file-contract']" size="lg"></fa-icon>
+                  <span fxFlexOffset="15px">Pogoji uporabe</span></button>
           </mat-menu>
         </sbc-main-nav-footer-icon>
         <sbc-main-nav-footer-icon>
@@ -120,49 +120,49 @@
       </sbc-main-nav-footer>
     </sbc-main-nav-container>
   </mat-sidenav>
-  <mat-sidenav-content class="test">
-    <!-- Add Content Here -->
-    
+  <mat-sidenav-content>
+
+    <!-- CONTENT OZ PRIKAZ KONTEKSTA -->
     <app-navigation></app-navigation>
  
-
-
-
-          
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<mat-drawer #drawer1 class="search-sidenav" mode="push" hasBackdrop="true">
+<!-- DRUGA NAVIGACIJSKA TIPKA ZAVIHKI IN ZGODOVINA -- DRAWER -->
+<mat-drawer #drawer1 sbcDrawer mode="push" hasBackdrop="true">
+  <sbc-drawer-container>
+    <sbc-drawer-navigation>
+      <button (click)="drawer1.close()"
+        mat-icon-button >
+        <fa-icon [icon]="['fas', 'arrow-left']" size="lg"></fa-icon>
+      </button>
+    </sbc-drawer-navigation>
+    <sbc-drawer-content>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Iskanje"></textarea>
+      </mat-form-field>
+      <br>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam impedit architecto quibusdam 
+        nostrum cum vel porro in aliquid harum incidunt, dicta reprehenderit nulla, ipsum fugiat illo qui, error veniam obcaecati.
+      </p>
+    </sbc-drawer-content>
+  </sbc-drawer-container>
+</mat-drawer>
 
-  <div>
-    <button (click)="drawer1.close()"
-    mat-icon-button >
-  <mat-icon>keyboard_arrow_left</mat-icon> 
-  </button>
-  <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Iskanje"></textarea>
-    </mat-form-field>
-  </div>
-Priljubleno
-
-  </mat-drawer>
-
-<mat-drawer #drawer class="search-sidenav" mode="push" hasBackdrop="true">
-
-  <div class="row">
-    <div class="column1">
-    <button (click)="drawer.close()"
-    mat-icon-button >
-  <mat-icon>arrow_back</mat-icon> 
-  </button>
-  </div>
-  <div class="column2">
-
-  <app-search-dialog></app-search-dialog>
-  
-  </div>
-
-    </div>
-  </mat-drawer>
+<!-- TRETJA NAVIGACIJSKA TIPKA ISKANJE -- DRAWER -->
+<mat-drawer #drawer2 sbcDrawer mode="push" hasBackdrop="true">
+  <sbc-drawer-container>
+    <sbc-drawer-navigation>
+      <button (click)="drawer2.close()"
+        mat-icon-button >
+        <fa-icon [icon]="['fas', 'arrow-left']" size="lg"></fa-icon>
+      </button>
+    </sbc-drawer-navigation>
+    <sbc-drawer-content>
+      <app-search-dialog></app-search-dialog>
+    </sbc-drawer-content>
+  </sbc-drawer-container>
+</mat-drawer>
 
   

@@ -21,7 +21,9 @@ import {
     faStream,
     faArrowCircleRight,
     faFileAlt,
-    faArrowCircleLeft
+    faArrowCircleLeft,
+    faArrowLeft,
+    faFileContract
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -31,7 +33,9 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 
 import {
-    faWpforms
+    faWpforms,
+    faAffiliatetheme,
+    faAccusoft
 } from '@fortawesome/free-brands-svg-icons';
 
 // Importa celotno knjižnico REGULAR knjižnico
@@ -60,7 +64,11 @@ library.add(
     faStream,
     faArrowCircleRight,
     faFileAlt,
-    faArrowCircleLeft
+    faArrowCircleLeft,
+    faArrowLeft,
+    faFileContract,
+    faAffiliatetheme,
+    faAccusoft
 );
 
 @NgModule({
