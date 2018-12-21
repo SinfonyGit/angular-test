@@ -16,30 +16,31 @@
       </div>
     </mat-toolbar>
     <mat-nav-list style="margin: 16px;" *ngIf="!inboundClick">
-      <a mat-list-item routerLink="" class="sideNavListComponent"
-        ><fa-icon [icon]="['fas', 'coffee']" size="lg"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a
+      <a mat-list-item routerLink="" class="sideNavListComponent" fxLayout="row" 
+        ><fa-icon [icon]="['fas', 'coffee']" size="lg" ></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a
       >
       <a mat-list-item routerLink="items" class="sideNavListComponent"
-        ><i class="fas fa-sitemap"></i>&nbsp;&nbsp;&nbsp;&nbsp;Items</a
+        ><fa-icon [icon]="['far', 'folder']" size="lg"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Items</a
       >
-      <a mat-list-item routerLink="forms"
-        ><i class="fab fa-wpforms"></i>&nbsp;&nbsp;&nbsp;&nbsp;Forms</a
+      <a mat-list-item routerLink="forms" class="sideNavListComponent"
+        ><fa-icon [icon]="['fab', 'wpforms']" size="lg"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Forms</a
       >
-      <a mat-list-item routerLink="datatable"
-        ><i class="fas fa-database"></i>&nbsp;&nbsp;&nbsp;&nbsp;DataTable
+      <a mat-list-item routerLink="datatable" class="sideNavListComponent"
+        ><fa-icon [icon]="['fas', 'table']" size="lg"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;DataTable
       </a>
-      <a mat-list-item routerLink="tree"
-        ><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Tree<i
-          class="fas fa-arrow-right"
-        ></i
-      ></a>
-      <a mat-list-item routerLink="documentation"
-        ><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Dokumentacija<i
-          class="fas fa-arrow-right"
-        ></i
-      ></a>
-      <a mat-list-item routerLink="testing-ui"
-        ><i class="fas fa-stream"></i>&nbsp;&nbsp;&nbsp;&nbsp;Testiranje UI</a
+      <a mat-list-item routerLink="tree" class="sideNavListComponent" fxLayout="row" fxLayoutAlign="space-between none"
+        ><fa-icon [icon]="['fas', 'stream']" size="lg" fxFlexAlign="start"></fa-icon>
+          <span fxFlexAlign="center">Tree</span>
+        <div fxFlex fxLayoutAlign="end start">
+        <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg" ></fa-icon>
+</div>
+      </a>
+      <a mat-list-item routerLink="documentation" class="sideNavListComponent"
+        ><fa-icon [icon]="['fas', 'file-alt']" size="lg"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Dokumentacija
+        <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg" pull="right"></fa-icon>
+      </a>
+      <a mat-list-item routerLink="testing-ui" class="sideNavListComponent"
+        ><fa-icon [icon]="['fas', 'cog']" size="lg" [spin]="isSyncAnimated" (click)="isSyncAnimated=!isSyncAnimated"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Testiranje UI</a
       >
     </mat-nav-list>
   </mat-sidenav>

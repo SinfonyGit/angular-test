@@ -15,13 +15,23 @@ import {
     faBell,
     faTh,
     faQuestionCircle,
-    faUserCircle
+    faUserCircle,
+    faCog,
+    faTable,
+    faStream,
+    faArrowCircleRight,
+    faFileAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
     faStar as farStar,
-    faUserCircle as farUserCircle
+    faUserCircle as farUserCircle,
+    faFolder as farFolder
 } from '@fortawesome/free-regular-svg-icons';
+
+import {
+    faWpforms
+} from '@fortawesome/free-brands-svg-icons';
 
 // Importa celotno knjižnico REGULAR knjižnico
 // import { far } from '@fortawesome/free-regular-svg-icons';
@@ -41,7 +51,14 @@ library.add(
     faTh,
     faQuestionCircle,
     faUserCircle,
-    farUserCircle
+    farUserCircle,
+    faCog,
+    farFolder,
+    faWpforms,
+    faTable,
+    faStream,
+    faArrowCircleRight,
+    faFileAlt
 );
 
 @NgModule({
