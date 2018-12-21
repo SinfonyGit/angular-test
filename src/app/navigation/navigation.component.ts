@@ -16,20 +16,23 @@ export class NavigationComponent {
       map(result => result.matches)
     );
 
-    isExpanded = false;
+  isExpanded = false;
+
+  // Pokaži oz skrij Ikone v navigacijskem meniju
+  showIconTree = false;
+  showIconDocumentation = false;
+
+  // Animacija Ikonice v navigacijskem meniju Testing
+  isSyncAnimated = false;
+
+  // Pokaži oz skrij navigacijski izbor predmeta
+  hideNavContent = false;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   widthSideBar = '241';
   widthSideBarExpanded = '241';
   widthSideBarCollapsed = '21';
-
-  hide() {
-    if (this.widthSideBarCollapsed === '20') {
-      console.log('skrito je');
-    }
-  }
-
 
   toggleSideBar(status: string) {
     // console.log('toggle called');

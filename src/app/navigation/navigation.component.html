@@ -10,38 +10,72 @@
     
     >
   
-    <mat-toolbar *ngIf="!inboundClick">
+    <mat-toolbar *ngIf="!hideNavContent">
       <div class="toolbarBox">
         Navigacija
       </div>
     </mat-toolbar>
-    <mat-nav-list style="margin: 16px;" *ngIf="!inboundClick">
-      <a mat-list-item routerLink="" class="sideNavListComponent" fxLayout="row" 
-        ><fa-icon [icon]="['fas', 'coffee']" size="lg" ></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a
-      >
-      <a mat-list-item routerLink="items" class="sideNavListComponent"
-        ><fa-icon [icon]="['far', 'folder']" size="lg"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Items</a
-      >
-      <a mat-list-item routerLink="forms" class="sideNavListComponent"
-        ><fa-icon [icon]="['fab', 'wpforms']" size="lg"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Forms</a
-      >
-      <a mat-list-item routerLink="datatable" class="sideNavListComponent"
-        ><fa-icon [icon]="['fas', 'table']" size="lg"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;DataTable
+    <mat-nav-list style="margin: 16px;" *ngIf="!hideNavContent">
+
+      <a mat-list-item routerLink="" class="sideNavListComponent">
+        <fa-icon [icon]="['fas', 'coffee']" size="lg" [fixedWidth]="true"></fa-icon>
+        <span fxFlexOffset="15px">
+            DashBoard
+        </span>
       </a>
-      <a mat-list-item routerLink="tree" class="sideNavListComponent" fxLayout="row" fxLayoutAlign="space-between none"
-        ><fa-icon [icon]="['fas', 'stream']" size="lg" fxFlexAlign="start"></fa-icon>
-          <span fxFlexAlign="center">Tree</span>
-        <div fxFlex fxLayoutAlign="end start">
-        <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg" ></fa-icon>
-</div>
+
+      <a mat-list-item routerLink="items" class="sideNavListComponent">
+        <fa-icon [icon]="['far', 'folder']" size="lg" [fixedWidth]="true"></fa-icon>
+        <span fxFlexOffset="15px">
+            Items
+        </span>
       </a>
+
+      <a mat-list-item routerLink="forms" class="sideNavListComponent">
+        <fa-icon [icon]="['fab', 'wpforms']" size="lg" [fixedWidth]="true"></fa-icon>
+        <span fxFlexOffset="15px">
+            Forms
+        </span>
+      </a>
+
+      <a mat-list-item routerLink="datatable" class="sideNavListComponent">
+        <fa-icon [icon]="['fas', 'table']" size="lg" [fixedWidth]="true"></fa-icon>
+          <span fxFlexOffset="15px">
+            DataTable
+          </span>
+      </a>
+
+      <a mat-list-item routerLink="tree" class="sideNavListComponent"
+        (mouseenter)="showIconTree = true"
+        (mouseleave)="showIconTree = false">
+        <fa-icon [icon]="['fas', 'stream']" size="lg" [fixedWidth]="true"></fa-icon>
+          <span fxFlexOffset="15px">
+            Tree
+          </span>
+        <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg" fxFlex fxLayoutAlign="flex-end" *ngIf="showIconTree"></fa-icon>
+      </a>
+
       <a mat-list-item routerLink="documentation" class="sideNavListComponent"
-        ><fa-icon [icon]="['fas', 'file-alt']" size="lg"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Dokumentacija
-        <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg" pull="right"></fa-icon>
+        (mouseenter)="showIconDocumentation = true"
+        (mouseleave)="showIconDocumentation = false">
+        <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
+          <span fxFlexOffset="15px">
+            Dokumentacija
+          </span>
+        <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg" fxFlex fxLayoutAlign="flex-end" *ngIf="showIconDocumentation"></fa-icon>
       </a>
+
       <a mat-list-item routerLink="testing-ui" class="sideNavListComponent"
-        ><fa-icon [icon]="['fas', 'cog']" size="lg" [spin]="isSyncAnimated" (click)="isSyncAnimated=!isSyncAnimated"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;Testiranje UI</a
-      >
+        (mouseenter)="isSyncAnimated = true"
+        (mouseleave)="isSyncAnimated = false">
+        <fa-icon [icon]="['fas', 'cog']" size="lg" [fixedWidth]="true" 
+        [spin]="isSyncAnimated" 
+        ></fa-icon>
+          <span fxFlexOffset="15px">
+            Testing UI
+          </span>
+      </a>
+
     </mat-nav-list>
   </mat-sidenav>
 
@@ -55,10 +89,10 @@
           type="button"
           aria-label="Toggle sidenav"
           (click)="toggleSideBar()"
-          (click)="inboundClick = !inboundClick"
+          (click)="hideNavContent = !hideNavContent"
         >
-        <mat-icon *ngIf="inboundClick" style="position: relative; bottom: 7px;">menu</mat-icon>
-        <mat-icon *ngIf="!inboundClick" style="position: relative; bottom: 7px;">keyboard_arrow_left</mat-icon>
+        <mat-icon *ngIf="hideNavContent" style="position: relative; bottom: 7px;">menu</mat-icon>
+        <mat-icon *ngIf="!hideNavContent" style="position: relative; bottom: 7px;">keyboard_arrow_left</mat-icon>
         </button>
 
       </div>
