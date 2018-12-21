@@ -1,0 +1,21 @@
+{
+  "name": "sinfony-ui",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.1.0",
+    "@angular/core": "^7.1.0"
+  },
+  "main": "bundles/sinfony-ui.umd.js",
+  "module": "fesm5/sinfony-ui.js",
+  "es2015": "fesm2015/sinfony-ui.js",
+  "esm5": "esm5/sinfony-ui.js",
+  "esm2015": "esm2015/sinfony-ui.js",
+  "fesm5": "fesm5/sinfony-ui.js",
+  "fesm2015": "fesm2015/sinfony-ui.js",
+  "typings": "sinfony-ui.d.ts",
+  "metadata": "sinfony-ui.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

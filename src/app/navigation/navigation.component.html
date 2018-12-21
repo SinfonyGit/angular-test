@@ -7,7 +7,8 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)"
-    
+    (mouseenter)="showNavButton = true"
+    (mouseleave)="showNavButton = false"
     >
   
     <mat-toolbar *ngIf="!hideNavContent">
@@ -79,11 +80,14 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content [style.marginLeft.px]="widthSideBar" >
+  <mat-sidenav-content [style.marginLeft.px]="widthSideBar">
     <div class="row" style="z-index: 305;">
-      <div class="column1 navButton blockDisplay" style="z-index: 306;" >
+      <div class="column1 navButton blockDisplay" style="z-index: 306;"
+        (mouseenter)="showNavButton = true"
+        (mouseleave)="showNavButton = false"
+      >
 
-        <button *ngIf="!changeText"
+        <button *ngIf="showNavButton"
         class="button1 button2" style="z-index: 307;"
           mat-icon-button
           type="button"

@@ -18,6 +18,11 @@ export class NavigationComponent {
 
   isExpanded = false;
 
+  // Pokaži oz skrije navogacijski button glede na lokacijo miške
+  showNavButton = false;
+
+  buttonMouseCheckEvent = false;
+
   // Pokaži oz skrij Ikone v navigacijskem meniju
   showIconTree = false;
   showIconDocumentation = false;
@@ -34,19 +39,13 @@ export class NavigationComponent {
   widthSideBarExpanded = '241';
   widthSideBarCollapsed = '21';
 
-  toggleSideBar(status: string) {
-    // console.log('toggle called');
-    // this.sb.toggle();
+  toggleSideBar() {
     if (this.widthSideBar === this.widthSideBarExpanded) {
       this.widthSideBar = this.widthSideBarCollapsed;
-      return status = '1';
+      this.showNavButton = true;
     } else {
       this.widthSideBar = this.widthSideBarExpanded;
-      return status = '0';
     }
-    // snav.toggle();
   }
-
-
 
 }
