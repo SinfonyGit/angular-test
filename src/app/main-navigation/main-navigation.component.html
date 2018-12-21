@@ -58,13 +58,27 @@
 
       <sbc-main-nav-footer>
         <sbc-main-nav-footer-icon>
-          <a
-            mat-list-item
-            routerLink="tree"
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="menuNotification"
+            isIconButton="true"
             matTooltip="Obvestila"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><fa-icon [icon]="['fas', 'bell']" size="lg"></fa-icon></a>
+          >
+          <fa-icon [icon]="['fas', 'bell']" size="lg"></fa-icon>
+          </button>
+          <mat-menu #menuNotification="matMenu">
+              <sbc-menu-title>Današnja obvestila</sbc-menu-title>
+              <button sbcMenuItem>Novice</button>
+              <button sbcMenuItem>Email</button>
+              <sbc-menu-title>Arhiv</sbc-menu-title>
+              <button sbcMenuItem>Zadnji mesec</button>
+              <button sbcMenuItem>
+                  <fa-icon [icon]="['fas', 'file-contract']" size="lg"></fa-icon>
+                  <span fxFlexOffset="15px">Pregled Arhivov</span>
+              </button>
+          </mat-menu>
         </sbc-main-nav-footer-icon>
         <sbc-main-nav-footer-icon>
           <button
