@@ -90,13 +90,13 @@
             ><fa-icon [icon]="['fas', 'th']" size="lg"></fa-icon>
           </button>
           <mat-menu #prehodAplikacij="matMenu">
-            <span class="atlas-menu-label">Operacije</span>
-            <button mat-menu-item class="atlas-menu-item">Množenje</button>
-            <button mat-menu-item class="atlas-menu-item">Delenje</button>
-            <button mat-menu-item class="atlas-menu-item">Seštevanje</button>
-            <button mat-menu-item class="atlas-menu-item">Odštevanje</button>
-            <span class="atlas-menu-label">Rezultat</span>
-            <button mat-menu-item class="atlas-menu-item">
+              <sbc-menu-title>Operacije</sbc-menu-title>
+            <button sbcMenuItem>Množenje</button>
+            <button sbcMenuItem>Delenje</button>
+            <button sbcMenuItem>Seštevanje</button>
+            <button sbcMenuItem>Odštevanje</button>
+            <sbc-menu-title>Rezultat</sbc-menu-title>
+            <button sbcMenuItem>
                 <fa-icon [icon]="['fab', 'affiliatetheme']" size="lg"></fa-icon>
                 <span fxFlexOffset="15px">Izračun</span></button>
           </mat-menu>
@@ -113,11 +113,11 @@
           <fa-icon [icon]="['fas', 'question-circle']" size="lg"></fa-icon>
           </button>
           <mat-menu #menu="matMenu">
-              <span class="atlas-menu-label">Dokumentacija</span>
-              <button mat-menu-item class="atlas-menu-item">Pomoč pri Breadcrumbers</button>
-              <button mat-menu-item class="atlas-menu-item">Navigacija</button>
-              <span class="atlas-menu-label">Licenca</span>
-              <button mat-menu-item class="atlas-menu-item">
+              <sbc-menu-title>Dokumentacija</sbc-menu-title>
+              <button sbcMenuItem>Pomoč pri Breadcrumbers</button>
+              <button sbcMenuItem>Navigacija</button>
+              <sbc-menu-title>Licenca</sbc-menu-title>
+              <button sbcMenuItem>
                   <fa-icon [icon]="['fas', 'file-contract']" size="lg"></fa-icon>
                   <span fxFlexOffset="15px">Pogoji uporabe</span></button>
           </mat-menu>

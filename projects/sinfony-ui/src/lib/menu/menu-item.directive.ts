@@ -20,7 +20,7 @@ export class MenuItemDirective {
         el.nativeElement.style.lineHeight = '30px';
         el.nativeElement.style.height = '30px';
         el.nativeElement.style.border = 'none';
-        el.nativeElement.style.padding = '0 12px';
+        el.nativeElement.style.padding = '0 16px';
         el.nativeElement.style.width = '100%';
         el.nativeElement.style.outline = '0';
         el.nativeElement.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';

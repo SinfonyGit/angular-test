@@ -1,3 +1,4 @@
+import { MenuPanelDirective } from './menu-panel.directive';
 import { MenuItemDirective } from './menu-item.directive';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,7 +8,8 @@ import { MenuTitleComponent } from './menu-title.component';
 @NgModule({
   declarations: [
     MenuTitleComponent,
-    MenuItemDirective
+    MenuItemDirective,
+    MenuPanelDirective
   ],
   imports: [
     RouterModule,
@@ -15,7 +17,8 @@ import { MenuTitleComponent } from './menu-title.component';
   ],
   exports: [
     MenuTitleComponent,
-    MenuItemDirective
+    MenuItemDirective,
+    MenuPanelDirective
   ]
 })
 export class MenuModule { }
