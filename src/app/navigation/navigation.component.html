@@ -19,8 +19,7 @@
 
     <!-- ANIMATION -->
     <div [@openCloseAnimation]="dropDownMenuDocumentation ? 'openAnimation' : 'closeAnimation'"
-        [@openCloseAnimation]="dropDownMenuTree ? 'openAnimation' : 'closeAnimation'"
-    >
+        [@openCloseAnimation]="dropDownMenuTree ? 'openAnimation' : 'closeAnimation'">
     <!-- !ANIMATION -->
 
     <mat-nav-list 
@@ -96,7 +95,8 @@
       *ngIf="!hideNavContent && dropDownMenuDocumentation"
       >
       <a mat-list-item sbcNavItem routerLink="documentation"
-        (click)="toggleDocumention()">
+        (click)="toggleDocumention()"
+        (click)="showIconDocumentation = false">
         <fa-icon [icon]="['fas', 'arrow-circle-left']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Nazaj na navigacijo
@@ -137,7 +137,8 @@
       >
       
       <a mat-list-item sbcNavItem routerLink="documentation"
-        (click)="dropDownMenuTree = !dropDownMenuTree">
+        (click)="dropDownMenuTree = !dropDownMenuTree"
+        (click)="showIconTree = false">
         <fa-icon [icon]="['fas', 'arrow-circle-left']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Nazaj na navigacijo
