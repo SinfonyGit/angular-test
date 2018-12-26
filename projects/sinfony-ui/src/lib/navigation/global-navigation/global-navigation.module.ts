@@ -1,3 +1,4 @@
+import { NavItemDirective } from './navigation/nav-item.directive';
 import { MainNavHeaderLogoIconComponent } from './main-nav-components/main-nav-header-logo-icon.component';
 import { MainNavFooterIconComponent } from './main-nav-components/main-nav-footer-icon.component';
 import { MainNavFooterComponent } from './main-nav-components/main-nav-footer.component';
@@ -12,6 +13,10 @@ import { DrawerDirective } from './main-nav-drawers/drawer.directive';
 import { DrawerContainerComponent } from './main-nav-drawers/drawer-container.component';
 import { DrawerNavigationComponent } from './main-nav-drawers/drawer-navigation.component';
 import { DrawerContentComponent } from './main-nav-drawers/drawer-content.component';
+import { NavItemTitleComponent } from './navigation/nav-item-title.component';
+import { NavContainerComponent } from './navigation/nav-container.component';
+import { NavContentComponent } from './navigation/nav-content.component';
+import { NavLineComponent } from './navigation/nav-line.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { DrawerContentComponent } from './main-nav-drawers/drawer-content.compon
     DrawerDirective,
     DrawerContainerComponent,
     DrawerNavigationComponent,
-    DrawerContentComponent
+    DrawerContentComponent,
+    NavItemDirective,
+    NavItemTitleComponent,
+    NavContainerComponent,
+    NavContentComponent,
+    NavLineComponent
   ],
   imports: [
     RouterModule,
@@ -40,7 +50,12 @@ import { DrawerContentComponent } from './main-nav-drawers/drawer-content.compon
     DrawerDirective,
     DrawerContainerComponent,
     DrawerNavigationComponent,
-    DrawerContentComponent
+    DrawerContentComponent,
+    NavItemDirective,
+    NavItemTitleComponent,
+    NavContainerComponent,
+    NavContentComponent,
+    NavLineComponent
   ]
 })
 export class GlobalNavigationModule { }

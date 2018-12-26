@@ -1,17 +1,20 @@
+import { navigationAnimation, navigationAnimationBackup } from './customAnimation';
 import { SearchDialogComponent } from './../main-navigation/search-dialog/search-dialog.component';
 import { Component, OnInit } from '@angular/core';
 
 import {MatDialog} from '@angular/material';
 
-
-
 @Component({
   selector: 'app-items',
+  animations: [ navigationAnimation, navigationAnimationBackup ],
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent implements OnInit {
 
+  isOpen = true;
+
+  isAnimation = false;
 
    tabela: any[] = [
     { 'link': '/../items', 'name': 'Itemsi' },
@@ -28,6 +31,14 @@ export class ItemsComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+
+  toggleAnimation() {
+    this.isAnimation = !this.isAnimation;
+  }
+
   openDialog1() {
     this.dialog.open(SearchDialogComponent);
   }
@@ -42,6 +53,5 @@ export class ItemsComponent implements OnInit {
       this.animal = result;
     });
   }
-
 
 }

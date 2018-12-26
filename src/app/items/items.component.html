@@ -15,11 +15,71 @@
   <button type="button" class="buttondva" >Test1</button>
   <button type="button" [className]="classname" >Test1</button>
 <br><br>
-<button mat-raised-button isRoundButton="true" color="accent">Accent</button>
+<button mat-raised-button isRoundButton="true" color="accent" (click)="toggle()">Accent</button>
 <br>
 
 
 <sbc-breadcrumb [items]="tabela"></sbc-breadcrumb>
+<br>
+<hr>
+<button mat-raised-button isRoundButton="true" color="accent" (click)="toggleAnimation()">prikaz animacije</button>
+<br>
+
+
+<div [@openCloseAnimation]="isAnimation ? 'openAnimation' : 'closeAnimation'" class="animacija">
+  <div style="margin: 10px;">
+
+    <div *ngIf="!isAnimation">
+      <p>Dashboard</p>
+      <p>Tree</p>
+      <p>Navigacija</p>
+      <p>Items</p>
+      <p (click)="toggleAnimation()" style="cursor: pointer;">Dokumentacija -></p>
+      <p>Konec seznama</p>
+    </div>
+
+    <div *ngIf="isAnimation">
+      <p (click)="toggleAnimation()" style="cursor: pointer;">Nazaj na Navigacijo</p>
+      <p>Dokumentacija</p>
+      <p>Kako začeti</p>
+      <p>Delamnje animacije</p>
+      <p>Nastavitve</p>
+    </div>
+
+  </div>
+</div>
+<hr>
+
+<div [@openCloseAnimationBackup]="isAnimation ? 'openAnimation' : 'closeAnimation'" class="animacija">
+    <div style="margin: 10px;">
+  
+      <div *ngIf="!isAnimation">
+        <p>Dashboard</p>
+        <p>Tree</p>
+        <p>Navigacija</p>
+        <p>Items</p>
+        <p (click)="toggleAnimation()" style="cursor: pointer;">Dokumentacija -></p>
+        <p>Konec seznama</p>
+      </div>
+  
+      <div *ngIf="isAnimation">
+        <p (click)="toggleAnimation()" style="cursor: pointer;">Nazaj na Navigacijo</p>
+        <p>Dokumentacija</p>
+        <p>Kako začeti</p>
+        <p>Delamnje animacije</p>
+        <p>Nastavitve</p>
+      </div>
+  
+    </div>
+  </div>
+
+<br>
+<hr>
+
+<!-- <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+  <p>Animacija je sedaj {{ isAnimation ? 'openAnimation' : 'closeAnimation' }}!</p>
+</div>
+ -->
 
 
 </div>

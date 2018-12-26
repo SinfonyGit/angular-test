@@ -9,7 +9,6 @@
     [opened]="!(isHandset$ | async)"
     (mouseenter)="showNavButton = true"
     (mouseleave)="showNavButton = false"
-    
     >
   
     <mat-toolbar *ngIf="!hideNavContent">
@@ -17,40 +16,46 @@
         Navigacija
       </div>
     </mat-toolbar>
+
+    <!-- ANIMATION -->
+    <div [@openCloseAnimation]="dropDownMenuDocumentation ? 'openAnimation' : 'closeAnimation'"
+        [@openCloseAnimation]="dropDownMenuTree ? 'openAnimation' : 'closeAnimation'"
+    >
+    <!-- !ANIMATION -->
+
     <mat-nav-list 
       style="margin: 16px;" 
       *ngIf="!hideNavContent && !dropDownMenuDocumentation && !dropDownMenuTree"
       >
-
-      <a mat-list-item routerLink="" class="sideNavListComponent">
+      <a mat-list-item sbcNavItem routerLink="">
         <fa-icon [icon]="['fas', 'coffee']" size="lg" [fixedWidth]="true"></fa-icon>
         <span fxFlexOffset="15px">
             DashBoard
         </span>
       </a>
 
-      <a mat-list-item routerLink="items" class="sideNavListComponent">
+      <a mat-list-item sbcNavItem routerLink="items">
         <fa-icon [icon]="['far', 'folder']" size="lg" [fixedWidth]="true"></fa-icon>
         <span fxFlexOffset="15px">
             Items
         </span>
       </a>
 
-      <a mat-list-item routerLink="forms" class="sideNavListComponent">
+      <a mat-list-item sbcNavItem routerLink="forms" >
         <fa-icon [icon]="['fab', 'wpforms']" size="lg" [fixedWidth]="true"></fa-icon>
         <span fxFlexOffset="15px">
             Forms
         </span>
       </a>
 
-      <a mat-list-item routerLink="datatable" class="sideNavListComponent">
+      <a mat-list-item sbcNavItem routerLink="datatable" >
         <fa-icon [icon]="['fas', 'table']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             DataTable
           </span>
       </a>
 
-      <a mat-list-item routerLink="tree" class="sideNavListComponent"
+      <a mat-list-item sbcNavItem routerLink="tree"
         (mouseenter)="showIconTree = true"
         (mouseleave)="showIconTree = false"
         (click)="dropDownMenuTree = !dropDownMenuTree">
@@ -61,10 +66,10 @@
         <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg" fxFlex fxLayoutAlign="flex-end" *ngIf="showIconTree"></fa-icon>
       </a>
 
-      <a mat-list-item routerLink="documentation" class="sideNavListComponent"
+      <a mat-list-item sbcNavItem routerLink="documentation"
         (mouseenter)="showIconDocumentation = true"
         (mouseleave)="showIconDocumentation = false"
-        (click)="dropDownMenuDocumentation = !dropDownMenuDocumentation">
+        (click)="toggleDocumention()">
         <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Dokumentacija
@@ -72,7 +77,7 @@
         <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg" fxFlex fxLayoutAlign="flex-end" *ngIf="showIconDocumentation"></fa-icon>
       </a>
 
-      <a mat-list-item routerLink="testing-ui" class="sideNavListComponent"
+      <a mat-list-item sbcNavItem routerLink="testing-ui"
         (mouseenter)="isSyncAnimated = true"
         (mouseleave)="isSyncAnimated = false">
         <fa-icon [icon]="['fas', 'cog']" size="lg" [fixedWidth]="true" 
@@ -82,17 +87,16 @@
             Testing UI
           </span>
       </a>
-
     </mat-nav-list>
 
     <!-- PodMeni komponente Dokumentacija -->
+  
     <mat-nav-list 
       style="margin: 16px;" 
       *ngIf="!hideNavContent && dropDownMenuDocumentation"
       >
-
-      <a mat-list-item routerLink="documentation" class="sideNavListComponent"
-        (click)="dropDownMenuDocumentation = !dropDownMenuDocumentation">
+      <a mat-list-item sbcNavItem routerLink="documentation"
+        (click)="toggleDocumention()">
         <fa-icon [icon]="['fas', 'arrow-circle-left']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Nazaj na navigacijo
@@ -100,8 +104,8 @@
       </a>
 
       <hr>
-      <span class="podmeniText">Breadcrumbers</span>
-      <a mat-list-item routerLink="documentation" class="sideNavListComponent">
+      <sbc-nav-item-title>Breadcrumbers</sbc-nav-item-title>
+      <a mat-list-item sbcNavItem routerLink="documentation">
         <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Dokumentacija
@@ -109,15 +113,16 @@
       </a>
 
       <hr>
-      <span class="podmeniText">Hitre povezave</span>
-      <a mat-list-item routerLink="" class="sideNavListComponent">
+
+      <sbc-nav-item-title>Hitre povezave</sbc-nav-item-title>
+      <a mat-list-item sbcNavItem routerLink="">
         <fa-icon [icon]="['fas', 'coffee']" size="lg" [fixedWidth]="true"></fa-icon>
         <span fxFlexOffset="15px">
             DashBoard
         </span>
       </a>
 
-      <a mat-list-item routerLink="items" class="sideNavListComponent">
+      <a mat-list-item sbcNavItem routerLink="items">
         <fa-icon [icon]="['far', 'folder']" size="lg" [fixedWidth]="true"></fa-icon>
         <span fxFlexOffset="15px">
             Items
@@ -131,7 +136,7 @@
       *ngIf="!hideNavContent && dropDownMenuTree"
       >
       
-      <a mat-list-item routerLink="documentation" class="sideNavListComponent"
+      <a mat-list-item sbcNavItem routerLink="documentation"
         (click)="dropDownMenuTree = !dropDownMenuTree">
         <fa-icon [icon]="['fas', 'arrow-circle-left']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
@@ -140,22 +145,23 @@
       </a>
 
       <hr>
-      <span class="podmeniText">Datoteke ki so na voljo</span>
-      <a mat-list-item routerLink="documentation" class="sideNavListComponent">
+
+      <sbc-nav-item-title>Datoteke ki so na voljo</sbc-nav-item-title>
+      <a mat-list-item sbcNavItem routerLink="documentation">
         <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Datoteka Avto
           </span>
       </a>
 
-      <a mat-list-item routerLink="documentation" class="sideNavListComponent">
+      <a mat-list-item sbcNavItem routerLink="documentation">
         <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Datoteka Pohištvo
           </span>
       </a>
 
-      <a mat-list-item routerLink="documentation" class="sideNavListComponent">
+      <a mat-list-item sbcNavItem routerLink="documentation">
         <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
           <span fxFlexOffset="15px">
             Datoteka Okna
@@ -164,15 +170,15 @@
 
       <hr>
 
-      <span class="podmeniText">Hitre povezave</span>
-      <a mat-list-item routerLink="" class="sideNavListComponent">
+      <sbc-nav-item-title>Hitre povezave</sbc-nav-item-title>
+      <a mat-list-item sbcNavItem routerLink="">
         <fa-icon [icon]="['fas', 'coffee']" size="lg" [fixedWidth]="true"></fa-icon>
         <span fxFlexOffset="15px">
             DashBoard
         </span>
       </a>
 
-      <a mat-list-item routerLink="items" class="sideNavListComponent">
+      <a mat-list-item sbcNavItem routerLink="items">
         <fa-icon [icon]="['far', 'folder']" size="lg" [fixedWidth]="true"></fa-icon>
         <span fxFlexOffset="15px">
             Items
@@ -180,11 +186,16 @@
       </a>
     </mat-nav-list>
 
+    <!-- ANIMATION -->
+    </div>
+    <!-- !ANIMATION -->
+
   </mat-sidenav>
 
   <!-- Container  za show&hide Navigacijo, hkrati je tudi Content(Router Outlet) -->
   <mat-sidenav-content [style.marginLeft.px]="widthSideBar">
-    <div class="row" style="z-index: 305;">
+      
+    <sbc-nav-container style="z-index: 305;">
       <div class="column1 navButton blockDisplay" style="z-index: 306;"
         (mouseenter)="showNavButton = true"
         (mouseleave)="showNavButton = false"
@@ -203,7 +214,11 @@
         </button>
 
       </div>
-      <div class="column2"><router-outlet></router-outlet></div>
-    </div>
+      
+        <div class="column2">
+        <router-outlet></router-outlet>
+     </div>
+
+      </sbc-nav-container>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,11 +1,9 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[sbcMenuPanel]'
 })
 export class MenuPanelDirective {
-
-
 
     constructor(private el: ElementRef) {
         el.nativeElement.style.position = 'relative';
@@ -13,8 +11,6 @@ export class MenuPanelDirective {
         el.nativeElement.style.top = '35px';
         el.nativeElement.style.maxWidth = 'none';
         el.nativeElement.style.minWidth = '300px';
-
      }
-
 
 }
