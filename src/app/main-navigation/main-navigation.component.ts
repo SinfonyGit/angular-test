@@ -17,15 +17,17 @@ export class MainNavigationComponent {
       map(result => result.matches)
     );
 
+  // Animacija Drawerja Modala
   overlayHistory = '';
 
-    overlayOpenHistory() {
-      this.overlayHistory = '1';
-    }
+  overlayOpenHistory() {
+    this.overlayHistory = '1';
+  }
 
-    overlayCloseHistory() {
-      this.overlayHistory = '0';
-    }
+  overlayCloseHistory() {
+    this.overlayHistory = '0';
+  }
+  // !Animacija Drawerja Konec
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 

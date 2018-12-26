@@ -18,7 +18,7 @@
         </sbc-main-nav-header-logo-icon>
 
         <sbc-main-nav-content>
-            <button (click)="drawer1.open()"
+          <button (click)="drawer1.open()"
             (click)="overlayOpenHistory()"
             mat-icon-button
             matTooltip="Zavihki in zgodovinaa"
@@ -30,6 +30,7 @@
 
         <sbc-main-nav-content>
           <button (click)="drawer2.toggle()"
+            (click)="overlayOpenHistory()"
             mat-icon-button
             matTooltip="Iskanje"
             matTooltipClass="tooltip"
@@ -171,6 +172,7 @@
   <sbc-drawer-container>
     <sbc-drawer-navigation>
       <button (click)="drawer2.close()"
+        (click)="overlayCloseHistory()"
         mat-icon-button >
         <fa-icon [icon]="['fas', 'arrow-left']" size="lg"></fa-icon>
       </button>

@@ -1,7 +1,6 @@
-import { navigationDrawerAnimation } from './../animations/navigationDrawerAnimation';
 import { navigationSlideAnimation } from '../animations/navigationSlideAnimation';
 
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,12 +10,11 @@ import { navigationOverlayAnimation } from '../animations/navigationOverlayAnima
 
 @Component({
   selector: 'app-navigation',
-  animations: [ navigationSlideAnimation, navigationDrawerAnimation, navigationOverlayAnimation
-  ],
+  animations: [ navigationSlideAnimation, navigationOverlayAnimation ],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit, OnChanges {
+export class NavigationComponent implements OnChanges {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -64,10 +62,6 @@ export class NavigationComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit() {
-
-  }
-
   ngOnChanges() {
     // Zatemnitev ekrana
     if (this.showOverlayHistory === '1') {
@@ -82,5 +76,4 @@ export class NavigationComponent implements OnInit, OnChanges {
   toggleDocumention() {
     this.dropDownMenuDocumentation = !this.dropDownMenuDocumentation;
   }
-
 }
