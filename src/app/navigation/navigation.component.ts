@@ -1,23 +1,27 @@
-import { Component } from '@angular/core';
+import { navigationDrawerAnimation } from './../animations/navigationDrawerAnimation';
+import { navigationSlideAnimation } from '../animations/navigationSlideAnimation';
+
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { navigationSlideAnimation } from '../animations/navigationSlideAnimation';
+import { navigationOverlayAnimation } from '../animations/navigationOverlayAnimation';
+
+
 
 @Component({
   selector: 'app-navigation',
-  animations: [ navigationSlideAnimation ],
+  animations: [ navigationSlideAnimation, navigationDrawerAnimation, navigationOverlayAnimation
+  ],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit, OnChanges {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
     );
-
-  isExpanded = false;
 
   // Pokaži oz skrije navogacijski button glede na lokacijo miške
   showNavButton = false;
@@ -38,11 +42,13 @@ export class NavigationComponent {
   dropDownMenuDocumentation = false;
   dropDownMenuTree = false;
 
-  isOpen = true;
-  constructor(private breakpointObserver: BreakpointObserver) {}
 
-  // Animacija Navigacija Menija
-  showSubMenuDocument = true;
+  // Zatemnjenost zaslona oz Kontenta ob pritistku na drawer Modal
+  // Podatek se dobi od Parent komponente preko Input metode
+  @Input() showOverlayHistory: string;
+  showOverlay = false;
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
   // Spreminjanje Sidebara
   widthSideBar = '241';
@@ -58,6 +64,21 @@ export class NavigationComponent {
     }
   }
 
+  ngOnInit() {
+
+  }
+
+  ngOnChanges() {
+    // Zatemnitev ekrana
+    if (this.showOverlayHistory === '1') {
+      this.showOverlay = true;
+      }
+    if (this.showOverlayHistory === '0') {
+        this.showOverlay = false;
+    }
+  }
+
+  // Alternative za prikaz podmenija
   toggleDocumention() {
     this.dropDownMenuDocumentation = !this.dropDownMenuDocumentation;
   }

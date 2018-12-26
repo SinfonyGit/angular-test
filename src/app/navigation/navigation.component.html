@@ -10,17 +10,17 @@
     (mouseenter)="showNavButton = true"
     (mouseleave)="showNavButton = false"
     >
-  
+
     <mat-toolbar *ngIf="!hideNavContent">
       <div class="toolbarBox">
         Navigacija
       </div>
     </mat-toolbar>
 
-    <!-- ANIMATION -->
+    <!-- ANIMATION SUBMENU -->
     <div [@openCloseAnimation]="dropDownMenuDocumentation ? 'openAnimation' : 'closeAnimation'"
         [@openCloseAnimation]="dropDownMenuTree ? 'openAnimation' : 'closeAnimation'">
-    <!-- !ANIMATION -->
+    <!-- !ANIMATION SUBMENU -->
 
     <mat-nav-list 
       style="margin: 16px;" 
@@ -187,9 +187,9 @@
       </a>
     </mat-nav-list>
 
-    <!-- ANIMATION -->
+    <!-- ANIMATION SUBMENU -->
     </div>
-    <!-- !ANIMATION -->
+    <!-- !ANIMATION SUBMENU -->
 
   </mat-sidenav>
 
@@ -216,7 +216,7 @@
 
       </div>
       
-        <div class="column2">
+        <div class="column2" [@showOverlay]="!showOverlay">
         <router-outlet></router-outlet>
      </div>
 

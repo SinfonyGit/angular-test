@@ -10,38 +10,6 @@ import {
   } from '@angular/animations';
 
 export const navigationSlideAnimation = trigger('openCloseAnimation', [
-  /* state('openAnimation', style({
-    width: 120,
-    transform: 'translateX(0)', opacity: 1
-  })),
-  state('closeAnimation', style({
-    width: 120,
-    transform: 'translateX(0)', opacity: 1
-  })),
-  transition('openAnimation => closeAnimation', [
-    style({ width: 10, transform: 'translateX(50px)', opacity: 0 }),
-    group([
-      animate('0.3s 0.1s ease', style({
-        transform: 'translateX(0)',
-        width: 120
-      })),
-      animate('0.3s ease', style({
-        opacity: 1
-      }))
-    ])
-  ]),
-  transition('closeAnimation => openAnimation', [
-    group([
-      animate('0.3s ease', style({
-        transform: 'translateX(50px)',
-        width: 100
-      })),
-      animate('0.3s 0.2s ease', style({
-        opacity: 0
-      }))
-    ])
-  ]), */
-
   // DOGODEK ON KLIKU NAZAJ NA MENI IZ PODMENIJA
   transition('openAnimation => closeAnimation', [
     style({ position: 'relative' }),

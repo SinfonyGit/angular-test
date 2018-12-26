@@ -1,12 +1,7 @@
-
-
-
-
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -22,10 +17,15 @@ export class MainNavigationComponent {
       map(result => result.matches)
     );
 
-    faStar = faStar;
+  overlayHistory = '';
 
+    overlayOpenHistory() {
+      this.overlayHistory = '1';
+    }
 
-    showFiller = false;
+    overlayCloseHistory() {
+      this.overlayHistory = '0';
+    }
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 

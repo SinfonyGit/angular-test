@@ -18,7 +18,8 @@
         </sbc-main-nav-header-logo-icon>
 
         <sbc-main-nav-content>
-            <button (click)="drawer1.toggle()"
+            <button (click)="drawer1.open()"
+            (click)="overlayOpenHistory()"
             mat-icon-button
             matTooltip="Zavihki in zgodovinaa"
             matTooltipPosition="right"
@@ -137,7 +138,7 @@
   <mat-sidenav-content>
 
     <!-- CONTENT OZ PRIKAZ KONTEKSTA -->
-    <app-navigation></app-navigation>
+    <app-navigation [showOverlayHistory]="overlayHistory"></app-navigation>
  
   </mat-sidenav-content>
 </mat-sidenav-container>
@@ -147,6 +148,7 @@
   <sbc-drawer-container>
     <sbc-drawer-navigation>
       <button (click)="drawer1.close()"
+      (click)="overlayCloseHistory()"
         mat-icon-button >
         <fa-icon [icon]="['fas', 'arrow-left']" size="lg"></fa-icon>
       </button>
