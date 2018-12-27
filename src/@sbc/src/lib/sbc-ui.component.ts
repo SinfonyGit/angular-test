@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sbc-sinfony-ui',
+  selector: 'sbc-sbc-ui',
   template: `
     <p>
-      sinfony-ui works!
+      sbc-ui works!
     </p>
   `,
   styles: []
 })
-export class SinfonyUiComponent implements OnInit {
+export class SbcUiComponent implements OnInit {
 
   constructor() { }
 

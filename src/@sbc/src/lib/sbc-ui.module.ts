@@ -4,14 +4,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import { SinfonyUiComponent } from './sinfony-ui.component';
+import { SbcUiComponent } from './sbc-ui.component';
 import { FormatCodeComponent } from './format-code/format-code.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { GlobalNavigationModule } from './navigation/global-navigation/global-navigation.module';
 
 @NgModule({
   declarations: [
-    SinfonyUiComponent,
+    SbcUiComponent,
     FormatCodeComponent,
     BreadcrumbComponent
   ],
@@ -22,11 +22,11 @@ import { GlobalNavigationModule } from './navigation/global-navigation/global-na
     MenuModule
   ],
   exports: [
-    SinfonyUiComponent,
+    SbcUiComponent,
     GlobalNavigationModule,
     MenuModule,
     FormatCodeComponent,
     BreadcrumbComponent
   ]
 })
-export class SinfonyUiModule { }
+export class SbcUiModule { }
