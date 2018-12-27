@@ -1,21 +1,17 @@
-import { navigationDrawerContentAnimation } from './../animations/navigationDrawerContentAnimation';
-import { navigationSlideAnimation } from '../animations/navigationSlideAnimation';
-
 import { Component, Input, OnChanges } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { navigationOverlayAnimation } from '../animations/navigationOverlayAnimation';
 import { navigationDrawerAnimation } from '../animations/navigationDrawerAnimation';
-import { navigationDrawerButtonAnimation } from '../animations/navigationDrawerButtonAnimation';
-
+import { navigationSlideAnimation } from '../animations/navigationSlideAnimation';
 
 
 @Component({
   selector: 'app-navigation',
   animations: [ navigationSlideAnimation,
                 navigationOverlayAnimation,
-                navigationDrawerAnimation],
+                navigationDrawerAnimation ],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })

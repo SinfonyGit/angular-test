@@ -32,9 +32,9 @@ export const navigationDrawerButtonAnimation = trigger('openCloseDrawerButtonAni
     // backgroundColor: 'green'
   })),
   transition( 'open => closed', [
-    animate('0.5s')
+    animate('1s')
   ]),
   transition('closed => open', [
-    animate('0.5s')
+    animate('1s')
   ])
 ]);

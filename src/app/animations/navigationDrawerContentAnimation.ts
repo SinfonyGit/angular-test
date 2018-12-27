@@ -8,24 +8,26 @@ import {
 
 export const navigationDrawerContentAnimation = trigger('openCloseDrawerContentAnimation', [
   state('open', style({
-    position: 'relative',
-    right: '0px',
-    width: '21px',
+    position: 'absolute',
+    left: 0,
+    // width: '21px',
+    // transform: 'translateX(0%)'
     // opacity: 1,
     // backgroundColor: 'yellow'
   })),
   state('closed', style({
-    position: 'relative',
-    right: '220px',
-    width: '21px',
+    position: 'absolute',
+    left: 0,
+    width: '200px',
+    // width: '21px',
+    // transform: 'translateX(-100%)'
     // opacity: 0.5,
     // backgroundColor: 'green'
   })),
   transition('open => closed', [
-    animate('0.5s')
+    animate('1s')
   ]),
   transition('closed => open', [
-    animate('0.5s')
+    animate('1s')
   ])
 ]);
-
