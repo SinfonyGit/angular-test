@@ -54,6 +54,9 @@ import { TestingUiComponent } from './testing-ui/testing-ui.component';
    providers: [],
    bootstrap: [
       AppComponent
-   ]
+   ],
+   entryComponents: [
+      SearchDialogNavigationComponent
+    ]
 })
 export class AppModule { }

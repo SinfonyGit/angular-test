@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { SearchDialogNavigationComponent } from './search-dialog-navigation/search-dialog-navigation.component';
+import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-main-navigation',
@@ -32,7 +33,14 @@ export class MainNavigationComponent {
   }
   // !Animacija Drawerja Konec
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver,
+              public dialog: MatDialog) {}
 
+  openDialog() {
+    const dialogRef = this.dialog.open(SearchDialogNavigationComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }

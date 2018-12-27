@@ -1,9 +1,11 @@
+import { SearchDialogNavigationComponent } from './../main-navigation/search-dialog-navigation/search-dialog-navigation.component';
 import { navigationAnimation, navigationAnimationBackup } from './customAnimation';
 import { SearchDialogComponent } from './../main-navigation/search-dialog/search-dialog.component';
 import { Component, OnInit } from '@angular/core';
 
 import {MatDialog} from '@angular/material';
 import { navigationDrawerAnimation } from '../animations/navigationDrawerAnimation';
+
 
 @Component({
   selector: 'app-items',
@@ -49,14 +51,11 @@ export class ItemsComponent implements OnInit {
     this.dialog.open(SearchDialogComponent);
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(SearchDialogComponent, {
-      width: '250px'
-    });
+  openDialog() {
+    const dialogRef = this.dialog.open(SearchDialogNavigationComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
+      console.log(`Dialog result: ${result}`);
     });
   }
 
