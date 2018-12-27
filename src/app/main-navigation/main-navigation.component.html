@@ -3,7 +3,10 @@
     #drawer
     class="sidenav main-nav-line"
     mode="side"
-    [opened]="!(isHandset$ | async)">
+    [opened]="!(isHandset$ | async)"
+    (mouseenter)="showNavButton = true"
+    (mouseleave)="showNavButton = false"
+    >
     <sbc-main-nav-container>
       <sbc-main-nav-header>
         <sbc-main-nav-header-logo-icon>
@@ -139,7 +142,10 @@
   <mat-sidenav-content>
 
     <!-- CONTENT OZ PRIKAZ KONTEKSTA -->
-    <app-navigation [showOverlayHistory]="overlayHistory"></app-navigation>
+    <app-navigation 
+    [showOverlayHistory]="overlayHistory"
+    [showNavButton]="showNavButton"
+    ></app-navigation>
  
   </mat-sidenav-content>
 </mat-sidenav-container>
@@ -182,5 +188,3 @@
     </sbc-drawer-content>
   </sbc-drawer-container>
 </mat-drawer>
-
-  

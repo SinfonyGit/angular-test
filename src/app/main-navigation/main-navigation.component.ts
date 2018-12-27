@@ -17,6 +17,9 @@ export class MainNavigationComponent {
       map(result => result.matches)
     );
 
+  // Pokaži/ skrij ikonco v child komponenti
+  showNavButton = false;
+
   // Animacija Drawerja Modala
   overlayHistory = '';
 

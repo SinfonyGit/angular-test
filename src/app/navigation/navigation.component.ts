@@ -21,8 +21,9 @@ export class NavigationComponent implements OnChanges {
       map(result => result.matches)
     );
 
+  // Pokaže oz Skrije navigacijski button iz parent komponente (Main Nav Component)
   // Pokaži oz skrije navogacijski button glede na lokacijo miške
-  showNavButton = false;
+  @Input() showNavButton = false;
 
   buttonMouseCheckEvent = false;
 
