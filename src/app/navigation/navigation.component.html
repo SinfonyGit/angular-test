@@ -199,7 +199,7 @@
     <sbc-nav-container style="z-index: 305;">
       <div sbcNavShowHidePanel style="z-index: 306;"
         (mouseenter)="showNavButton = true"
-        (mouseenter)="showNavButton = false"
+        (mouseleave)="showNavButton = false"
       >
         <button *ngIf="showNavButton"
           sbcNavShowHideButton style="z-index: 307;"
