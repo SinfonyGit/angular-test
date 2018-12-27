@@ -33,7 +33,7 @@ mat-sidenav-content{
 //Angular Material Tooltip
 .mat-list-item {
   //background-color: black;
-  color: blue;
+  color: whitesmoke;
   font-size: 14px;
 }
 //Navigacija, ko se z kurzorjem dotaknemo gumba
@@ -74,6 +74,7 @@ a:visited {
 a:hover {
   color: whitesmoke;
 }
+
 
 ::ng-deep mat-icon{
   color: currentcolor;

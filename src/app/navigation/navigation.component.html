@@ -57,7 +57,7 @@
           </span>
       </a>
 
-      <a mat-list-item sbcNavItem routerLink="tree"
+      <a mat-list-item sbcNavItem
         (mouseenter)="showIconTree = true"
         (mouseleave)="showIconTree = false"
         (click)="dropDownMenuTree = !dropDownMenuTree">
@@ -68,7 +68,7 @@
         <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg" fxFlex fxLayoutAlign="flex-end" *ngIf="showIconTree"></fa-icon>
       </a>
 
-      <a mat-list-item sbcNavItem routerLink="documentation"
+      <a mat-list-item sbcNavItem
         (mouseenter)="showIconDocumentation = true"
         (mouseleave)="showIconDocumentation = false"
         (click)="toggleDocumention()">
@@ -97,7 +97,7 @@
       style="margin: 16px;" 
       *ngIf="!hideNavContent && dropDownMenuDocumentation"
       >
-      <a mat-list-item sbcNavItem routerLink="documentation"
+      <a mat-list-item sbcNavItem
         (click)="toggleDocumention()"
         (click)="showIconDocumentation = false">
         <fa-icon [icon]="['fas', 'arrow-circle-left']" size="lg" [fixedWidth]="true"></fa-icon>
@@ -139,7 +139,7 @@
       *ngIf="!hideNavContent && dropDownMenuTree"
       >
       
-      <a mat-list-item sbcNavItem routerLink="documentation"
+      <a mat-list-item sbcNavItem
         (click)="dropDownMenuTree = !dropDownMenuTree"
         (click)="showIconTree = false">
         <fa-icon [icon]="['fas', 'arrow-circle-left']" size="lg" [fixedWidth]="true"></fa-icon>
