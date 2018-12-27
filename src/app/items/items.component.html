@@ -24,7 +24,10 @@
 <hr>
 <button mat-raised-button isRoundButton="true" color="accent" (click)="toggleAnimation()">prikaz animacije</button>
 <br>
+<button mat-raised-button isRoundButton="true" color="accent" (click)="toggleNew()">Toggle Open/Closed</button>
+<br>
 
+<div [@openCloseDrawerAnimation]="isOpenTwo ? 'open' : 'closed'" class="open-close-container">
 
 <div [@openCloseAnimation]="isAnimation ? 'openAnimation' : 'closeAnimation'" class="animacija">
   <div style="margin: 10px;">
@@ -45,6 +48,7 @@
       <p>Delamnje animacije</p>
       <p>Nastavitve</p>
     </div>
+</div>
 
   </div>
 </div>

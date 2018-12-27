@@ -9,6 +9,7 @@
     [opened]="!(isHandset$ | async)"
     (mouseenter)="showNavButton = true"
     (mouseleave)="showNavButton = false"
+    [@openCloseDrawerAnimation]="isOpenTwo ? 'open' : 'closed'"
     >
 
     <mat-toolbar *ngIf="!hideNavContent">
@@ -16,6 +17,8 @@
         Navigacija
       </div>
     </mat-toolbar>
+
+    
 
     <!-- ANIMATION SUBMENU -->
     <div [@openCloseAnimation]="dropDownMenuDocumentation ? 'openAnimation' : 'closeAnimation'"
@@ -191,6 +194,8 @@
     </div>
     <!-- !ANIMATION SUBMENU -->
 
+  
+
   </mat-sidenav>
 
   <!-- Container  za show&hide Navigacijo, hkrati je tudi Content(Router Outlet) -->
@@ -208,14 +213,16 @@
           aria-label="Toggle sidenav"
           (click)="toggleSideBar()"
           (click)="hideNavContent = !hideNavContent"
+          (click)="toggleNew()"
         >
           <fa-icon *ngIf="hideNavContent" [icon]="['fas', 'bars']" [fixedWidth]="true" style="position: relative; bottom: 7px;"></fa-icon>
           <fa-icon *ngIf="!hideNavContent" [icon]="['fas', 'angle-left']" [fixedWidth]="true" style="position: relative; bottom: 7px; right: 1px;"></fa-icon>
         </button>
 
       </div>
-      
-      <div class="router-content" [@showOverlay]="!showOverlay">
+      <!-- (click)="toggleSideBar()" -->
+      <div class="router-content" 
+        [@showOverlay]="!showOverlay">
         <router-outlet></router-outlet>
       </div>
 

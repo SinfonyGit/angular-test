@@ -3,16 +3,18 @@ import { SearchDialogComponent } from './../main-navigation/search-dialog/search
 import { Component, OnInit } from '@angular/core';
 
 import {MatDialog} from '@angular/material';
+import { navigationDrawerAnimation } from '../animations/navigationDrawerAnimation';
 
 @Component({
   selector: 'app-items',
-  animations: [ navigationAnimation, navigationAnimationBackup ],
+  animations: [ navigationAnimation, navigationAnimationBackup, navigationDrawerAnimation ],
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent implements OnInit {
 
   isOpen = true;
+  isOpenTwo = true;
 
   isAnimation = false;
 
@@ -33,6 +35,10 @@ export class ItemsComponent implements OnInit {
 
   toggle() {
     this.isOpen = !this.isOpen;
+  }
+
+  toggleNew() {
+    this.isOpenTwo = !this.isOpenTwo;
   }
 
   toggleAnimation() {

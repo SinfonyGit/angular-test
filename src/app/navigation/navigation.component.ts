@@ -1,3 +1,4 @@
+import { navigationDrawerContentAnimation } from './../animations/navigationDrawerContentAnimation';
 import { navigationSlideAnimation } from '../animations/navigationSlideAnimation';
 
 import { Component, Input, OnChanges } from '@angular/core';
@@ -5,12 +6,16 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { navigationOverlayAnimation } from '../animations/navigationOverlayAnimation';
+import { navigationDrawerAnimation } from '../animations/navigationDrawerAnimation';
+import { navigationDrawerButtonAnimation } from '../animations/navigationDrawerButtonAnimation';
 
 
 
 @Component({
   selector: 'app-navigation',
-  animations: [ navigationSlideAnimation, navigationOverlayAnimation ],
+  animations: [ navigationSlideAnimation,
+                navigationOverlayAnimation,
+                navigationDrawerAnimation],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
@@ -49,6 +54,8 @@ export class NavigationComponent implements OnChanges {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  isOpenTwo = true;
+
   // Spreminjanje Sidebara
   widthSideBar = '241';
   widthSideBarExpanded = '241';
@@ -77,4 +84,9 @@ export class NavigationComponent implements OnChanges {
   toggleDocumention() {
     this.dropDownMenuDocumentation = !this.dropDownMenuDocumentation;
   }
+
+  toggleNew() {
+    this.isOpenTwo = !this.isOpenTwo;
+  }
+
 }
