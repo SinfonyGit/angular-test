@@ -62,8 +62,25 @@
       </sbc-main-nav-header>
 
       <sbc-main-nav-footer>
+
+          <sbc-main-nav-footer-icon>
+              <button
+                mat-icon-button
+                [matMenuTriggerFor]="menuNotification"
+                [matMenuTriggerFor]="closeMenu"
+                isIconButton="true"
+                matTooltip="TESTIRANJE"
+                matTooltipPosition="right"
+                matTooltipClass="tooltip"
+              >
+              <fa-icon [icon]="['fas', 'cog']" size="lg"></fa-icon>
+              </button>
+            </sbc-main-nav-footer-icon>
+
+
         <sbc-main-nav-footer-icon>
           <button
+            (click)="closeIconMenu"
             mat-icon-button
             [matMenuTriggerFor]="menuNotification"
             isIconButton="true"
@@ -94,7 +111,7 @@
             matTooltipClass="tooltip"
             ><fa-icon [icon]="['fas', 'th']" size="lg"></fa-icon>
           </button>
-          <mat-menu #prehodAplikacij="matMenu">
+          <mat-menu #prehodAplikacij="matMenu" xPosition="after">
               <sbc-menu-title>Operacije</sbc-menu-title>
             <button sbcMenuItem>Množenje</button>
             <button sbcMenuItem>Delenje</button>

@@ -17,7 +17,7 @@ export const navigationDrawerAnimation = trigger('openCloseDrawerAnimation', [
     animate('0.2s')
   ]),
   transition('closed => open', [
-    animate('0.3s')
+    // animate('0.3s')
   ]),
 ]);
 

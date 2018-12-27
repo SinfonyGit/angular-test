@@ -21,6 +21,9 @@ export class MainNavigationComponent {
   // Pokaži/ skrij ikonco v child komponenti
   showNavButton = false;
 
+  // Zapri menu na ikonici
+  closeIconMenu = false;
+
   // Animacija Drawerja Modala
   overlayHistory = '';
 
@@ -33,9 +36,12 @@ export class MainNavigationComponent {
   }
   // !Animacija Drawerja Konec
 
+
+
   constructor(private breakpointObserver: BreakpointObserver,
               public dialog: MatDialog) {}
 
+  // DIALOG ZA ODPIRANJE DIALOGA NA TRETJI IKONI
   openDialog() {
     const dialogRef = this.dialog.open(SearchDialogNavigationComponent);
 
@@ -43,4 +49,6 @@ export class MainNavigationComponent {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+
 }

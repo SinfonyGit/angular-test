@@ -32,13 +32,19 @@ mat-sidenav-content{
   position: relative;
 }
 
-// Spreminjanje Pozicija material MENU
+/* // Spreminjanje Pozicija material MENU
 ::ng-deep .mat-menu-panel {
   position: relative;
   left: 50px;
   top: 35px;
   max-width: none!important;
   min-width: 300px!important;
+} */
+
+::ng-deep .cdk-overlay-pane {
+  position: absolute !important;
+  left: 50px;
+  bottom: -35px;
 }
 
 // Material MENU Pisava
