@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container>
   <mat-sidenav
     #sidenav
     class="sidenav main-nav-line"
@@ -197,29 +197,28 @@
   <mat-sidenav-content [style.marginLeft.px]="widthSideBar">
       
     <sbc-nav-container style="z-index: 305;">
-      <div class="column1 navButton blockDisplay" style="z-index: 306;"
+      <div sbcNavShowHidePanel style="z-index: 306;"
         (mouseenter)="showNavButton = true"
-        (mouseleave)="showNavButton = false"
+        (mouseenter)="showNavButton = false"
       >
-
         <button *ngIf="showNavButton"
-        class="button1 button2" style="z-index: 307;"
+          sbcNavShowHideButton style="z-index: 307;"
           mat-icon-button
           type="button"
           aria-label="Toggle sidenav"
           (click)="toggleSideBar()"
           (click)="hideNavContent = !hideNavContent"
         >
-        <mat-icon *ngIf="hideNavContent" style="position: relative; bottom: 7px;">menu</mat-icon>
-        <mat-icon *ngIf="!hideNavContent" style="position: relative; bottom: 7px;">keyboard_arrow_left</mat-icon>
+          <fa-icon *ngIf="hideNavContent" [icon]="['fas', 'bars']" [fixedWidth]="true" style="position: relative; bottom: 7px;"></fa-icon>
+          <fa-icon *ngIf="!hideNavContent" [icon]="['fas', 'angle-left']" [fixedWidth]="true" style="position: relative; bottom: 7px; right: 1px;"></fa-icon>
         </button>
 
       </div>
       
-        <div class="column2" [@showOverlay]="!showOverlay">
+      <div class="column2" [@showOverlay]="!showOverlay">
         <router-outlet></router-outlet>
-     </div>
+      </div>
 
-      </sbc-nav-container>
+    </sbc-nav-container>
   </mat-sidenav-content>
 </mat-sidenav-container>

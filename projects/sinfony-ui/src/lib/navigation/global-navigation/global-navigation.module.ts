@@ -1,3 +1,4 @@
+import { NavShowHideButtonDirective } from './navigation/nav-show-hide-button.directive';
 import { NavItemDirective } from './navigation/nav-item.directive';
 import { MainNavHeaderLogoIconComponent } from './main-nav-components/main-nav-header-logo-icon.component';
 import { MainNavFooterIconComponent } from './main-nav-components/main-nav-footer-icon.component';
@@ -17,6 +18,7 @@ import { NavItemTitleComponent } from './navigation/nav-item-title.component';
 import { NavContainerComponent } from './navigation/nav-container.component';
 import { NavContentComponent } from './navigation/nav-content.component';
 import { NavLineComponent } from './navigation/nav-line.component';
+import { NavShowHidePanelDirective } from './navigation/nav-show-hide-panel.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { NavLineComponent } from './navigation/nav-line.component';
     NavItemTitleComponent,
     NavContainerComponent,
     NavContentComponent,
-    NavLineComponent
+    NavLineComponent,
+    NavShowHidePanelDirective,
+    NavShowHideButtonDirective
   ],
   imports: [
     RouterModule,
@@ -55,7 +59,9 @@ import { NavLineComponent } from './navigation/nav-line.component';
     NavItemTitleComponent,
     NavContainerComponent,
     NavContentComponent,
-    NavLineComponent
+    NavLineComponent,
+    NavShowHidePanelDirective,
+    NavShowHideButtonDirective
   ]
 })
 export class GlobalNavigationModule { }
