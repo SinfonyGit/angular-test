@@ -62,22 +62,6 @@
       </sbc-main-nav-header>
 
       <sbc-main-nav-footer>
-
-          <sbc-main-nav-footer-icon>
-              <button
-                mat-icon-button
-                [matMenuTriggerFor]="menuNotification"
-                [matMenuTriggerFor]="closeMenu"
-                isIconButton="true"
-                matTooltip="TESTIRANJE"
-                matTooltipPosition="right"
-                matTooltipClass="tooltip"
-              >
-              <fa-icon [icon]="['fas', 'cog']" size="lg"></fa-icon>
-              </button>
-            </sbc-main-nav-footer-icon>
-
-
         <sbc-main-nav-footer-icon>
           <button
             (click)="closeIconMenu"
@@ -90,7 +74,7 @@
           >
           <fa-icon [icon]="['fas', 'bell']" size="lg"></fa-icon>
           </button>
-          <mat-menu #menuNotification="matMenu">
+          <mat-menu #menuNotification="matMenu" class="matMenu1">
               <sbc-menu-title>Današnja obvestila</sbc-menu-title>
               <button sbcMenuItem>Novice</button>
               <button sbcMenuItem>Email</button>
@@ -111,7 +95,7 @@
             matTooltipClass="tooltip"
             ><fa-icon [icon]="['fas', 'th']" size="lg"></fa-icon>
           </button>
-          <mat-menu #prehodAplikacij="matMenu" xPosition="after">
+          <mat-menu #prehodAplikacij="matMenu" class="matMenu2">
               <sbc-menu-title>Operacije</sbc-menu-title>
             <button sbcMenuItem>Množenje</button>
             <button sbcMenuItem>Delenje</button>
@@ -134,7 +118,7 @@
           >
           <fa-icon [icon]="['fas', 'question-circle']" size="lg"></fa-icon>
           </button>
-          <mat-menu #menu="matMenu">
+          <mat-menu #menu="matMenu" class="matMenu3">
               <sbc-menu-title>Dokumentacija</sbc-menu-title>
               <button sbcMenuItem>Pomoč pri Breadcrumbers</button>
               <button sbcMenuItem>Navigacija</button>

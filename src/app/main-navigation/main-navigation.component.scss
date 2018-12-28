@@ -32,20 +32,31 @@ mat-sidenav-content{
   position: relative;
 }
 
-/* // Spreminjanje Pozicija material MENU
-::ng-deep .mat-menu-panel {
-  position: relative;
-  left: 50px;
-  top: 35px;
-  max-width: none!important;
-  min-width: 300px!important;
-} */
-
-::ng-deep .cdk-overlay-pane {
+::ng-deep .cdk-overlay-pane-23 {
   position: absolute !important;
   left: 50px;
   bottom: -35px;
 }
+
+
+::ng-deep .cdk-overlay-pane .matMenu1 {
+  position: absolute !important;
+  left: 50px;
+  bottom: 140px;
+}
+
+::ng-deep .cdk-overlay-pane .matMenu2 {
+  position: absolute !important;
+  left: 50px;
+  bottom: 100px;
+}
+
+::ng-deep .cdk-overlay-pane .matMenu3 {
+  position: absolute !important;
+  left: 50px;
+  bottom: 60px;
+}
+
 
 // Material MENU Pisava
 ::ng-deep .mat-menu-item {
