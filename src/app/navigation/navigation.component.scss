@@ -1,3 +1,11 @@
+.transition {
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  animation: 0.7s;
+  -webkit-animation: 0.7s;
+  transition-timing-function: ease-in-out;
+}
+
 .sidenav-container {
   height: 100%;
 }
@@ -104,3 +112,4 @@ a:hover {
   margin-top: 20px;
   padding-left: 16px;
 }
+

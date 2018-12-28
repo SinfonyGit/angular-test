@@ -11,7 +11,7 @@ import { navigationSlideAnimation } from '../animations/navigationSlideAnimation
   selector: 'app-navigation',
   animations: [ navigationSlideAnimation,
                 navigationOverlayAnimation,
-                navigationDrawerAnimation ],
+                navigationDrawerAnimation],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
@@ -52,22 +52,26 @@ export class NavigationComponent implements OnChanges {
   drawerAnimation = true;
 
   // Spreminjanje Sidebara
+  // [style.width.px]="widthSideBar" JE ZAPISANO V obeh <mat-sidenav> TAggah
   widthSideBar = '241';
   widthSideBarExpanded = '241';
   widthSideBarCollapsed = '21';
 
+  // Animation TIME
+  widthSideBarAnimation = false;
+
   toggleSideBar() {
     if (this.widthSideBar === this.widthSideBarExpanded) {
       // Ob zapiranju navigacije | Open => Closed |
-      setTimeout(() => {
+  //    setTimeout(() => {
         this.widthSideBar = this.widthSideBarCollapsed;
         this.showNavButton = true;
-      }, 150);
+  //    }, 150);
     } else {
       // Ob odpiranju navigacije | Closed => Open |
-      setTimeout(() => {
+  //    setTimeout(() => {
         this.widthSideBar = this.widthSideBarExpanded;
-      }, 50);
+  //    }, 50);
 
     }
   }
@@ -98,14 +102,18 @@ export class NavigationComponent implements OnChanges {
     if (this.hideNavContent === false) {
       setTimeout(() => {
       this.hideNavContent = true;
-    }, 350);
+    }, 500);
     } else {
       // Ob odpiranju navigacije | Closed => Open |
       setTimeout(() => {
         this.hideNavContent = false;
-      }, 90);
+      }, 200);
     }
-
   }
+
+    // Animation TIME
+    toggleWidthSideBarAnimation() {
+      this.widthSideBarAnimation = true;
+    }
 
 }

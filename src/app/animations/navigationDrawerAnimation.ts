@@ -14,11 +14,11 @@ export const navigationDrawerAnimation = trigger('openCloseDrawerAnimation', [
     width: '21px'
   })),
   transition('open => closed', [
-    animate('0.4s')
+    animate('0.7s ease-in-out')
   ]),
   transition('closed => open', [
     // animate('0.4s 0.2s')  Prva pove čas animacije, drugi parameter pove čas PREDEN se začne animacija oz Delay
-    animate('0.4s')
+    animate('0.7s ease-in-out')
   ]),
 ]);
 
