@@ -48,6 +48,12 @@ mat-sidenav-content{
   background-color: #05367F;
 }
 
+// Aktivno polje ko uporabnik ostane na enakem linku
+.active{
+  border-radius: 8px;
+  background-color: #05367F;
+}
+
 
 .main-nav-line {
   border-style: none solid none none;

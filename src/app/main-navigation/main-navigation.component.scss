@@ -32,25 +32,30 @@ mat-sidenav-content{
   position: relative;
 }
 
-::ng-deep .cdk-overlay-pane-23 {
+// NE BRIŠI
+// Globalna spremeljivka ki spremeni celoten CDK Overlay Panel
+// Ni za uporabo, saj mi spremeni vse kot npr. modalna okna, menije, tabele....
+/* ::ng-deep .cdk-overlay-pane {
   position: absolute !important;
   left: 50px;
   bottom: -35px;
-}
+} */
 
+// Posamezna styling okna za Mat-menu
 
+// Mat menu "Obvestila"
 ::ng-deep .cdk-overlay-pane .matMenu1 {
   position: absolute !important;
   left: 50px;
   bottom: 140px;
 }
-
+// Mat menu "Prehod med aplikacijami"
 ::ng-deep .cdk-overlay-pane .matMenu2 {
   position: absolute !important;
   left: 50px;
   bottom: 100px;
 }
-
+// Mat menu "Pomoč in podpora"
 ::ng-deep .cdk-overlay-pane .matMenu3 {
   position: absolute !important;
   left: 50px;
