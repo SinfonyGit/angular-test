@@ -1,3 +1,4 @@
+import { FunctionsModule } from './functions/functions.module';
 import { MenuModule } from './menu/menu.module';
 
 import { NgModule } from '@angular/core';
@@ -19,14 +20,16 @@ import { GlobalNavigationModule } from './navigation/global-navigation/global-na
     RouterModule,
     BrowserModule,
     GlobalNavigationModule,
-    MenuModule
+    MenuModule,
+    FunctionsModule
   ],
   exports: [
     SbcUiComponent,
     GlobalNavigationModule,
     MenuModule,
     FormatCodeComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    FunctionsModule
   ]
 })
 export class SbcUiModule { }

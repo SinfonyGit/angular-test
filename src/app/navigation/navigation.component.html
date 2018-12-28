@@ -9,11 +9,11 @@
     [opened]="!(isHandset$ | async)"
     (mouseenter)="showNavButton = true"
     (mouseleave)="showNavButton = false"
-    [@openCloseDrawerAnimation]="isOpenTwo ? 'open' : 'closed'"
+    [@openCloseDrawerAnimation]="drawerAnimation ? 'open' : 'closed'"
     >
 
     <mat-toolbar *ngIf="!hideNavContent">
-      <div class="toolbarBox">
+      <div sbcClipper class="toolbarBox">
         Navigacija
       </div>
     </mat-toolbar>
@@ -25,7 +25,8 @@
         [@openCloseAnimation]="dropDownMenuTree ? 'openAnimation' : 'closeAnimation'">
     <!-- !ANIMATION SUBMENU -->
 
-    <mat-nav-list 
+    <mat-nav-list
+      sbcClipper
       style="margin: 16px;" 
       *ngIf="!hideNavContent && !dropDownMenuDocumentation && !dropDownMenuTree"
       >
@@ -73,8 +74,8 @@
         (mouseleave)="showIconDocumentation = false"
         (click)="toggleDocumention()">
         <fa-icon [icon]="['fas', 'file-alt']" size="lg" [fixedWidth]="true"></fa-icon>
-          <span fxFlexOffset="15px">
-            Dokumentacija
+          <span fxFlexOffset="15px" sbcClipper>
+            Dokumentacija Dokumentacija
           </span>
         <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg" fxFlex fxLayoutAlign="flex-end" *ngIf="showIconDocumentation"></fa-icon>
       </a>
@@ -85,15 +86,15 @@
         <fa-icon [icon]="['fas', 'cog']" size="lg" [fixedWidth]="true" 
         [spin]="isSyncAnimated" 
         ></fa-icon>
-          <span fxFlexOffset="15px">
+          <p fxFlexOffset="15px">
             Testing UI Testing UI
-          </span>
+          </p>
       </a>
     </mat-nav-list>
 
     <!-- PodMeni komponente Dokumentacija -->
   
-    <mat-nav-list 
+    <mat-nav-list sbcClipper
       style="margin: 16px;" 
       *ngIf="!hideNavContent && dropDownMenuDocumentation"
       >
@@ -134,7 +135,7 @@
     </mat-nav-list>
 
     <!-- PodMeni komponente Tree -->
-    <mat-nav-list 
+    <mat-nav-list sbcClipper
       style="margin: 16px;" 
       *ngIf="!hideNavContent && dropDownMenuTree"
       >
@@ -212,14 +213,15 @@
           type="button"
           aria-label="Toggle sidenav"
           (click)="toggleSideBar()"
-          (click)="hideNavContent = !hideNavContent"
-          (click)="toggleNew()"
+          (click)="toggleHideNavContent()"
+          (click)="toggleDrawerAnimation()"
         >
           <fa-icon *ngIf="hideNavContent" [icon]="['fas', 'bars']" [fixedWidth]="true" style="position: relative; bottom: 7px;"></fa-icon>
           <fa-icon *ngIf="!hideNavContent" [icon]="['fas', 'angle-left']" [fixedWidth]="true" style="position: relative; bottom: 7px; right: 1px;"></fa-icon>
         </button>
 
       </div>
+      <!-- (click)="hideNavContent = !hideNavContent" -->
       <!-- (click)="toggleSideBar()" -->
       <div class="router-content"
         [@showOverlay]="!showOverlay">

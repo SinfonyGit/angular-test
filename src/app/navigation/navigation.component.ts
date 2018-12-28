@@ -17,6 +17,8 @@ import { navigationSlideAnimation } from '../animations/navigationSlideAnimation
 })
 export class NavigationComponent implements OnChanges {
 
+  constructor(private breakpointObserver: BreakpointObserver) {}
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
@@ -26,8 +28,6 @@ export class NavigationComponent implements OnChanges {
   // Pokaži oz skrije navogacijski button glede na lokacijo miške
   @Input() showNavButton = false;
 
-  buttonMouseCheckEvent = false;
-
   // Pokaži oz skrij Ikone v navigacijskem meniju
   showIconTree = false;
   showIconDocumentation = false;
@@ -35,7 +35,7 @@ export class NavigationComponent implements OnChanges {
   // Animacija Ikonice v navigacijskem meniju Testing
   isSyncAnimated = false;
 
-  // Pokaži oz skrij navigacijski izbor predmeta
+  // Pokaži oz skrij navigacijski izbor predmeta (po domače, pokaži skrij besedilo npr. Documentation, Dashboard, items)
   hideNavContent = false;
 
   // DropDown animacija in pokazatelj ob kliku na documentation
@@ -48,9 +48,8 @@ export class NavigationComponent implements OnChanges {
   @Input() showOverlayHistory: string;
   showOverlay = false;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-
-  isOpenTwo = true;
+  // Animacija za prikaz navigacijskega SideBara Open/Close
+  drawerAnimation = true;
 
   // Spreminjanje Sidebara
   widthSideBar = '241';
@@ -59,14 +58,16 @@ export class NavigationComponent implements OnChanges {
 
   toggleSideBar() {
     if (this.widthSideBar === this.widthSideBarExpanded) {
+      // Ob zapiranju navigacije | Open => Closed |
       setTimeout(() => {
         this.widthSideBar = this.widthSideBarCollapsed;
-      this.showNavButton = true;
-      }, 50);
+        this.showNavButton = true;
+      }, 150);
     } else {
+      // Ob odpiranju navigacije | Closed => Open |
       setTimeout(() => {
         this.widthSideBar = this.widthSideBarExpanded;
-      }, 0);
+      }, 50);
 
     }
   }
@@ -86,8 +87,25 @@ export class NavigationComponent implements OnChanges {
     this.dropDownMenuDocumentation = !this.dropDownMenuDocumentation;
   }
 
-  toggleNew() {
-    this.isOpenTwo = !this.isOpenTwo;
+  // Animacija za prikaz navigacijskega SideBara Open/Close
+  toggleDrawerAnimation() {
+    this.drawerAnimation = !this.drawerAnimation;
+  }
+
+  // Toggler za prikaz in skritje besedila ob zapiranju in odpiranju NavBara
+  toggleHideNavContent() {
+    // Ob zapiranju navigacije | Open => Closed |
+    if (this.hideNavContent === false) {
+      setTimeout(() => {
+      this.hideNavContent = true;
+    }, 350);
+    } else {
+      // Ob odpiranju navigacije | Closed => Open |
+      setTimeout(() => {
+        this.hideNavContent = false;
+      }, 90);
+    }
+
   }
 
 }

@@ -3,7 +3,7 @@ import {
     state,
     style,
     animate,
-    transition,
+    transition
   } from '@angular/animations';
 
 export const navigationDrawerAnimation = trigger('openCloseDrawerAnimation', [
@@ -14,10 +14,11 @@ export const navigationDrawerAnimation = trigger('openCloseDrawerAnimation', [
     width: '21px'
   })),
   transition('open => closed', [
-    animate('0.2s')
+    animate('0.4s')
   ]),
   transition('closed => open', [
-    // animate('0.1s')
+    // animate('0.4s 0.2s')  Prva pove čas animacije, drugi parameter pove čas PREDEN se začne animacija oz Delay
+    animate('0.4s')
   ]),
 ]);
 
