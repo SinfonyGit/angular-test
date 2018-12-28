@@ -59,10 +59,15 @@ export class NavigationComponent implements OnChanges {
 
   toggleSideBar() {
     if (this.widthSideBar === this.widthSideBarExpanded) {
-      this.widthSideBar = this.widthSideBarCollapsed;
+      setTimeout(() => {
+        this.widthSideBar = this.widthSideBarCollapsed;
       this.showNavButton = true;
+      }, 50);
     } else {
-      this.widthSideBar = this.widthSideBarExpanded;
+      setTimeout(() => {
+        this.widthSideBar = this.widthSideBarExpanded;
+      }, 0);
+
     }
   }
 
