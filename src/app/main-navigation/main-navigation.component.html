@@ -1,6 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
-    #drawer
     disableClose
     class="sidenav main-nav-line"
     mode="side"
@@ -153,7 +152,7 @@
 </mat-sidenav-container>
 
 <!-- DRUGA NAVIGACIJSKA TIPKA ZAVIHKI IN ZGODOVINA -- DRAWER -->
-<mat-drawer #drawer1 sbcDrawer mode="push" hasBackdrop="true">
+<mat-drawer #drawer1 sbcDrawer mode="push">
   <sbc-drawer-container>
     <sbc-drawer-navigation>
       <button (click)="drawer1.close()"
@@ -176,7 +175,7 @@
 </mat-drawer>
 
 <!-- TRETJA NAVIGACIJSKA TIPKA ISKANJE -- DRAWER -->
-<mat-drawer #drawer2 sbcDrawer mode="push" hasBackdrop="true">
+<mat-drawer #drawer2 sbcDrawer mode="push">
   <sbc-drawer-container>
     <sbc-drawer-navigation>
       <button (click)="drawer2.close()"

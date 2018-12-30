@@ -1,5 +1,5 @@
 import { SearchDialogNavigationComponent } from './search-dialog-navigation/search-dialog-navigation.component';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -34,10 +34,20 @@ export class MainNavigationComponent {
   overlayCloseHistory() {
     this.overlayHistory = '0';
   }
+
   // !Animacija Drawerja Konec
 
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.keyCode === KEY_CODE.ESC) {
+      this.overlayHistory = '0';
+    }
+  }
 
-
+  /* @HostListener('keydown') onKeyDown() {
+    this.overlayHistory = '0';
+  }
+ */
   constructor(private breakpointObserver: BreakpointObserver,
               public dialog: MatDialog) {}
 
@@ -51,4 +61,12 @@ export class MainNavigationComponent {
   }
 
 
+}
+
+export enum KEY_CODE {
+  UP_ARROW = 38,
+  DOWN_ARROW = 40,
+  RIGHT_ARROW = 39,
+  LEFT_ARROW = 37,
+  ESC = 27
 }
