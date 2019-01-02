@@ -1,9 +1,10 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[sbcDrawerTriggerFor]'
 })
 export class DrawerTriggerForDirective {
+
   constructor(private el: ElementRef) {
     el.nativeElement.style.webkitBoxAlign = 'center';
     el.nativeElement.style.alignItems = 'center';
