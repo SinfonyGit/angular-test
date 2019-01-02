@@ -1,1 +1,13 @@
+.container {
+    display: flex;
+}
+
+.global-navigation {
+    // position: fixed;
+    width: 64px;
+}
+
+.navigation {
+    flex-grow: 1;
+}
 

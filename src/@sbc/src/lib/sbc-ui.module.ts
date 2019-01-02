@@ -1,3 +1,4 @@
+import { MainNavigationModule } from './main-navigation/main-navigation.module';
 import { FunctionsModule } from './functions/functions.module';
 import { MenuModule } from './menu/menu.module';
 
@@ -21,7 +22,8 @@ import { GlobalNavigationModule } from './navigation/global-navigation/global-na
     BrowserModule,
     GlobalNavigationModule,
     MenuModule,
-    FunctionsModule
+    FunctionsModule,
+    MainNavigationModule
   ],
   exports: [
     SbcUiComponent,
@@ -29,7 +31,8 @@ import { GlobalNavigationModule } from './navigation/global-navigation/global-na
     MenuModule,
     FormatCodeComponent,
     BreadcrumbComponent,
-    FunctionsModule
+    FunctionsModule,
+    MainNavigationModule
   ]
 })
 export class SbcUiModule { }

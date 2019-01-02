@@ -1,0 +1,97 @@
+
+<!-- <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      disableClose
+      class="sidenav main-nav-line"
+      mode="side"
+      [opened]="!(isHandset$ | async)"
+      (mouseenter)="showNavButton = true"
+      (mouseleave)="showNavButton = false"
+      >
+
+    <div class="global-nav-container"> 
+
+        <ng-content></ng-content>
+      </div>
+
+
+ </mat-sidenav>
+      
+
+  <mat-sidenav-content>
+
+      
+   
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+
+
+
+  <mat-sidenav
+      disableClose
+      class="sidenav main-nav-line"
+      mode="side"
+      [opened]="!(isHandset$ | async)"
+      (mouseenter)="showNavButton = true"
+      (mouseleave)="showNavButton = false"
+      >
+
+
+
+        <ng-content></ng-content>
+
+
+
+</mat-sidenav>
+
+
+
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    disableClose
+    class="sidenav main-nav-line"
+    mode="side"
+    [opened]="!(isHandset$ | async)"
+    (mouseenter)="showNavButton = true"
+    (mouseleave)="showNavButton = false">
+    
+    <div class="global-nav-container">
+        <ng-content></ng-content>
+      </div>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+      
+    <app-navigation 
+      [showOverlayHistory]="overlayHistory"
+      [showNavButton]="showNavButton">
+    </app-navigation>
+
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    disableClose
+    class="sidenav main-nav-line"
+    mode="side"
+    [opened]="!(isHandset$ | async)"
+    (mouseenter)="showNavButton = true"
+    (mouseleave)="showNavButton = false">
+    
+      <sbc-main-nav-container>
+        TUKAJ NOT GREDO IKONCE IN NASLEDNJI KLASI
+        <ng-content></ng-content>
+      </sbc-main-nav-container>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+      
+    <app-navigation 
+      [showOverlayHistory]="overlayHistory"
+      [showNavButton]="showNavButton">
+    </app-navigation>
+
+  </mat-sidenav-content>
+</mat-sidenav-container> -->

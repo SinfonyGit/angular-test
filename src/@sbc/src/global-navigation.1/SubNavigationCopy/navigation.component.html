@@ -1,0 +1,84 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenav
+    disableClose
+    class="sidenav main-nav-line"
+    fixedInViewport="true"
+    [style.width.px]="widthSideBar"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+    (mouseenter)="showNavButton = true"
+    (mouseleave)="showNavButton = false"
+    [@openCloseDrawerAnimation]="drawerAnimation ? 'open' : 'closed'"
+    >
+
+    <mat-toolbar *ngIf="!hideNavContent">
+      <div sbcClipper class="toolbarBox">
+        Navigacija
+      </div>
+    </mat-toolbar>
+
+    
+
+    <!-- ANIMATION SUBMENU -->
+    <div [@openCloseAnimation]="dropDownMenuDocumentation ? 'openAnimation' : 'closeAnimation'"
+        [@openCloseAnimation]="dropDownMenuTree ? 'openAnimation' : 'closeAnimation'">
+    <!-- !ANIMATION SUBMENU -->
+
+    <mat-nav-list
+      sbcClipper
+      style="margin: 16px;" 
+      *ngIf="!hideNavContent && !dropDownMenuDocumentation && !dropDownMenuTree"
+      >
+      <a mat-list-item sbcNavItem routerLink="">
+        <fa-icon [icon]="['fas', 'coffee']" size="lg" [fixedWidth]="true"></fa-icon>
+        <span fxFlexOffset="15px">
+            DashBoard
+        </span>
+      </a>
+      </mat-nav-list>
+
+   
+
+    <!-- ANIMATION SUBMENU -->
+    </div>
+    <!-- !ANIMATION SUBMENU -->
+
+  
+
+  </mat-sidenav>
+
+  <!-- Container  za show&hide Navigacijo, hkrati je tudi Content(Router Outlet) -->
+  <mat-sidenav-content [style.marginLeft.px]="widthSideBar" [ngClass]="{'transition': widthSideBarAnimation}">
+      
+    <sbc-nav-containers style="z-index: 305;">
+      <div sbcNavShowHidePanel style="z-index: 306;"
+        (mouseenter)="showNavButton = true"
+        (mouseleave)="showNavButton = false"
+      >
+        <button *ngIf="showNavButton"
+          sbcNavShowHideButton style="z-index: 307;"
+          mat-icon-button
+          type="button"
+          aria-label="Toggle sidenav"
+          (click)="toggleSideBar()"
+          (click)="toggleHideNavContent()"
+          (click)="toggleDrawerAnimation()"
+          (click)="toggleWidthSideBarAnimation()"
+        >
+          <fa-icon *ngIf="hideNavContent" [icon]="['fas', 'bars']" [fixedWidth]="true" style="position: relative; bottom: 7px;"></fa-icon>
+          <fa-icon *ngIf="!hideNavContent" [icon]="['fas', 'angle-left']" [fixedWidth]="true" style="position: relative; bottom: 7px; right: 1px;"></fa-icon>
+        </button>
+
+      </div>
+      <!-- (click)="hideNavContent = !hideNavContent" -->
+      <!-- (click)="toggleSideBar()" -->
+      <div class="router-content"
+        [@showOverlay]="!showOverlay">
+        <router-outlet></router-outlet>
+      </div>
+
+    </sbc-nav-containers>
+  </mat-sidenav-content>
+</mat-sidenav-container>

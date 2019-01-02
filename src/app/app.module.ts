@@ -1,4 +1,6 @@
 import { SbcUiModule } from '../@sbc/src/lib/sbc-ui.module';
+
+import { SbcModule } from '../@sbc/src/sbc.module';
 import { FontAwesomeIconsModule } from './font-awesome-icons.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -23,6 +25,8 @@ import { SearchDialogNavigationComponent } from './main-navigation/search-dialog
 import { SearchDialogComponent } from './main-navigation/search-dialog/search-dialog.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { TestingUiComponent } from './testing-ui/testing-ui.component';
+import { NavigationTestComponent } from './navigation-test/navigation-test.component';
+import { MainNavigationBlockComponent } from './main-navigation-block/main-navigation-block.component';
 
 
 @NgModule({
@@ -38,7 +42,9 @@ import { TestingUiComponent } from './testing-ui/testing-ui.component';
       SearchDialogComponent,
       SearchDialogNavigationComponent,
       DocumentationComponent,
-      TestingUiComponent
+      TestingUiComponent,
+      NavigationTestComponent,
+      MainNavigationBlockComponent
    ],
    imports: [
       BrowserModule,
@@ -49,7 +55,8 @@ import { TestingUiComponent } from './testing-ui/testing-ui.component';
       MaterialModule,
       ReactiveFormsModule,
       LayoutModule,
-      SbcUiModule
+      SbcUiModule,
+      SbcModule
    ],
    providers: [],
    bootstrap: [
@@ -57,6 +64,6 @@ import { TestingUiComponent } from './testing-ui/testing-ui.component';
    ],
    entryComponents: [
       SearchDialogNavigationComponent
-    ]
+   ]
 })
 export class AppModule { }

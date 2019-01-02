@@ -1,0 +1,80 @@
+<!-- <div class="breadcrumbsContainer breadcrumbsContainerBasic">
+  <div *ngFor="let item of items">
+    <div class="breadcrumbsItemElement">
+      <a
+        routerLink="{{ item.link }}"
+        class="breadcrumbsButtonElement breadcrumbIcon"
+        ><i class="{{ item.icon }}">&nbsp;</i> {{ item.name }}
+      </a>
+      <div class="breadcrumbsSeparator">{{ item.separator }}</div>
+    </div>
+  </div>
+</div> -->
+
+<div class="mat-sidenav-container-test">
+  <div class="mat-sidenav-test">
+
+    <div class="global-nav-container hrefLinks"> 
+
+        <ng-content></ng-content>
+
+    </div>
+
+  </div>
+
+  <div class="mat-sidenav-content-test">
+
+    <!-- <app-navigation> -->
+  </div>
+
+</div>
+
+
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    disableClose
+    class="sidenav main-nav-line"
+    mode="side"
+    [opened]="!(isHandset$ | async)"
+    (mouseenter)="showNavButton = true"
+    (mouseleave)="showNavButton = false">
+    
+    <div class="global-nav-container">
+        <ng-content></ng-content>
+      </div>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+      
+    <app-navigation 
+      [showOverlayHistory]="overlayHistory"
+      [showNavButton]="showNavButton">
+    </app-navigation>
+
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    disableClose
+    class="sidenav main-nav-line"
+    mode="side"
+    [opened]="!(isHandset$ | async)"
+    (mouseenter)="showNavButton = true"
+    (mouseleave)="showNavButton = false">
+    
+      <sbc-main-nav-container>
+        TUKAJ NOT GREDO IKONCE IN NASLEDNJI KLASI
+        <ng-content></ng-content>
+      </sbc-main-nav-container>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+      
+    <app-navigation 
+      [showOverlayHistory]="overlayHistory"
+      [showNavButton]="showNavButton">
+    </app-navigation>
+
+  </mat-sidenav-content>
+</mat-sidenav-container> -->

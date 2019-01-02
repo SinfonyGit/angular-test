@@ -10,13 +10,13 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { TestingUiComponent } from './testing-ui/testing-ui.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent, data: {animation: 'HomePage'}},
+  { path: '', component: DashboardComponent },
   { path: 'items', component: ItemsComponent },
   { path: 'forms', component: AddressFormComponent },
   { path: 'datatable', component: DatatableComponent },
   { path: 'tree', component: TreeComponent },
   { path: 'mainNav', component: MainNavigationComponent },
-  { path: 'documentation', component: DocumentationComponent, data: {animation: 'AboutPage'} },
+  { path: 'documentation', component: DocumentationComponent },
   { path: 'testing-ui', component: TestingUiComponent }
 ];
 

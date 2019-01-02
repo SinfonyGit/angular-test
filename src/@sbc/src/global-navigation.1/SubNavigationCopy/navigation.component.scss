@@ -1,0 +1,114 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 241px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-drawer.mat-drawer-end[ng-reflect-opened=false]{
+  left: 35px !important;
+  visibility: visible !important;
+}
+
+mat-sidenav {
+  background-color: #0747A6;
+  z-index: 200;
+}
+
+mat-sidenav-content{
+  z-index: 300;
+}
+
+//Angular Material Tooltip
+.mat-list-item {
+  //background-color: black;
+  color: whitesmoke;
+  font-size: 14px;
+}
+//Navigacija, ko se z kurzorjem dotaknemo gumba
+.mat-list-item:hover{
+  border-radius: 8px;
+  background-color: #1C63CE;
+}
+
+//Navigacijska izbira na meniju
+.mat-list-item:focus{
+  border-radius: 8px;
+  background-color: #05367F;
+}
+
+// Aktivno polje ko uporabnik ostane na enakem linku
+.active{
+  border-radius: 8px;
+  background-color: #05367F;
+}
+
+
+.main-nav-line {
+  border-style: none solid none none;
+    border-width: 3px;
+}
+
+
+mat-toolbar {
+  color: whitesmoke;
+}
+
+a {
+  color: whitesmoke;
+}
+
+a:link {
+  color: whitesmoke;
+}
+
+a:visited {
+  color: whitesmoke;
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+
+::ng-deep mat-icon{
+  color: currentcolor;
+  display: inline-block;
+  fill: rgb(255, 255, 255);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.row{
+  display: flex;
+}
+
+.router-content {
+  // margin-top: 24px;
+  flex: 1 1 0%;
+  overflow: auto;
+}
+
+.toolbarBox {
+  margin-top: 20px;
+  padding-left: 16px;
+}
+
+.transition {
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  animation: 0.7s;
+  -webkit-animation: 0.7s;
+  transition-timing-function: ease-in-out;
+}

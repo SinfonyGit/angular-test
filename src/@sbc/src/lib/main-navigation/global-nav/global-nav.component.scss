@@ -1,0 +1,133 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  // Barva Ikonic
+  .hrefLinks a {
+    color: #0747A6;
+  }
+
+  p {
+    color: green;
+    text-align: center;
+  }
+  
+  //Angular Material Tooltip
+  ::ng-deep .tooltip {
+    background-color: black;
+    color: blue;
+    font-size: 14px;
+  }
+  
+  // Main-nav Linija med main in Side navigation
+  .main-nav-line {
+    border-style: none solid none none;
+      border-width: 2px;
+  }
+  // BArva črte med mainNav in Nav
+  mat-sidenav {
+    background-color: #0747A6;
+    z-index: 20;
+    position: absolute;
+  }
+  
+  mat-sidenav-content{
+    z-index: 50;
+    position: relative;
+  }
+  
+  // NE BRIŠI
+  // Globalna spremeljivka ki spremeni celoten CDK Overlay Panel
+  // Ni za uporabo, saj mi spremeni vse kot npr. modalna okna, menije, tabele....
+  /* ::ng-deep .cdk-overlay-pane {
+    position: absolute !important;
+    left: 50px;
+    bottom: -35px;
+  } */
+  
+  // Posamezna styling okna za Mat-menu
+  
+  // Mat menu "Obvestila"
+  ::ng-deep .cdk-overlay-pane .matMenu1 {
+    position: absolute !important;
+    left: 50px;
+    bottom: 140px;
+  }
+  // Mat menu "Prehod med aplikacijami"
+  ::ng-deep .cdk-overlay-pane .matMenu2 {
+    position: absolute !important;
+    left: 50px;
+    bottom: 100px;
+  }
+  // Mat menu "Pomoč in podpora"
+  ::ng-deep .cdk-overlay-pane .matMenu3 {
+    position: absolute !important;
+    left: 50px;
+    bottom: 60px;
+  }
+  
+  
+  // Material MENU Pisava
+  ::ng-deep .mat-menu-item {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.42857142857143;
+  }
+  
+  
+  
+  // NOVO NA NOVO MAT-SIDENAV-CONTAINER
+  
+
+.mat-sidenav-container-test {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    // -webkit-overflow-scrolling: touch;
+    display: block;
+    overflow: hidden;
+    height: 100%;
+}
+
+// NOVO NA NOVO MAT-SIDENAV
+.mat-sidenav-test {
+    transform: none;
+    visibility: visible;
+
+    border-style: none solid none none;
+    border-width: 2px;
+
+    background-color: #0747A6;
+    z-index: 20;
+    position: absolute;
+
+    display: block;
+    top: 0;
+    bottom: 0;
+    outline: 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    border-right: solid 1px rgba(0,0,0,.12);
+}
+
+.global-nav-container {
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100vh;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  width: 64px;
+  background-color: rgb(7, 71, 166);
+  color: rgb(255, 255, 255);
+  fill: rgb(7, 71, 166);
+  transition: background-color 0.3s cubic-bezier(0.2, 0, 0, 1) 0s, color 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+}

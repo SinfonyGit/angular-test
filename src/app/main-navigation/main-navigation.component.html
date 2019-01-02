@@ -1,27 +1,29 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
+    <mat-sidenav
     disableClose
     class="sidenav main-nav-line"
     mode="side"
     [opened]="!(isHandset$ | async)"
-    (mouseenter)="showNavButton = true"
-    (mouseleave)="showNavButton = false"
+    sbcMatSideNav
     >
-    <sbc-main-nav-container>
-      <sbc-main-nav-header>
-        <sbc-main-nav-header-logo-icon>
-          <a
+    <sbc-global-nav>
+
+      <sbc-global-nav-header>
+        
+          <a sbcGlobalNavLogo
             mat-list-item
             routerLink=""
             matTooltip="Začetna stran"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
             ><fa-icon [icon]="['fab', 'accusoft']" size="2x"></fa-icon>
-        </a>
-        </sbc-main-nav-header-logo-icon>
+          </a><span sbcGlobalNavLogoSpacer></span>
+       
 
-        <sbc-main-nav-content>
-          <button (click)="drawer1.open()"
+        
+          <button 
+            sbcGlobalNavPrimaryItem
+            (click)="drawer1.open()"
             (click)="overlayOpenHistory()"
             mat-icon-button
             matTooltip="Zavihki in zgodovinaa"
@@ -29,41 +31,43 @@
             matTooltipClass="tooltip">
             <fa-icon [icon]="['far', 'star']" size="lg"></fa-icon> 
           </button>
-        </sbc-main-nav-content>
-
-        <sbc-main-nav-content>
-          <button (click)="drawer2.toggle()"
+        
+          <button
+            sbcGlobalNavPrimaryItem
+            (click)="drawer2.toggle()"
             (click)="overlayOpenHistory()"
             mat-icon-button
             matTooltip="Iskanje"
-            matTooltipClass="tooltip"
-          >
-          <fa-icon [icon]="['fas', 'search']" size="lg"></fa-icon> 
+            matTooltipClass="tooltip">
+            <fa-icon [icon]="['fas', 'search']" size="lg"></fa-icon> 
           </button>
-        </sbc-main-nav-content>
-        <sbc-main-nav-content>
+        
           <button
+            sbcGlobalNavPrimaryItem
             mat-icon-button
             (click)="openDialog()"
             matTooltip="Ustvari novo komponento"
             matTooltipPosition="right"
-            matTooltipClass="tooltip"
-            ><fa-icon [icon]="['fas', 'plus']" size="lg"></fa-icon></button
-        ></sbc-main-nav-content>
-        <sbc-main-nav-content>
+            matTooltipClass="tooltip">
+            <fa-icon [icon]="['fas', 'plus']" size="lg"></fa-icon>
+          </button>
+
             <button
+              sbcGlobalNavPrimaryItem
               mat-icon-button
               routerLink="datatable"
               matTooltip="Pregled projektov in kave"
               matTooltipPosition="right"
-              matTooltipClass="tooltip"
-              ><fa-icon [icon]="['fas', 'coffee']" size="lg"></fa-icon></button>
-          </sbc-main-nav-content>
-      </sbc-main-nav-header>
+              matTooltipClass="tooltip">
+              <fa-icon [icon]="['fas', 'coffee']" size="lg"></fa-icon>
+            </button>
+          
+      </sbc-global-nav-header>
 
-      <sbc-main-nav-footer>
-        <sbc-main-nav-footer-icon>
+      <sbc-global-nav-footer>
+       
           <button
+            sbcGlobalNavSecondaryItem
             (click)="closeIconMenu"
             mat-icon-button
             [matMenuTriggerFor]="menuNotification"
@@ -84,10 +88,10 @@
                   <fa-icon [icon]="['fas', 'file-contract']" size="lg"></fa-icon>
                   <span fxFlexOffset="15px">Pregled Arhivov</span>
               </button>
-          </mat-menu>
-        </sbc-main-nav-footer-icon>
-        <sbc-main-nav-footer-icon>
+          </mat-menu><span sbcGlobalNavFooterSpacer></span>
+       
           <button
+          sbcGlobalNavSecondaryItem
             mat-icon-button
             [matMenuTriggerFor]="prehodAplikacij"
             matTooltip="Prehod med aplikacijami"
@@ -105,17 +109,16 @@
             <button sbcMenuItem>
                 <fa-icon [icon]="['fab', 'affiliatetheme']" size="lg"></fa-icon>
                 <span fxFlexOffset="15px">Izračun</span></button>
-          </mat-menu>
-        </sbc-main-nav-footer-icon>
-        <sbc-main-nav-footer-icon>
+          </mat-menu><span sbcGlobalNavFooterSpacer></span>
+        
           <button
+          sbcGlobalNavSecondaryItem
             mat-icon-button
             [matMenuTriggerFor]="menu"
             isIconButton="true"
             matTooltip="Pomoč in podpora"
             matTooltipPosition="right"
-            matTooltipClass="tooltip"
-          >
+            matTooltipClass="tooltip">
           <fa-icon [icon]="['fas', 'question-circle']" size="lg"></fa-icon>
           </button>
           <mat-menu #menu="matMenu" class="matMenu3">
@@ -126,29 +129,31 @@
               <button sbcMenuItem>
                   <fa-icon [icon]="['fas', 'file-contract']" size="lg"></fa-icon>
                   <span fxFlexOffset="15px">Pogoji uporabe</span></button>
-          </mat-menu>
-        </sbc-main-nav-footer-icon>
-        <sbc-main-nav-footer-icon>
-          <a
+          </mat-menu><span sbcGlobalNavFooterSpacer></span>
+        
+          <button
+            sbcGlobalNavSecondaryItem
             mat-list-item
             routerLink="datatable"
             matTooltip="Profil"
             matTooltipPosition="right"
             matTooltipClass="tooltip"
-            ><fa-icon [icon]="['fas', 'user-circle']" size="lg"></fa-icon></a
-        ></sbc-main-nav-footer-icon>
-      </sbc-main-nav-footer>
-    </sbc-main-nav-container>
+            ><fa-icon [icon]="['fas', 'user-circle']" size="lg"></fa-icon>
+          </button>
+
+      </sbc-global-nav-footer>
+    </sbc-global-nav>
   </mat-sidenav>
+
   <mat-sidenav-content>
 
-    <!-- CONTENT OZ PRIKAZ KONTEKSTA -->
     <app-navigation 
     [showOverlayHistory]="overlayHistory"
     [showNavButton]="showNavButton"
     ></app-navigation>
- 
+
   </mat-sidenav-content>
+
 </mat-sidenav-container>
 
 <!-- DRUGA NAVIGACIJSKA TIPKA ZAVIHKI IN ZGODOVINA -- DRAWER -->
