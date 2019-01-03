@@ -1,141 +1,101 @@
 <div class="container">
+
   <div class="el1">Element1</div>
   <div class="el2">Element2</div>
   <div class="el3">Element3</div>
   <div class="el4">Element4</div>
+
+
+
 </div>
 
-<br />
+<br>
 
 <div class="container-button">
-  <button type="button" class="buttondva">Test1</button>
-  <button type="button" [className]="classname">Test1</button> <br /><br />
-  <button
-    mat-raised-button
-    isRoundButton="true"
-    color="accent"
-    (click)="toggle()"
-  >
-    Accent
-  </button>
-  <br />
-
-  <div class="GlobalNavigationUi">
-
-      <div><app-testing-ui></app-testing-ui></div>
-
-      <div><app-testing-ui></app-testing-ui></div>
-
-        <h1>Global Navigator</h1>
-        <p>Blue</p>
+  <button type="button" class="buttondva" >Test1</button>
+  <button type="button" [className]="classname" >Test1</button>
+<br><br>
+<button mat-raised-button isRoundButton="true" color="accent" (click)="toggle()">Accent</button>
+<br>
 
 
-  </div>
+<sbc-breadcrumb [items]="tabela"></sbc-breadcrumb>
+<br>
+<hr>
+<br>
 
-  
-  height: 50vh;
-  <sbc-breadcrumb [items]="tabela"></sbc-breadcrumb>
-  <br />
-  <hr />
-  <br />
 
-  <button mat-raised-button color="primary" (click)="openDialog()">
-    Open dialog
-  </button>
-  <hr />
-  <p>Ime linka ki je beli haha</p>
+<button mat-raised-button color="primary" (click)="openDialog()">Open dialog</button>
 
-  <a href="google.si">Stran na google</a>
 
-  <hr />
-  <button
-    mat-raised-button
-    isRoundButton="true"
-    color="accent"
-    (click)="toggleAnimation()"
-  >
-    prikaz animacije
-  </button>
-  <br />
-  <button
-    mat-raised-button
-    isRoundButton="true"
-    color="accent"
-    (click)="toggleNew()"
-  >
-    Toggle Open/Closed
-  </button>
-  <br />
 
-  <div
-    [@openCloseDrawerAnimation]="isOpenTwo ? 'open' : 'closed'"
-    class="open-close-container"
-  >
-    <div
-      [@openCloseAnimation]="isAnimation ? 'openAnimation' : 'closeAnimation'"
-      class="animacija"
-    >
-      <div style="margin: 10px;">
-        <div *ngIf="!isAnimation">
-          <p>Dashboard</p>
-          <p>Tree</p>
-          <p>Navigacija</p>
-          <p>Items</p>
-          <p (click)="toggleAnimation()" style="cursor: pointer;">
-            Dokumentacija ->
-          </p>
-          <p>Konec seznama</p>
-        </div>
 
-        <div *ngIf="isAnimation">
-          <p (click)="toggleAnimation()" style="cursor: pointer;">
-            Nazaj na Navigacijo
-          </p>
-          <p>Dokumentacija</p>
-          <p>Kako začeti</p>
-          <p>Delamnje animacije</p>
-          <p>Nastavitve</p>
-        </div>
-      </div>
+<hr>
+<button mat-raised-button isRoundButton="true" color="accent" (click)="toggleAnimation()">prikaz animacije</button>
+<br>
+<button mat-raised-button isRoundButton="true" color="accent" (click)="toggleNew()">Toggle Open/Closed</button>
+<br>
+
+<div [@openCloseDrawerAnimation]="isOpenTwo ? 'open' : 'closed'" class="open-close-container">
+
+<div [@openCloseAnimation]="isAnimation ? 'openAnimation' : 'closeAnimation'" class="animacija">
+  <div style="margin: 10px;">
+
+    <div *ngIf="!isAnimation">
+      <p>Dashboard</p>
+      <p>Tree</p>
+      <p>Navigacija</p>
+      <p>Items</p>
+      <p (click)="toggleAnimation()" style="cursor: pointer;">Dokumentacija -></p>
+      <p>Konec seznama</p>
     </div>
-  </div>
-  <hr />
 
-  <div
-    [@openCloseAnimationBackup]="
-      isAnimation ? 'openAnimation' : 'closeAnimation'
-    "
-    class="animacija"
-  >
+    <div *ngIf="isAnimation">
+      <p (click)="toggleAnimation()" style="cursor: pointer;">Nazaj na Navigacijo</p>
+      <p>Dokumentacija</p>
+      <p>Kako začeti</p>
+      <p>Delamnje animacije</p>
+      <p>Nastavitve</p>
+    </div>
+</div>
+
+  </div>
+</div>
+<hr>
+
+<div [@openCloseAnimationBackup]="isAnimation ? 'openAnimation' : 'closeAnimation'" class="animacija">
     <div style="margin: 10px;">
+  
       <div *ngIf="!isAnimation">
         <p>Dashboard</p>
         <p>Tree</p>
         <p>Navigacija</p>
         <p>Items</p>
-        <p (click)="toggleAnimation()" style="cursor: pointer;">
-          Dokumentacija ->
-        </p>
+        <p (click)="toggleAnimation()" style="cursor: pointer;">Dokumentacija -></p>
         <p>Konec seznama</p>
       </div>
-
+  
       <div *ngIf="isAnimation">
-        <p (click)="toggleAnimation()" style="cursor: pointer;">
-          Nazaj na Navigacijo
-        </p>
+        <p (click)="toggleAnimation()" style="cursor: pointer;">Nazaj na Navigacijo</p>
         <p>Dokumentacija</p>
         <p>Kako začeti</p>
         <p>Delamnje animacije</p>
         <p>Nastavitve</p>
       </div>
+  
     </div>
   </div>
 
-  <br />
-  <hr />
+<br>
+<hr>
 
-  <!-- <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+<!-- <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
   <p>Animacija je sedaj {{ isAnimation ? 'openAnimation' : 'closeAnimation' }}!</p>
 </div>
  -->
+
+
 </div>
+
+
+

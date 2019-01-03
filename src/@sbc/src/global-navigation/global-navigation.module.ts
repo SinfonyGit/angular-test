@@ -20,6 +20,7 @@ import { GlobalNavLogoDirective } from './global-nav-logo/global-nav-logo.direct
 import { GlobalNavLogoSpacerDirective } from './global-nav-logo/global-nav-logo-spacer.directive';
 import { GlobalNavSecondaryItemDirective } from './global-nav-secondary-item/global-nav-secondary-item.directive';
 import { GlobalNavigationElementComponent } from './global-nav-element/global-nav-element.component';
+import { GlobalNavigationContentComponent } from './global-nav-content/global-nav-content.component';
 
 
 
@@ -33,7 +34,8 @@ import { GlobalNavigationElementComponent } from './global-nav-element/global-na
       GlobalNavPrimaryItemDirective,
       GlobalNavSecondaryItemDirective,
       GlobalNavFooterSpacerDirective,
-      GlobalNavigationElementComponent
+      GlobalNavigationElementComponent,
+      GlobalNavigationContentComponent
   ],
   imports: [
     RouterModule,
@@ -53,7 +55,8 @@ import { GlobalNavigationElementComponent } from './global-nav-element/global-na
     GlobalNavPrimaryItemDirective,
     GlobalNavSecondaryItemDirective,
     GlobalNavFooterSpacerDirective,
-    GlobalNavigationElementComponent
+    GlobalNavigationElementComponent,
+    GlobalNavigationContentComponent
   ]
 })
 export class GlobalNavigationModule { }

@@ -1,5 +1,3 @@
-import { ModalsModule } from './modals.1/modals.module';
-import { DrawersModule } from './drawers.1/drawers.module';
 
 
 import { NgModule } from '@angular/core';
@@ -15,13 +13,9 @@ import { GlobalNavigationModule } from './global-navigation/global-navigation.mo
     RouterModule,
     BrowserModule,
     GlobalNavigationModule,
-    DrawersModule,
-    ModalsModule
   ],
   exports: [
     GlobalNavigationModule,
-    DrawersModule,
-    ModalsModule
   ]
 })
 export class SbcModule { }

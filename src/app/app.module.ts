@@ -1,6 +1,4 @@
 import { SbcUiModule } from '../@sbc/src/lib/sbc-ui.module';
-
-import { SbcModule } from '../@sbc/src/sbc.module';
 import { FontAwesomeIconsModule } from './font-awesome-icons.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -25,8 +23,7 @@ import { SearchDialogNavigationComponent } from './main-navigation/search-dialog
 import { SearchDialogComponent } from './main-navigation/search-dialog/search-dialog.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { TestingUiComponent } from './testing-ui/testing-ui.component';
-import { NavigationTestComponent } from './navigation-test/navigation-test.component';
-import { MainNavigationBlockComponent } from './main-navigation-block/main-navigation-block.component';
+import { SbcModule } from 'src/@sbc/src/sbc.module';
 
 
 @NgModule({
@@ -42,9 +39,7 @@ import { MainNavigationBlockComponent } from './main-navigation-block/main-navig
       SearchDialogComponent,
       SearchDialogNavigationComponent,
       DocumentationComponent,
-      TestingUiComponent,
-      NavigationTestComponent,
-      MainNavigationBlockComponent
+      TestingUiComponent
    ],
    imports: [
       BrowserModule,
@@ -64,6 +59,6 @@ import { MainNavigationBlockComponent } from './main-navigation-block/main-navig
    ],
    entryComponents: [
       SearchDialogNavigationComponent
-   ]
+    ]
 })
 export class AppModule { }

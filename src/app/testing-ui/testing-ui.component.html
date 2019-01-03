@@ -1,173 +1,133 @@
+<div class="flex">
 
-  <sbc-global-nav-element>
-    <sbc-global-nav-header>
-      <a
-        sbcGlobalNavLogo
-        mat-list-item
-        routerLink=""
-        matTooltip="Začetna stran"
-        matTooltipPosition="right"
-        matTooltipClass="tooltip"
-        ><fa-icon [icon]="['fas', 'cog']" size="2x"></fa-icon> </a
-      ><span sbcGlobalNavLogoSpacer></span>
+<div class="container">
+  <sbc-main-nav-container>
 
-      <button
-        sbcDrawerTriggerFor
-        (click)="drawer1.open()"
-        mat-icon-button
-        matTooltip="Zavihki in zgodovinaa"
-        matTooltipPosition="right"
-        matTooltipClass="tooltip"
-      >
-        <fa-icon [icon]="['far', 'star']" size="lg"></fa-icon>
-      </button>
-      <mat-drawer #drawer1 sbcDrawer>
-          <sbc-drawer-container>
-            <sbc-drawer-navigation>
-              <button
-                (click)="drawer1.close()"
-                mat-icon-button>
-                <fa-icon [icon]="['fas', 'arrow-left']" size="lg"></fa-icon>
-              </button>
-            </sbc-drawer-navigation>
-            <sbc-drawer-content>
-             
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam impedit
-                architecto quibusdam nostrum cum vel porro in aliquid harum incidunt,
-                dicta reprehenderit nulla, ipsum fugiat illo qui, error veniam
-                obcaecati.
-              </p>
-            </sbc-drawer-content>
-          </sbc-drawer-container>
+
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+          <p>Auto-resizing sidenav</p>
+          <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+          <button (click)="showFiller = !showFiller" mat-raised-button>
+            Toggle extra text
+          </button>
+          <br>
+
+          <button type="button" mat-button (click)="drawer.close()">
+              <mat-icon>left</mat-icon> 
+            </button>
+
         </mat-drawer>
 
-      <button
-        sbcGlobalNavPrimaryItem
-        (click)="drawer2.toggle()"
-        mat-icon-button
-        matTooltip="Iskanje"
-        matTooltipClass="tooltip"
-      >
-        <fa-icon [icon]="['fas', 'search']" size="lg"></fa-icon>
-      </button>
-      <mat-drawer #drawer2 sbcDrawer mode="push">
-        <sbc-drawer-container>
-          <sbc-drawer-navigation>
-            <button
-              (click)="drawer2.close()"
-              mat-icon-button
-            >
-              <fa-icon [icon]="['fas', 'arrow-left']" size="lg"></fa-icon>
+
+
+    <sbc-main-nav-header>
+      <sbc-main-nav-header-logo-icon>
+        <button mat-icon-button routerLink="">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </sbc-main-nav-header-logo-icon>
+      <sbc-main-nav-content>
+        <button mat-icon-button routerLink="./../items">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </sbc-main-nav-content>
+      <sbc-main-nav-content> 
+
+          <button type="button" mat-button (click)="drawer.open()">
+              <mat-icon>search</mat-icon> 
             </button>
-          </sbc-drawer-navigation>
-          <sbc-drawer-content>
-            <app-search-dialog></app-search-dialog>
-          </sbc-drawer-content>
-        </sbc-drawer-container>
-      </mat-drawer>
 
-      <button
-        sbcGlobalNavPrimaryItem
-        mat-icon-button
-        (click)="openDialog()"
-        matTooltip="Ustvari novo komponento"
-        matTooltipPosition="right"
-        matTooltipClass="tooltip"
-      >
-        <fa-icon [icon]="['fas', 'plus']" size="lg"></fa-icon>
-      </button>
+        
+      </sbc-main-nav-content>
+    </sbc-main-nav-header>
 
-      <button
-        sbcGlobalNavPrimaryItem
-        mat-icon-button
-        routerLink="datatable"
-        matTooltip="Pregled projektov in kave"
-        matTooltipPosition="right"
-        matTooltipClass="tooltip"
-      >
-        <fa-icon [icon]="['fas', 'coffee']" size="lg"></fa-icon>
-      </button>
-    </sbc-global-nav-header>
+    <sbc-main-nav-footer>
+      <sbc-main-nav-footer-icon>
+        <button [matMenuTriggerFor]="menu1" mat-icon-button>
+          <mat-icon aria-label="Example icon-button with a heart icon">info</mat-icon>
+        </button>
+        <mat-menu #menu1="matMenu" yPosition="above" xPosition="after">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+      </sbc-main-nav-footer-icon>
+      <sbc-main-nav-footer-icon>
+        <button [matMenuTriggerFor]="menu2" mat-icon-button>
+          <mat-icon aria-label="Example icon-button with a heart icon">person</mat-icon>
+        </button>
+        <mat-menu #menu2="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </sbc-main-nav-footer-icon>
+    </sbc-main-nav-footer>
+  </sbc-main-nav-container>
+</div>
 
-    <sbc-global-nav-footer>
-      <button
-        sbcGlobalNavSecondaryItem
-        mat-icon-button
-        [matMenuTriggerFor]="menuNotification"
-        isIconButton="true"
-        matTooltip="Obvestila"
-        matTooltipPosition="right"
-        matTooltipClass="tooltip"
-      >
-        <fa-icon [icon]="['fas', 'bell']" size="lg"></fa-icon>
-      </button>
-      <mat-menu #menuNotification="matMenu" class="matMenu1">
-        <sbc-menu-title>Današnja obvestila</sbc-menu-title>
-        <button sbcMenuItem>Novice</button> <button sbcMenuItem>Email</button>
-        <sbc-menu-title>Arhiv</sbc-menu-title>
-        <button sbcMenuItem>Zadnji mesec</button>
-        <button sbcMenuItem>
-          <fa-icon [icon]="['fas', 'file-contract']" size="lg"></fa-icon>
-          <span fxFlexOffset="15px">Pregled Arhivov</span>
-        </button> </mat-menu
-      ><span sbcGlobalNavFooterSpacer></span>
 
-      <button
-        sbcGlobalNavSecondaryItem
-        mat-icon-button
-        [matMenuTriggerFor]="prehodAplikacij"
-        matTooltip="Prehod med aplikacijami"
-        matTooltipPosition="right"
-        matTooltipClass="tooltip"
-      >
-        <fa-icon [icon]="['fas', 'th']" size="lg"></fa-icon>
-      </button>
-      <mat-menu #prehodAplikacij="matMenu" class="matMenu2">
-        <sbc-menu-title>Operacije</sbc-menu-title>
-        <button sbcMenuItem>Množenje</button>
-        <button sbcMenuItem>Delenje</button>
-        <button sbcMenuItem>Seštevanje</button>
-        <button sbcMenuItem>Odštevanje</button>
-        <sbc-menu-title>Rezultat</sbc-menu-title>
-        <button sbcMenuItem>
-          <fa-icon [icon]="['fab', 'affiliatetheme']" size="lg"></fa-icon>
-          <span fxFlexOffset="15px">Izračun</span>
-        </button> </mat-menu
-      ><span sbcGlobalNavFooterSpacer></span>
+<div class="container">
+  <sbc-main-nav-container>
 
-      <button
-        sbcGlobalNavSecondaryItem
-        mat-icon-button
-        [matMenuTriggerFor]="menu"
-        isIconButton="true"
-        matTooltip="Pomoč in podpora"
-        matTooltipPosition="right"
-        matTooltipClass="tooltip"
-      >
-        <fa-icon [icon]="['fas', 'question-circle']" size="lg"></fa-icon>
-      </button>
-      <mat-menu #menu="matMenu" class="matMenu3">
-        <sbc-menu-title>Dokumentacija</sbc-menu-title>
-        <button sbcMenuItem>Pomoč pri Breadcrumbers</button>
-        <button sbcMenuItem>Navigacija</button>
-        <sbc-menu-title>Licenca</sbc-menu-title>
-        <button sbcMenuItem>
-          <fa-icon [icon]="['fas', 'file-contract']" size="lg"></fa-icon>
-          <span fxFlexOffset="15px">Pogoji uporabe</span>
-        </button> </mat-menu
-      ><span sbcGlobalNavFooterSpacer></span>
 
-      <button
-        sbcGlobalNavSecondaryItem
-        mat-icon-button
-        routerLink="datatable"
-        matTooltip="Profil"
-        matTooltipPosition="right"
-        matTooltipClass="tooltip"
-      >
-        <fa-icon [icon]="['fas', 'user-circle']" size="lg"></fa-icon>
-      </button>
-    </sbc-global-nav-footer>
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+          <p>Auto-resizing sidenav</p>
+          <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+          <button (click)="showFiller = !showFiller" mat-raised-button>
+            Toggle extra text
+          </button>
+          <br>
 
-  </sbc-global-nav-element>
+          <button type="button" mat-button (click)="drawer.close()">
+              <mat-icon>left</mat-icon> 
+            </button>
+
+        </mat-drawer>
+
+
+
+    <sbc-main-nav-header>
+      <sbc-main-nav-header-logo-icon>
+        <button mat-icon-button routerLink="">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </sbc-main-nav-header-logo-icon>
+      <sbc-main-nav-content>
+        <button mat-icon-button routerLink="./../items">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </sbc-main-nav-content>
+      <sbc-main-nav-content> 
+
+          <button type="button" mat-button (click)="drawer.open()">
+              <mat-icon>search</mat-icon> 
+            </button>
+
+        
+      </sbc-main-nav-content>
+    </sbc-main-nav-header>
+
+    <sbc-main-nav-footer>
+      <sbc-main-nav-footer-icon>
+        <button [matMenuTriggerFor]="menu1" mat-icon-button>
+          <mat-icon aria-label="Example icon-button with a heart icon">info</mat-icon>
+        </button>
+        <mat-menu #menu1="matMenu" yPosition="above" xPosition="after">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+      </sbc-main-nav-footer-icon>
+      <sbc-main-nav-footer-icon>
+        <button [matMenuTriggerFor]="menu2" mat-icon-button>
+          <mat-icon aria-label="Example icon-button with a heart icon">person</mat-icon>
+        </button>
+        <mat-menu #menu2="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </sbc-main-nav-footer-icon>
+    </sbc-main-nav-footer>
+  </sbc-main-nav-container>
+</div>
+
+
+</div>
