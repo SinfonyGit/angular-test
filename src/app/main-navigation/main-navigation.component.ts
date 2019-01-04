@@ -1,8 +1,5 @@
 import { SearchDialogNavigationComponent } from './search-dialog-navigation/search-dialog-navigation.component';
 import { Component, HostListener } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 import {MatDialog} from '@angular/material';
 
@@ -13,14 +10,7 @@ import {MatDialog} from '@angular/material';
 })
 export class MainNavigationComponent {
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
-
-  defaultTheme = true;
-  grayTheme = false;
-  blueTheme = false;
+  constructor( public dialog: MatDialog ) {}
 
   // Pokaži/ skrij ikonco v child komponenti
   showNavButton = false;
@@ -47,19 +37,14 @@ export class MainNavigationComponent {
     }
   }
 
-
-  constructor(private breakpointObserver: BreakpointObserver,
-              public dialog: MatDialog) {}
-
   // DIALOG ZA ODPIRANJE DIALOGA NA TRETJI IKONI
   openDialog() {
     const dialogRef = this.dialog.open(SearchDialogNavigationComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(`Sporočilo Modalnega okna. Odstrani se v .ts komponenti. Dialog result: ${result}`);
     });
   }
-
 
 }
 

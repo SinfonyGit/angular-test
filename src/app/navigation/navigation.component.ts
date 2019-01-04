@@ -1,7 +1,4 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { navigationOverlayAnimation } from '../animations/navigationOverlayAnimation';
 import { navigationDrawerAnimation } from '../animations/navigationDrawerAnimation';
 import { navigationSlideAnimation } from '../animations/navigationSlideAnimation';
@@ -17,12 +14,7 @@ import { navigationSlideAnimation } from '../animations/navigationSlideAnimation
 })
 export class NavigationComponent implements OnChanges {
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
+  constructor() {}
 
   // Pokaže oz Skrije navigacijski button iz parent komponente (Main Nav Component)
   // Pokaži oz skrije navogacijski button glede na lokacijo miške
