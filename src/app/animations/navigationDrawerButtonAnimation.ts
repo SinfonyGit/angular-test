@@ -15,7 +15,7 @@ function expandedSideBar(widthSideBarExpanded: string) {
   widthSideBarExpanded = '241';
   return widthSideBarExpanded;
 }
-
+// Trenutno ni v uporabi
 export const navigationDrawerButtonAnimation = trigger('openCloseDrawerButtonAnimation', [
   state('open', style({
     position: 'relative',

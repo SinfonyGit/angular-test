@@ -1,6 +1,5 @@
 import {
     trigger,
-    state,
     style,
     animate,
     transition,
@@ -9,6 +8,7 @@ import {
     animateChild
   } from '@angular/animations';
 
+  // Ta animacija se uporablja v meniju in prvonivojskega prehoda v druginivojski način
 export const navigationSlideAnimation = trigger('openCloseAnimation', [
   // DOGODEK ON KLIKU NAZAJ NA MENI IZ PODMENIJA
   transition('openAnimation => closeAnimation', [

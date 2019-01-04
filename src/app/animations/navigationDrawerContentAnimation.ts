@@ -6,6 +6,7 @@ import {
     transition
   } from '@angular/animations';
 
+  // Trenutno ni v uporabi
 export const navigationDrawerContentAnimation = trigger('openCloseDrawerContentAnimation', [
   state('open', style({
     // position: 'absolute',

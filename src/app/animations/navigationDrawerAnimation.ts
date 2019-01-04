@@ -6,6 +6,7 @@ import {
     transition
   } from '@angular/animations';
 
+  // animacija se uporablja pri kliku na gumb odpri / zapri navigacijo
 export const navigationDrawerAnimation = trigger('openCloseDrawerAnimation', [
   state('open', style({
     width: '241px'
