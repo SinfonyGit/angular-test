@@ -30,6 +30,15 @@ mat-sidenav-content{
   z-index: 300;
 }
 
+mat-drawer {
+  background-color: #0747A6;
+  z-index: 200;
+}
+
+mat-drawer-content{
+  z-index: 300;
+}
+
 //Angular Material Tooltip
 .mat-list-item {
   //background-color: black;

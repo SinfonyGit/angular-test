@@ -4,7 +4,7 @@
     disableClose
     class="main-nav-line"
     mode="side"
-    [opened]="!(isHandset$ | async)"
+    opened="true"
     (mouseenter)="showNavButton = true"
     (mouseleave)="showNavButton = false"
     >
@@ -56,6 +56,26 @@
             mat-icon-button
             routerLink="datatable"
             matTooltip="Pregled projektov in kave"
+            matTooltipPosition="right"
+            matTooltipClass="tooltip">
+            <fa-icon [icon]="['fas', 'coffee']" size="lg"></fa-icon>
+          </button>
+
+          <button
+            sbcGlobalNavPrimaryItem
+            (click)="grayTheme"
+            mat-icon-button
+            matTooltip="Sivo Ozadje"
+            matTooltipPosition="right"
+            matTooltipClass="tooltip">
+            <fa-icon [icon]="['fas', 'coffee']" size="lg"></fa-icon>
+          </button>
+
+          <button
+            sbcGlobalNavPrimaryItem
+            (click)="blueTheme"
+            mat-icon-button
+            matTooltip="Modra tema"
             matTooltipPosition="right"
             matTooltipClass="tooltip">
             <fa-icon [icon]="['fas', 'coffee']" size="lg"></fa-icon>

@@ -18,6 +18,10 @@ export class MainNavigationComponent {
       map(result => result.matches)
     );
 
+  defaultTheme = true;
+  grayTheme = false;
+  blueTheme = false;
+
   // Pokaži/ skrij ikonco v child komponenti
   showNavButton = false;
 

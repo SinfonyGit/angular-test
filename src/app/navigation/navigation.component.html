@@ -1,5 +1,7 @@
-<mat-sidenav-container>
-  <mat-sidenav
+<mat-drawer-container
+hasBackdrop="false"
+>
+  <mat-drawer
     #sidenav
     disableClose
     class="sidenav main-nav-line"
@@ -198,10 +200,10 @@
 
   
 
-  </mat-sidenav>
+  </mat-drawer>
 
   <!-- Container  za show&hide Navigacijo, hkrati je tudi Content(Router Outlet) -->
-  <mat-sidenav-content [style.marginLeft.px]="widthSideBar" [ngClass]="{'transition': widthSideBarAnimation}">
+  <mat-drawer-content [style.marginLeft.px]="widthSideBar" [ngClass]="{'transition': widthSideBarAnimation}">
       
     <sbc-nav-container style="z-index: 305;">
       <div sbcNavShowHidePanel style="z-index: 306;"
@@ -225,11 +227,11 @@
       </div>
       <!-- (click)="hideNavContent = !hideNavContent" -->
       <!-- (click)="toggleSideBar()" -->
-      <div class="router-content"
+      <div class="router-content" style="z-index: 207;"
         [@showOverlay]="!showOverlay">
         <router-outlet></router-outlet>
       </div>
 
     </sbc-nav-container>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </mat-drawer-content>
+</mat-drawer-container>

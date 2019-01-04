@@ -116,4 +116,5 @@ export class NavigationComponent implements OnChanges {
       this.widthSideBarAnimation = true;
     }
 
+
 }

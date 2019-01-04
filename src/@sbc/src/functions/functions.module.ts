@@ -1,3 +1,4 @@
+import { FormatCodeComponent } from './format-code/format-code.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -6,7 +7,8 @@ import { TextEllipsisDirective } from './text/text-ellipsis.directive';
 @NgModule({
   declarations: [
     TextClipperDirective,
-    TextEllipsisDirective
+    TextEllipsisDirective,
+    FormatCodeComponent
   ],
   imports: [
     RouterModule,
@@ -14,7 +16,8 @@ import { TextEllipsisDirective } from './text/text-ellipsis.directive';
   ],
   exports: [
     TextClipperDirective,
-    TextEllipsisDirective
+    TextEllipsisDirective,
+    FormatCodeComponent
   ]
 })
 export class FunctionsModule { }

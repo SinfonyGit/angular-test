@@ -1,4 +1,3 @@
-import { SbcUiModule } from '../@sbc/src/lib/sbc-ui.module';
 import { FontAwesomeIconsModule } from './font-awesome-icons.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -50,7 +49,6 @@ import { SbcModule } from 'src/@sbc/src/sbc.module';
       MaterialModule,
       ReactiveFormsModule,
       LayoutModule,
-      SbcUiModule,
       SbcModule
    ],
    providers: [],
