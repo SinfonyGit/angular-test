@@ -5,6 +5,8 @@ import { DrawerContainerComponent } from './drawer-container.component';
 import { DrawerContentComponent } from './drawer-content.component';
 import { DrawerNavigationComponent } from './drawer-navigation.component';
 import { DrawerDirective } from './drawer.directive';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { DrawerDirective } from './drawer.directive';
   ],
   imports: [
     RouterModule,
-    BrowserModule
+    BrowserModule,
+    FontAwesomeModule,
+    MatButtonModule
   ],
   exports: [
     DrawerContainerComponent,

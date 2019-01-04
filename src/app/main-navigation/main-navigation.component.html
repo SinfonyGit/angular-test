@@ -152,14 +152,9 @@
 </mat-sidenav-container>
 
 <mat-drawer #drawer1 sbcDrawer mode="push">
-  <sbc-drawer-container>
-    <sbc-drawer-navigation>
-      <button (click)="drawer1.close()"
-      (click)="overlayCloseHistory()"
-        mat-icon-button >
-        <fa-icon [icon]="['fas', 'arrow-left']" size="lg"></fa-icon>
-      </button>
-    </sbc-drawer-navigation>
+  <sbc-drawer-container action
+    (click)="drawer1.close()"
+    (click)="overlayCloseHistory()">
     <sbc-drawer-content>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam impedit architecto quibusdam 
@@ -171,14 +166,9 @@
 
 <!-- TRETJA NAVIGACIJSKA TIPKA ISKANJE -- DRAWER -->
 <mat-drawer #drawer2 sbcDrawer mode="push" >
-  <sbc-drawer-container>
-    <sbc-drawer-navigation>
-      <button (click)="drawer2.close()"
-        (click)="overlayCloseHistory()"
-        mat-icon-button >
-        <fa-icon [icon]="['fas', 'arrow-left']" size="lg"></fa-icon>
-      </button>
-    </sbc-drawer-navigation>
+    <sbc-drawer-container action
+    (click)="drawer2.close()"
+    (click)="overlayCloseHistory()">
     <sbc-drawer-content>
       <app-search-dialog-navigation></app-search-dialog-navigation>
     </sbc-drawer-content>

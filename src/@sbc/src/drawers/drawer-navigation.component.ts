@@ -1,10 +1,15 @@
 import { Component} from '@angular/core';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'sbc-drawer-navigation',
     template: `
     <div class="drawer-navigation">
-      <ng-content></ng-content>
+    <button mat-icon-button select="[action]">
+
+        <fa-icon [icon]="faArrowLeft" size="lg"></fa-icon>
+      </button>
+
     </div>
     `,
     styles: [`
@@ -24,5 +29,5 @@ import { Component} from '@angular/core';
     `]
   })
 export class DrawerNavigationComponent {
-
+  faArrowLeft = faArrowLeft;
 }
