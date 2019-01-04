@@ -13,7 +13,7 @@ export const navigationOverlayAnimation = trigger('showOverlay', [
     // Ko se Modal Odpre
     // Prvotno stanje
     // state('false', style({ opacity: 0.3, display: 'none' })),
-    state('false', style({ opacity: 0.2, backgroundColor: 'red' })),
+    state('false', style({ opacity: 0.2})),
     transition('0 => 1', animate('.2s')),
     transition('1 => 0', animate('.4s'))
 
