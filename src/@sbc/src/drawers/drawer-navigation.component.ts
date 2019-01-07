@@ -1,11 +1,13 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'sbc-drawer-navigation',
     template: `
     <div class="drawer-navigation">
-    <button mat-icon-button select="[action]">
+    <button mat-icon-button select="[action]"
+    (click)="overlayCloseHistory()"
+    >
 
         <fa-icon [icon]="faArrowLeft" size="lg"></fa-icon>
       </button>
@@ -30,4 +32,9 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
   })
 export class DrawerNavigationComponent {
   faArrowLeft = faArrowLeft;
+  @Input() overlayHistory = '';
+
+  @Input() overlayCloseHistory() {
+    this.overlayHistory = '0';
+  }
 }

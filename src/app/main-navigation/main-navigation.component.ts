@@ -30,12 +30,12 @@ export class MainNavigationComponent {
   }
   // !Animacija Drawerja Konec
 
-  @HostListener('window:keyup', ['$event'])
+  /* @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (event.keyCode === KEY_CODE.ESC) {
       this.overlayHistory = '0';
     }
-  }
+  } */
 
   // DIALOG ZA ODPIRANJE DIALOGA NA TRETJI IKONI
   openDialog() {
@@ -48,10 +48,10 @@ export class MainNavigationComponent {
 
 }
 
-export enum KEY_CODE {
+/* export enum KEY_CODE {
   UP_ARROW = 38,
   DOWN_ARROW = 40,
   RIGHT_ARROW = 39,
   LEFT_ARROW = 37,
   ESC = 27
-}
+} */

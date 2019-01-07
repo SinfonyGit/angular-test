@@ -25,7 +25,8 @@ import {
     faArrowLeft,
     faFileContract,
     faAngleLeft,
-    faBars
+    faBars,
+    faPalette
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -72,7 +73,8 @@ library.add(
     faAffiliatetheme,
     faAccusoft,
     faAngleLeft,
-    faBars
+    faBars,
+    faPalette
 );
 
 @NgModule({

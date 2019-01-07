@@ -1,5 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
+  
     #drawer
     disableClose
     fixedInViewport="true"
@@ -10,6 +11,7 @@
     (mouseleave)="showNavButton = false"
     >
     <sbc-global-nav-content>
+      
       <sbc-global-nav-header>
         
           <a sbcGlobalNavLogo
@@ -63,7 +65,7 @@
           </button>
 
       </sbc-global-nav-header>
-
+      
       <sbc-global-nav-footer>
 
           <button sbcGlobalNavSecondaryItem
@@ -151,10 +153,12 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<mat-drawer #drawer1 sbcDrawer mode="push">
+<mat-drawer #drawer1 sbcDrawer>
   <sbc-drawer-container action
     (click)="drawer1.close()"
-    (click)="overlayCloseHistory()">
+    (click)="overlayCloseHistory()"
+    (keydown.esc)="overlayCloseHistory()"
+    >
     <sbc-drawer-content>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam impedit architecto quibusdam 
@@ -165,10 +169,11 @@
 </mat-drawer>
 
 <!-- TRETJA NAVIGACIJSKA TIPKA ISKANJE -- DRAWER -->
-<mat-drawer #drawer2 sbcDrawer mode="push" >
+<mat-drawer #drawer2 sbcDrawer>
     <sbc-drawer-container action
     (click)="drawer2.close()"
-    (click)="overlayCloseHistory()">
+    (click)="overlayCloseHistory()"
+    (keydown.esc)="overlayCloseHistory()">
     <sbc-drawer-content>
       <app-search-dialog-navigation></app-search-dialog-navigation>
     </sbc-drawer-content>

@@ -207,6 +207,7 @@
         (mouseenter)="showNavButton = true"
         (mouseleave)="showNavButton = false"
       >
+      
         <button *ngIf="showNavButton"
           sbcNavShowHideButton style="z-index: 307;"
           mat-icon-button
@@ -215,6 +216,7 @@
           (click)="toggleSideBar()"
           (click)="toggleHideNavContent()"
           (click)="toggleDrawerAnimation()"
+          sbcNavButtonTest
           (click)="toggleWidthSideBarAnimation()"
         >
           <fa-icon *ngIf="hideNavContent" [icon]="['fas', 'bars']" [fixedWidth]="true" style="position: relative; bottom: 7px;"></fa-icon>
@@ -222,6 +224,7 @@
         </button>
 
       </div>
+      <!-- (click)="toggleDrawerAnimation()" -->
       <!-- (click)="hideNavContent = !hideNavContent" -->
       <!-- (click)="toggleSideBar()" -->
       <div class="router-content"

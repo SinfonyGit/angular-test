@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { GlobalNavigationModule } from './global-navigation/global-navigation.module';
+import { TestingComponentsModule } from './testing-components/testing-components.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { GlobalNavigationModule } from './global-navigation/global-navigation.mo
     FunctionsModule,
     GlobalNavigationModule,
     NavigationModule,
-    MenuModule
+    MenuModule,
+    TestingComponentsModule
   ],
   exports: [
     BreadcrumbModule,
@@ -31,7 +33,8 @@ import { GlobalNavigationModule } from './global-navigation/global-navigation.mo
     FunctionsModule,
     GlobalNavigationModule,
     NavigationModule,
-    MenuModule
+    MenuModule,
+    TestingComponentsModule
   ]
 })
 export class SbcModule { }
