@@ -1,7 +1,10 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { ShowOverlayService } from './../../@sbc/src/drawers/show-overlay.service';
+
+import { Component, Input, OnInit } from '@angular/core';
 import { navigationOverlayAnimation } from '../animations/navigationOverlayAnimation';
 import { navigationDrawerAnimation } from '../animations/navigationDrawerAnimation';
 import { navigationSlideAnimation } from '../animations/navigationSlideAnimation';
+
 
 
 @Component({
@@ -12,9 +15,11 @@ import { navigationSlideAnimation } from '../animations/navigationSlideAnimation
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnChanges {
+export class NavigationComponent implements OnInit {
 
-  constructor() {}
+  message: string;
+
+  constructor(private overlay: ShowOverlayService) {}
 
   // Pokaže oz Skrije navigacijski button iz parent komponente (Main Nav Component)
   // Pokaži oz skrije navogacijski button glede na lokacijo miške
@@ -37,7 +42,7 @@ export class NavigationComponent implements OnChanges {
 
   // Zatemnjenost zaslona oz Kontenta ob pritistku na drawer Modal
   // Podatek se dobi od Parent komponente preko Input metode
-  @Input() showOverlayHistory: string;
+  // @Input() showOverlayHistory: string;
   showOverlay = false;
 
   // Animacija za prikaz navigacijskega SideBara Open/Close
@@ -55,27 +60,16 @@ export class NavigationComponent implements OnChanges {
   toggleSideBar() {
     if (this.widthSideBar === this.widthSideBarExpanded) {
       // Ob zapiranju navigacije | Open => Closed |
-  //    setTimeout(() => {
         this.widthSideBar = this.widthSideBarCollapsed;
         this.showNavButton = true;
-  //    }, 150);
     } else {
       // Ob odpiranju navigacije | Closed => Open |
-  //    setTimeout(() => {
         this.widthSideBar = this.widthSideBarExpanded;
-  //    }, 50);
-
     }
   }
 
-  ngOnChanges() {
-    // Zatemnitev ekrana
-    if (this.showOverlayHistory === '1') {
-      this.showOverlay = true;
-      }
-    if (this.showOverlayHistory === '0') {
-        this.showOverlay = false;
-    }
+  ngOnInit() {
+    this.overlay.currentShowOverlay.subscribe(overlay => this.showOverlay = overlay);
   }
 
   // Alternative za prikaz podmenija

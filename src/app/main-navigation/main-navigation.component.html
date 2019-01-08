@@ -24,9 +24,8 @@
         </a><span sbcGlobalNavLogoSpacer></span>
 
           <button 
-            sbcGlobalNavPrimaryItem
+            sbcGlobalNavTriggerFor
             (click)="drawer1.open()"
-            (click)="overlayOpenHistory()"
             mat-icon-button
             matTooltip="Zavihki in zgodovinaa"
             matTooltipPosition="right"
@@ -35,9 +34,8 @@
           </button>
 
           <button 
-           sbcGlobalNavPrimaryItem
-           (click)="drawer2.toggle()"
-            (click)="overlayOpenHistory()"
+            sbcGlobalNavTriggerFor
+            (click)="drawer2.open()"
             mat-icon-button
             matTooltip="Iskanje"
             matTooltipClass="tooltip">
@@ -145,8 +143,7 @@
   <mat-sidenav-content>
 
     <!-- CONTENT OZ PRIKAZ KONTEKSTA -->
-    <app-navigation 
-    [showOverlayHistory]="overlayHistory"
+    <app-navigation
     [showNavButton]="showNavButton"
     ></app-navigation>
  
@@ -154,11 +151,8 @@
 </mat-sidenav-container>
 
 <mat-drawer #drawer1 sbcDrawer>
-  <sbc-drawer-container action
-    (click)="drawer1.close()"
-    (click)="overlayCloseHistory()"
-    (keydown.esc)="overlayCloseHistory()"
-    >
+  <sbc-drawer-container>
+    <sbc-drawer-navigation (click)="drawer1.close()"></sbc-drawer-navigation>
     <sbc-drawer-content>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam impedit architecto quibusdam 
@@ -170,10 +164,8 @@
 
 <!-- TRETJA NAVIGACIJSKA TIPKA ISKANJE -- DRAWER -->
 <mat-drawer #drawer2 sbcDrawer>
-    <sbc-drawer-container action
-    (click)="drawer2.close()"
-    (click)="overlayCloseHistory()"
-    (keydown.esc)="overlayCloseHistory()">
+  <sbc-drawer-container>
+    <sbc-drawer-navigation (click)="drawer2.close()"></sbc-drawer-navigation>
     <sbc-drawer-content>
       <app-search-dialog-navigation></app-search-dialog-navigation>
     </sbc-drawer-content>

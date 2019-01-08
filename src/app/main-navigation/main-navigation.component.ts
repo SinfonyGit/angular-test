@@ -1,5 +1,5 @@
 import { SearchDialogNavigationComponent } from './search-dialog-navigation/search-dialog-navigation.component';
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 
 import {MatDialog} from '@angular/material';
 
@@ -18,25 +18,6 @@ export class MainNavigationComponent {
   // Zapri menu na ikonici
   closeIconMenu = false;
 
-  // Animacija Drawerja Modala
-  overlayHistory = '';
-
-  overlayOpenHistory() {
-    this.overlayHistory = '1';
-  }
-
-  overlayCloseHistory() {
-    this.overlayHistory = '0';
-  }
-  // !Animacija Drawerja Konec
-
-  /* @HostListener('window:keyup', ['$event'])
-  keyEvent(event: KeyboardEvent) {
-    if (event.keyCode === KEY_CODE.ESC) {
-      this.overlayHistory = '0';
-    }
-  } */
-
   // DIALOG ZA ODPIRANJE DIALOGA NA TRETJI IKONI
   openDialog() {
     const dialogRef = this.dialog.open(SearchDialogNavigationComponent);
@@ -47,11 +28,3 @@ export class MainNavigationComponent {
   }
 
 }
-
-/* export enum KEY_CODE {
-  UP_ARROW = 38,
-  DOWN_ARROW = 40,
-  RIGHT_ARROW = 39,
-  LEFT_ARROW = 37,
-  ESC = 27
-} */

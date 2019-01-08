@@ -1,3 +1,4 @@
+import { GlobalNavTriggerForDirective } from './global-nav-primary-item/global-nav-trigger-for.directive';
 
 import { GlobalNavFooterSpacerDirective } from './global-nav-secondary-item/global-nav-logo-spacer.directive';
 import { GlobalNavPrimaryItemDirective } from './global-nav-primary-item/global-nav-primary-item.directive';
@@ -35,7 +36,8 @@ import { GlobalNavigationContentComponent } from './global-nav-content/global-na
       GlobalNavSecondaryItemDirective,
       GlobalNavFooterSpacerDirective,
       GlobalNavigationElementComponent,
-      GlobalNavigationContentComponent
+      GlobalNavigationContentComponent,
+      GlobalNavTriggerForDirective
   ],
   imports: [
     RouterModule,
@@ -56,7 +58,8 @@ import { GlobalNavigationContentComponent } from './global-nav-content/global-na
     GlobalNavSecondaryItemDirective,
     GlobalNavFooterSpacerDirective,
     GlobalNavigationElementComponent,
-    GlobalNavigationContentComponent
+    GlobalNavigationContentComponent,
+    GlobalNavTriggerForDirective
   ]
 })
 export class GlobalNavigationModule { }
