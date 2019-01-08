@@ -7,18 +7,16 @@
     [style.width.px]="widthSideBar"
     mode="side"
     opened="true"
-    (mouseenter)="showNavButton = true"
-    (mouseleave)="showNavButton = false"
+    (mouseenter)="showNavButtonEvent()"
+    (mouseleave)="hideNavButtonEvent()"
     [@openCloseDrawerAnimation]="drawerAnimation ? 'open' : 'closed'"
     >
-
+    
     <mat-toolbar *ngIf="!hideNavContent">
       <div sbcClipper class="toolbarBox">
         Navigacija
       </div>
     </mat-toolbar>
-
-    
 
     <!-- ANIMATION SUBMENU -->
     <div [@openCloseAnimation]="dropDownMenuDocumentation ? 'openAnimation' : 'closeAnimation'"
@@ -195,38 +193,13 @@
     </div>
     <!-- !ANIMATION SUBMENU -->
 
-  
-
   </mat-sidenav>
 
   <!-- Container  za show&hide Navigacijo, hkrati je tudi Content(Router Outlet) -->
   <mat-sidenav-content [style.marginLeft.px]="widthSideBar" [ngClass]="{'transition': widthSideBarAnimation}">
       
     <sbc-nav-container style="z-index: 305;">
-      <div sbcNavShowHidePanel style="z-index: 306;"
-        (mouseenter)="showNavButton = true"
-        (mouseleave)="showNavButton = false"
-      >
-      
-        <button *ngIf="showNavButton"
-          sbcNavShowHideButton style="z-index: 307;"
-          mat-icon-button
-          type="button"
-          aria-label="Toggle sidenav"
-          (click)="toggleSideBar()"
-          (click)="toggleHideNavContent()"
-          (click)="toggleDrawerAnimation()"
-          sbcNavButtonTest
-          (click)="toggleWidthSideBarAnimation()"
-        >
-          <fa-icon *ngIf="hideNavContent" [icon]="['fas', 'bars']" [fixedWidth]="true" style="position: relative; bottom: 7px;"></fa-icon>
-          <fa-icon *ngIf="!hideNavContent" [icon]="['fas', 'angle-left']" [fixedWidth]="true" style="position: relative; bottom: 7px; right: 1px;"></fa-icon>
-        </button>
 
-      </div>
-      <!-- (click)="toggleDrawerAnimation()" -->
-      <!-- (click)="hideNavContent = !hideNavContent" -->
-      <!-- (click)="toggleSideBar()" -->
       <div class="router-content"
         [@showOverlay]="!showOverlay">
         <router-outlet></router-outlet>

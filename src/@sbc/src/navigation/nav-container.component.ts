@@ -4,6 +4,8 @@ import { Component } from '@angular/core';
     selector: 'sbc-nav-container',
     template: `
     <div class="drawer-container">
+    <sbc-nav-container-button>
+    </sbc-nav-container-button>
       <ng-content></ng-content>
     </div>
     `,

@@ -21,8 +21,7 @@ export class NavShowHidePanelDirective {
         el.nativeElement.style.paddingBottom = '16px';
         el.nativeElement.style.paddingBottom = '16px';
         el.nativeElement.style.paddingTop = '24px';
-
-
+        // el.nativeElement.style.paddingRight = '24px';
 
      }
 }

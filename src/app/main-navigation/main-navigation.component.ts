@@ -12,9 +12,6 @@ export class MainNavigationComponent {
 
   constructor( public dialog: MatDialog ) {}
 
-  // Pokaži/ skrij ikonco v child komponenti
-  showNavButton = false;
-
   // Zapri menu na ikonici
   closeIconMenu = false;
 

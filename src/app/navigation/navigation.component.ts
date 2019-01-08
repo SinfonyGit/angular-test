@@ -1,3 +1,4 @@
+import { NavigationService } from './../../@sbc/src/navigation/navigation.service';
 import { ShowOverlayService } from './../../@sbc/src/drawers/show-overlay.service';
 
 import { Component, Input, OnInit } from '@angular/core';
@@ -17,13 +18,11 @@ import { navigationSlideAnimation } from '../animations/navigationSlideAnimation
 })
 export class NavigationComponent implements OnInit {
 
-  message: string;
-
-  constructor(private overlay: ShowOverlayService) {}
+  constructor(private overlay: ShowOverlayService, private navigation: NavigationService) {}
 
   // Pokaže oz Skrije navigacijski button iz parent komponente (Main Nav Component)
   // Pokaži oz skrije navogacijski button glede na lokacijo miške
-  @Input() showNavButton = false;
+  showNavButton = false;
 
   // Pokaži oz skrij Ikone v navigacijskem meniju
   showIconTree = false;
@@ -33,7 +32,7 @@ export class NavigationComponent implements OnInit {
   isSyncAnimated = false;
 
   // Pokaži oz skrij navigacijski izbor predmeta (po domače, pokaži skrij besedilo npr. Documentation, Dashboard, items)
-  hideNavContent = false;
+  hideNavContent: boolean;
 
   // DropDown animacija in pokazatelj ob kliku na documentation
   dropDownMenuDocumentation = false;
@@ -41,35 +40,27 @@ export class NavigationComponent implements OnInit {
 
 
   // Zatemnjenost zaslona oz Kontenta ob pritistku na drawer Modal
-  // Podatek se dobi od Parent komponente preko Input metode
-  // @Input() showOverlayHistory: string;
   showOverlay = false;
 
   // Animacija za prikaz navigacijskega SideBara Open/Close
-  drawerAnimation = true;
+  drawerAnimation: boolean;
 
   // Spreminjanje Sidebara
   // [style.width.px]="widthSideBar" JE ZAPISANO V obeh <mat-sidenav> TAggah
-  widthSideBar = '241';
-  widthSideBarExpanded = '241';
-  widthSideBarCollapsed = '21';
+  widthSideBar: string;
+
 
   // Animation TIME
-  widthSideBarAnimation = false;
+  widthSideBarAnimation: boolean;
 
-  toggleSideBar() {
-    if (this.widthSideBar === this.widthSideBarExpanded) {
-      // Ob zapiranju navigacije | Open => Closed |
-        this.widthSideBar = this.widthSideBarCollapsed;
-        this.showNavButton = true;
-    } else {
-      // Ob odpiranju navigacije | Closed => Open |
-        this.widthSideBar = this.widthSideBarExpanded;
-    }
-  }
 
   ngOnInit() {
     this.overlay.currentShowOverlay.subscribe(overlay => this.showOverlay = overlay);
+    this.navigation.currentShowHideNavButton.subscribe(navigation => this.showNavButton = navigation);
+    this.navigation.currentHideNavContent.subscribe(hideNavContent => this.hideNavContent = hideNavContent);
+    this.navigation.currentDrawerAnimation.subscribe(drawerAnimation => this.drawerAnimation = drawerAnimation);
+    this.navigation.currentwidthSideBarAnimation.subscribe(widthSideBarAnimation => this.widthSideBarAnimation = widthSideBarAnimation);
+    this.navigation.currentwidthSideBar.subscribe(widthSideBar => this.widthSideBar = widthSideBar);
   }
 
   // Alternative za prikaz podmenija
@@ -77,30 +68,12 @@ export class NavigationComponent implements OnInit {
     this.dropDownMenuDocumentation = !this.dropDownMenuDocumentation;
   }
 
-  // Animacija za prikaz navigacijskega SideBara Open/Close
-  toggleDrawerAnimation() {
-    this.drawerAnimation = !this.drawerAnimation;
-  }
-
-  // Toggler za prikaz in skritje besedila ob zapiranju in odpiranju NavBara
-  toggleHideNavContent() {
-    // Ob zapiranju navigacije | Open => Closed |
-    if (this.hideNavContent === false) {
-      setTimeout(() => {
-      this.hideNavContent = true;
-    }, 500);
-    } else {
-      // Ob odpiranju navigacije | Closed => Open |
-      setTimeout(() => {
-        this.hideNavContent = false;
-      }, 200);
-    }
-  }
-
-    // Animation TIME
-    toggleWidthSideBarAnimation() {
-      this.widthSideBarAnimation = true;
+    showNavButtonEvent() {
+      this.navigation.changeShowHideNavButton(true);
     }
 
+    hideNavButtonEvent() {
+      this.navigation.changeShowHideNavButton(false);
+    }
 
 }

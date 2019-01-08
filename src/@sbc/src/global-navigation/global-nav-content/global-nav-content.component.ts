@@ -1,9 +1,13 @@
+import { NavigationService } from './../../navigation/navigation.service';
 import { Component} from '@angular/core';
 
 @Component({
     selector: 'sbc-global-nav-content',
     template: `
-      <div class="global-nav-content">
+      <div class="global-nav-content"
+      (mouseenter)="showNavButton()"
+      (mouseleave)="hideNavButton()"
+      >
         <ng-content></ng-content>
       </div>
     `,
@@ -36,7 +40,14 @@ import { Component} from '@angular/core';
 export class GlobalNavigationContentComponent {
 
 
-  constructor() { }
+  constructor(private navigation: NavigationService) { }
 
+  showNavButton() {
+    this.navigation.changeShowHideNavButton(true);
+  }
+
+  hideNavButton() {
+    this.navigation.changeShowHideNavButton(false);
+  }
 
 }

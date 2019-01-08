@@ -1,6 +1,6 @@
 import { ShowOverlayService } from './show-overlay.service';
 
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -47,5 +47,6 @@ export class DrawerNavigationComponent {
   closeOverlay() {
     this.overlay.changeOverlay(false);
   }
+
 
 }
