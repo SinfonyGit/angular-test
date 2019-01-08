@@ -22,7 +22,7 @@ export class NavigationComponent implements OnInit {
 
   // Pokaže oz Skrije navigacijski button iz parent komponente (Main Nav Component)
   // Pokaži oz skrije navogacijski button glede na lokacijo miške
-  showNavButton = false;
+  showNavButton: boolean;
 
   // Pokaži oz skrij Ikone v navigacijskem meniju
   showIconTree = false;
@@ -40,7 +40,7 @@ export class NavigationComponent implements OnInit {
 
 
   // Zatemnjenost zaslona oz Kontenta ob pritistku na drawer Modal
-  showOverlay = false;
+  showOverlay: boolean;
 
   // Animacija za prikaz navigacijskega SideBara Open/Close
   drawerAnimation: boolean;
@@ -68,12 +68,13 @@ export class NavigationComponent implements OnInit {
     this.dropDownMenuDocumentation = !this.dropDownMenuDocumentation;
   }
 
-    showNavButtonEvent() {
-      this.navigation.changeShowHideNavButton(true);
-    }
+  // Prikaz ikonce v Mat-container
+  showNavButtonEvent() {
+    this.navigation.changeShowHideNavButton(true);
+  }
 
-    hideNavButtonEvent() {
-      this.navigation.changeShowHideNavButton(false);
-    }
+  hideNavButtonEvent() {
+    this.navigation.changeShowHideNavButton(false);
+  }
 
 }

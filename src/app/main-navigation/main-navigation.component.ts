@@ -12,9 +12,6 @@ export class MainNavigationComponent {
 
   constructor( public dialog: MatDialog ) {}
 
-  // Zapri menu na ikonici
-  closeIconMenu = false;
-
   // DIALOG ZA ODPIRANJE DIALOGA NA TRETJI IKONI
   openDialog() {
     const dialogRef = this.dialog.open(SearchDialogNavigationComponent);
